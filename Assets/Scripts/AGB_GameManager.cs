@@ -2,10 +2,13 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class AGB_GameManager : MonoBehaviour
 {
     #region Variable
+
     [SerializeField]
     private int _maxHp = 0;
     [SerializeField]
@@ -24,10 +27,16 @@ public class AGB_GameManager : MonoBehaviour
     public GameObject LCont;
     public GameObject RCont;
 
-    [SerializeField]
-    GameObject Llay;
-    [SerializeField]
-    GameObject Rlay;
+    //lay
+    XRInteractorLineVisual Llay;
+    XRInteractorLineVisual Rlay;
+    //ui
+    GameObject RMenu;
+    GameObject LMenu;
+    GameObject Sword;
+    public GameObject CountText;
+    Text CountTexts;
+    bool _isContText;
     #endregion
 
     #region intance
@@ -89,12 +98,17 @@ public class AGB_GameManager : MonoBehaviour
 
     private void Start()
     {
-        //var vec = new Vector3(75, 0, 0);
-        //Llay = LCont.transform.Find("[LeftHand Controller] Ray Origin").gameObject;
-        //Rlay = RCont.transform.Find("[RightHand Controller] Ray Origin").gameObject;
+      
+        Llay = LCont.transform.GetComponent<XRInteractorLineVisual>();
+        Rlay = RCont.transform.GetComponent<XRInteractorLineVisual>();
+        RMenu = RCont.transform.GetChild(0).gameObject;
+        LMenu = LCont.transform.GetChild(0).gameObject;
+        Sword = RCont.transform.GetChild(1).gameObject;
+        Llay.lineLength = 0;
+        Llay.invalidColorGradient.alphaKeys[0].alpha = 0;
+        Rlay.invalidColorGradient.alphaKeys[0].alpha = 0;
+        Rlay.lineLength = 0;
 
-        //Llay.transform.Rotate(vec);
-        //Rlay.transform.Rotate(vec);
     }
     private void GameOver()
     {
@@ -103,18 +117,40 @@ public class AGB_GameManager : MonoBehaviour
   
 
     #region Btn
-    public void BtnGamePause()
+    /// <summary>
+    /// 중지버튼
+    /// </summary>
+    /// <param name="i">0 == Right ,1==Left </param>
+    /// 
+    public void BtnGamePause(int i)
     {
+
+        Llay = LCont.transform.GetComponent<XRInteractorLineVisual>();
+        Rlay = RCont.transform.GetComponent<XRInteractorLineVisual>();
         Time.timeScale = 0;
-        //pauseui 생성
+        if(i==0)
+        {
+            Llay.lineLength=1;
+            Sword.SetActive(false);
+            RMenu.SetActive(true);
+        }
+        else
+        {
+            Rlay.lineLength = 1;
+            Sword.SetActive(false);
+            LMenu.SetActive(true);
+        }
+     
     }
 
     public void BtnContinueGame()
     {
-        Debug.Log("게속하기");
-        //StartCoroutine(CoConGame());
+        Llay.lineLength = 0;
+        Rlay.lineLength = 0;
+        StartCoroutine(CoConGame());
     }
 
+ 
 
     #endregion
 
@@ -137,16 +173,33 @@ public class AGB_GameManager : MonoBehaviour
 
     IEnumerator CoConGame()
     {
+
+        StartCoroutine(CountDown());
         //팝업 내리기
-        for (int i = 0; i < 3; i++)
+        for (int i = 3; i < 0; i--)
         {
+            CountTexts.text = Convert.ToString(i);
             yield return new WaitForSeconds(1f);
+            CountText.transform.position = new Vector3(0, 0, 0);
             //카운트 다운 이미지 변경
         }
 
-
+        CountTexts.text = "";
+        _isContText = false;
         Time.timeScale = 1;
         
+    }
+    IEnumerator CountDown()
+    {
+        float x;
+        while(_isContText)
+        {
+            x = CountText.transform.position.x;
+            CountText.transform.position = new Vector3(x -= 0.2f, 0, 0);
+               yield return new WaitForSeconds(0.1f);
+        }
+        CountText.transform.position = new Vector3(0, 0, 0);
+        _isContText = true;
     }
     #endregion
 }
