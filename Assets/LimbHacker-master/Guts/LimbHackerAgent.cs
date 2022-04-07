@@ -150,10 +150,11 @@ namespace NobleMuffins.LimbHacker.Guts
 
 				ApplySnapshotsToRoot(alfaObject, jobYield.Alfa);
                 ApplySnapshotsToRoot(bravoObject, jobYield.Bravo);
-                                                
+                //대연 메테리얼 테스트 
                 var results = new GameObject[] {
                     alfaObject, bravoObject
                 };
+                //alfaObject.AddComponent<>
 
 				jobSpecification.Hackable.handleSlice(results, jobState.Yield.PlaneInWorldSpace, jobState.Yield.FocalPointInWorldSpace);
 
