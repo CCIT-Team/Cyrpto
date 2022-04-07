@@ -16,7 +16,7 @@ public class AGB_XRmanager : MonoBehaviour
 
     bool _isPressRtrigger = false;
     bool _isPressLtrigger = false;
-    public bool _isPause;
+    public bool _isPause = false;
 
     bool _isPlaying = true;
     bool _isConCont = false;
@@ -24,7 +24,11 @@ public class AGB_XRmanager : MonoBehaviour
     private InputDevice _rightController;
     private InputDevice _leftController;
 
+    private bool _isRPrimaryBtn = false;
+    private bool _isLPrimaryBtn = false;
     
+
+
     private void OnEnable()
     {
         GetDevice();
@@ -89,8 +93,11 @@ public class AGB_XRmanager : MonoBehaviour
         _isConCont = true;
         while ((_leftController.isValid || _rightController.isValid) && _isPlaying)
         {
-
+            //검전환
             _rightController.TryGetFeatureValue(CommonUsages.triggerButton, out _isRtrigger);
+            _rightController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRPrimaryBtn);
+            _leftController.TryGetFeatureValue(CommonUsages.primaryButton, out _isLPrimaryBtn);
+
             if (_isRtrigger&& !_isPressRtrigger)
             {
                 _isPressRtrigger = true;
@@ -103,9 +110,22 @@ public class AGB_XRmanager : MonoBehaviour
            
 
             }
-            _leftController.TryGetFeatureValue(CommonUsages.triggerButton, out _isLtrigger);
-            if (_isLtrigger)
 
+            ////총트리거
+            //_leftController.TryGetFeatureValue(CommonUsages.triggerButton, out _isLtrigger);
+            //if (_isLtrigger)
+
+             
+            //if(_isRPrimaryBtn && !_isPause)
+            //{
+            //    _isPause = true;
+            //    AGB_GameManager.Instance.BtnGamePause(0);
+            //}
+            //if (_isLPrimaryBtn && !_isPause)
+            //{
+            //    _isPause = true;
+            //    AGB_GameManager.Instance.BtnGamePause(1);
+            //}
             //_rightController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRtrigger);
             //_leftController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRtrigger);
 
