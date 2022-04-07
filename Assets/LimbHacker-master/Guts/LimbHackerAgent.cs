@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using System.Collections;
 
 namespace NobleMuffins.LimbHacker.Guts
 {
@@ -159,9 +160,21 @@ namespace NobleMuffins.LimbHacker.Guts
 				if(backIsNew) {
                     Destroy(jobSpecification.Subject);
 				}
+                StartCoroutine(Delete(alfaObject, bravoObject));
+
             }
+
+
         }
-        
+        IEnumerator Delete(GameObject a, GameObject b)
+        {
+
+            yield return new WaitForSeconds(1f);
+            if (a != null)
+            Destroy(a);
+            if (b != null)
+                Destroy(b);
+        }
         //These buffers are used in HandleHierarchy. This method is executed only on the event dispatch thread and therefore will not be clobbered.
         readonly ICollection<Transform> boneBuffer = new HashSet<Transform>();
         readonly ICollection<GameObject> rendererHolderBuffer = new HashSet<GameObject>();

@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections.Generic;
 using System;
 using NobleMuffins.LimbHacker.Guts;
+using System.Collections;
 
 namespace NobleMuffins.LimbHacker
 {
@@ -48,10 +49,17 @@ namespace NobleMuffins.LimbHacker
             if (LimbHackerAgent.DetermineSlice(this, positionInWorldSpace, ref jointName, ref rootTipProgression) && (decisionMaker == null || decisionMaker.ShouldHack(jointName)))
             {
                 LimbHackerAgent.instance.SeverByJoint(gameObject, jointName, rootTipProgression, normalInWorldSpace);
+                StartCoroutine(Delete());
             }
         }
+        IEnumerator Delete()
+        {
+          
+            yield return new WaitForSeconds(1f);
+            Destroy(gameObject);
+        }
 
-		public void handleSlice(GameObject[] results, Vector4 planeInWorldSpace, Vector3 focalPointInWorldSpace)
+        public void handleSlice(GameObject[] results, Vector4 planeInWorldSpace, Vector3 focalPointInWorldSpace)
         {
             bool originalRemainsAfterSlice = false;
 

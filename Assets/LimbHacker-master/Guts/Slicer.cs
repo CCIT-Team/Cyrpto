@@ -5,6 +5,8 @@ namespace NobleMuffins.LimbHacker.Guts
 {
     public class Slicer : MonoBehaviour
     {
+        public enum Sword {red,blue };
+        public Sword sword;
         class PendingSlice
         {
             public PendingSlice(Vector3 _point, ISliceable _target)
@@ -48,14 +50,18 @@ namespace NobleMuffins.LimbHacker.Guts
         {
             if (suppressUntilContactCeases.Contains(other.gameObject) == false)
             {
-                ISliceable sliceable = other.GetComponent(typeof(ISliceable)) as ISliceable;
-
-                if (sliceable != null)
+                if((sword == Sword.blue && other.tag == "BlueCuttingMonster") || (sword == Sword.red && other.tag == "RedCuttingMonster"))
                 {
-                    Vector3 point = other.ClosestPointOnBounds(positionInWorldSpace);
+                    ISliceable sliceable = other.GetComponent(typeof(ISliceable)) as ISliceable;
 
-                    pendingSlices.Enqueue(new PendingSlice(point, sliceable));
+                    if (sliceable != null)
+                    {
+                        Vector3 point = other.ClosestPointOnBounds(positionInWorldSpace);
+
+                        pendingSlices.Enqueue(new PendingSlice(point, sliceable));
+                    }
                 }
+               
             }
         }
 

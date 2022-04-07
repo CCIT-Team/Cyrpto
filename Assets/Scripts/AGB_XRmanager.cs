@@ -49,7 +49,7 @@ public class AGB_XRmanager : MonoBehaviour
 
         if (!_isConCont)
             StartCoroutine(GetKey());
-        Debug.Log($"{device.name} : {device.characteristics}");
+        
     }
 
     private IEnumerator LeftController(InputDevice device, InputDeviceCharacteristics characteristics)
@@ -87,7 +87,7 @@ public class AGB_XRmanager : MonoBehaviour
     IEnumerator GetKey()
     {
         _isConCont = true;
-        while (_leftController.isValid && _isPlaying)
+        while ((_leftController.isValid || _rightController.isValid) && _isPlaying)
         {
 
             _rightController.TryGetFeatureValue(CommonUsages.triggerButton, out _isRtrigger);
@@ -100,11 +100,11 @@ public class AGB_XRmanager : MonoBehaviour
             {
                 _isPressRtrigger = false;
                 swordSelecter.SelectSword(false);
+           
 
             }
             _leftController.TryGetFeatureValue(CommonUsages.triggerButton, out _isLtrigger);
             if (_isLtrigger)
-                Debug.Log("LTrigger pressed " + _isLtrigger);
 
             //_rightController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRtrigger);
             //_leftController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRtrigger);
