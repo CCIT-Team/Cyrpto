@@ -19,8 +19,13 @@ public class AGB_GameManager : MonoBehaviour
 
     private float _gameOverTime = 1f;
 
-    GameObject LCont;
-    GameObject RCont;
+    public GameObject LCont;
+    public GameObject RCont;
+
+    [SerializeField]
+    GameObject Llay;
+    [SerializeField]
+    GameObject Rlay;
     #endregion
 
     #region intance
@@ -82,7 +87,12 @@ public class AGB_GameManager : MonoBehaviour
 
     private void Start()
     {
-        
+        //var vec = new Vector3(75, 0, 0);
+        //Llay = LCont.transform.Find("[LeftHand Controller] Ray Origin").gameObject;
+        //Rlay = RCont.transform.Find("[RightHand Controller] Ray Origin").gameObject;
+
+        //Llay.transform.Rotate(vec);
+        //Rlay.transform.Rotate(vec);
     }
     private void GameOver()
     {
