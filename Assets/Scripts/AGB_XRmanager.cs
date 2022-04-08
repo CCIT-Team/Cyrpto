@@ -10,13 +10,14 @@ public class AGB_XRmanager : MonoBehaviour
     // 추가해야 할것 정지버튼 총쏘는거
 
     public AGB_SwordSelecter swordSelecter;
+    //public AGB_GameManager gameManager;
 
     private bool _isRtrigger = false;
     private bool _isLtrigger = false;
 
     bool _isPressRtrigger = false;
     bool _isPressLtrigger = false;
-    public bool _isPause = false;
+    
 
     bool _isPlaying = true;
     bool _isConCont = false;
@@ -115,19 +116,19 @@ public class AGB_XRmanager : MonoBehaviour
             //_leftController.TryGetFeatureValue(CommonUsages.triggerButton, out _isLtrigger);
             //if (_isLtrigger)
 
-             
-            //if(_isRPrimaryBtn && !_isPause)
-            //{
-            //    _isPause = true;
-            //    AGB_GameManager.Instance.BtnGamePause(0);
-            //}
-            //if (_isLPrimaryBtn && !_isPause)
-            //{
-            //    _isPause = true;
-            //    AGB_GameManager.Instance.BtnGamePause(1);
-            //}
-            //_rightController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRtrigger);
-            //_leftController.TryGetFeatureValue(CommonUsages.primaryButton, out _isRtrigger);
+
+            if (_isRPrimaryBtn && !AGB_GameManager._inst._isPause)
+            {
+                AGB_GameManager._inst._isPause = true;
+                AGB_GameManager._inst.BtnGamePause(0);
+            }
+            if (_isLPrimaryBtn && !AGB_GameManager._inst._isPause)
+            {
+                AGB_GameManager._inst._isPause = true;
+                AGB_GameManager._inst.BtnGamePause(1);
+            }
+           
+         
 
 
             if (!_isPlaying)
