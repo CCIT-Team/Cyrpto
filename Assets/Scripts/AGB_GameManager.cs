@@ -21,7 +21,7 @@ public class AGB_GameManager : MonoBehaviour
     private int _healCombo = 5;
 
     private float _gameOverTime = 1f;
-
+    public bool _isPause = false;
 
 
     public GameObject LCont;
@@ -36,28 +36,20 @@ public class AGB_GameManager : MonoBehaviour
     GameObject Sword;
     public GameObject CountText;
     Text CountTexts;
-    bool _isContText;
+    bool _isContText = false;
+    string _Cunt;
+    
     #endregion
 
     #region intance
 
-    private static AGB_GameManager _inst = null;
+    public static AGB_GameManager _inst = null;
     private static readonly object key = new object();
 
-    public static AGB_GameManager Instance
+  
+    private void Awake()
     {
-        get
-        {
-            lock (key)
-            {
-                if (_inst == null)
-                {
-                    _inst = new AGB_GameManager();
-
-                }
-                return _inst;
-            }
-        }
+        _inst = this;
     }
     #endregion
 
@@ -86,7 +78,7 @@ public class AGB_GameManager : MonoBehaviour
         set
         {
             _combo = value;
-            if(_maxHp > Hp)
+            if (_maxHp > Hp)
             {
                 if ((value %= _healCombo) == 0)
                     Hp++;
@@ -98,7 +90,8 @@ public class AGB_GameManager : MonoBehaviour
 
     private void Start()
     {
-      
+
+        CountTexts = CountText.GetComponent<Text>();
         Llay = LCont.transform.GetComponent<XRInteractorLineVisual>();
         Rlay = RCont.transform.GetComponent<XRInteractorLineVisual>();
         RMenu = RCont.transform.GetChild(0).gameObject;
@@ -114,7 +107,12 @@ public class AGB_GameManager : MonoBehaviour
     {
         StartCoroutine(CoGameOver());
     }
-  
+    private void Update()
+    {
+        if (_isContText)
+            CountTexts.text = _Cunt;
+
+    }
 
     #region Btn
     /// <summary>
@@ -125,12 +123,11 @@ public class AGB_GameManager : MonoBehaviour
     public void BtnGamePause(int i)
     {
 
-        Llay = LCont.transform.GetComponent<XRInteractorLineVisual>();
-        Rlay = RCont.transform.GetComponent<XRInteractorLineVisual>();
-        Time.timeScale = 0;
-        if(i==0)
+
+        //Time.timeScale = 0;
+        if (i == 0)
         {
-            Llay.lineLength=1;
+            Llay.lineLength = 1;
             Sword.SetActive(false);
             RMenu.SetActive(true);
         }
@@ -140,17 +137,17 @@ public class AGB_GameManager : MonoBehaviour
             Sword.SetActive(false);
             LMenu.SetActive(true);
         }
-     
+
     }
 
-    public void BtnContinueGame()
+    public void BtnContinueGame(int i)
     {
         Llay.lineLength = 0;
         Rlay.lineLength = 0;
-        StartCoroutine(CoConGame());
+        StartCoroutine(CoConGame(i));
     }
 
- 
+
 
     #endregion
 
@@ -171,35 +168,47 @@ public class AGB_GameManager : MonoBehaviour
 
     }
 
-    IEnumerator CoConGame()
+    IEnumerator CoConGame(int j)
     {
-
+        switch (j)
+        {
+            case 0:
+                RMenu.SetActive(false);
+                break;
+            default:
+                LMenu.SetActive(false);
+                break;
+        }
+        
+        _isContText = true;
         StartCoroutine(CountDown());
         //팝업 내리기
-        for (int i = 3; i < 0; i--)
+        for (int i = 3; i > 0; i--)
         {
-            CountTexts.text = Convert.ToString(i);
+            _Cunt = Convert.ToString(i);
             yield return new WaitForSeconds(1f);
-            CountText.transform.position = new Vector3(0, 0, 0);
+            CountText.transform.localPosition = new Vector3(0, 0, 0);
             //카운트 다운 이미지 변경
+         
         }
 
         CountTexts.text = "";
         _isContText = false;
-        Time.timeScale = 1;
-        
+        _isPause = false;
+        //Time.timeScale = 1;
+
     }
     IEnumerator CountDown()
     {
-        float x;
-        while(_isContText)
+        float z = CountText.transform.localPosition.z;
+        while (_isContText)
         {
-            x = CountText.transform.position.x;
-            CountText.transform.position = new Vector3(x -= 0.2f, 0, 0);
-               yield return new WaitForSeconds(0.1f);
+            z = CountText.transform.localPosition.z;
+            CountText.transform.localPosition = new Vector3(0, 0, z += 5f);
+            yield return new WaitForSeconds(0.0001f);
         }
-        CountText.transform.position = new Vector3(0, 0, 0);
-        _isContText = true;
+        CountText.transform.localPosition = new Vector3(0, 0, 0);
+
     }
     #endregion
 }
