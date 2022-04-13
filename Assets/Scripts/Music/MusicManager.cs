@@ -58,7 +58,6 @@ public class MusicManager : MonoBehaviour
     public void StartSong()
     {       
         audioSource.Play();
-        audioSource.volume = 1;
     }
     public static double GetAudioSourceTime()
     {

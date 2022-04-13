@@ -5,11 +5,8 @@ using UnityEngine;
 public class TestMap : MonoBehaviour
 {
     public GameObject map_Part1;
-    public Collider map_End;
     public float map_flow;
-    public float map_SpawnPoint;
-    public Transform Spawn_Point;
-
+    public Transform map_Spawn;
     void Start()
     {
         
@@ -18,17 +15,16 @@ public class TestMap : MonoBehaviour
     
     void Update()
     {
-        transform.Translate(new Vector3(map_flow, 0, 0));
+        map_Part1.transform.Translate(new Vector3(map_flow, 0, 0));
+        if(map_Part1.transform.position.z <= -31f)
+        {
+            ReSpawnMap();
+        }
     }
 
-    void OnTriggerEnter(Collider col)
+    void ReSpawnMap()
     {
-        if(col.tag == "Player")
-        {
-            map_End = col; //= map_End.GetComponent<BoxCollider>();
-            Debug.Log("zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz");
-            Instantiate(map_Part1, Spawn_Point.position, new Quaternion(0, 0, 0, 0)); 
-        }
-        
+            Instantiate(this.gameObject, map_Spawn);
+            Destroy(map_Part1);
     }
 }

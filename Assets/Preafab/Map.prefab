@@ -86,8 +86,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3314472091431783658}
-  m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 2.0869, y: 0, z: -13.91}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 2.1802}
   m_Children:
   - {fileID: 3945640977791679530}
@@ -96,7 +96,7 @@ Transform:
   - {fileID: 2395412661723287640}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2395412660960082035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -110,10 +110,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map_Part1: {fileID: 919132149155446097, guid: fd13c88731b0f624db72b7d4aa415a7e, type: 3}
-  map_End: {fileID: 2395412661723287641}
   map_flow: 0.05
-  map_SpawnPoint: 2.72
-  Spawn_Point: {fileID: 0}
+  map_Spawn: {fileID: 0}
 --- !u!65 &4911999419169565670
 BoxCollider:
   m_ObjectHideFlags: 0
