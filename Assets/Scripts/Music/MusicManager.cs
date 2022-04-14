@@ -18,6 +18,8 @@ public class MusicManager : MonoBehaviour
     public float NoteTime;
     public float NoteSpawnY;
     public float NoteTapY;
+
+    public GameObject Player;
     public float NoteDespawnY
     {
         get

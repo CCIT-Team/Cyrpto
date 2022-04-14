@@ -18,13 +18,8 @@ public class TestMap : MonoBehaviour
         map_Part1.transform.Translate(new Vector3(map_flow, 0, 0));
         if(map_Part1.transform.position.z <= -31f)
         {
-            ReSpawnMap();
-        }
-    }
-
-    void ReSpawnMap()
-    {
-            Instantiate(this.gameObject, map_Spawn);
             Destroy(map_Part1);
+            Instantiate(map_Part1, map_Spawn);
+        }
     }
 }

@@ -8,19 +8,23 @@ public class Note : MonoBehaviour
     double timeInstantiated;
     public float assignedTime;
     Vector3 notetransform;
+    [HideInInspector]
+    public double timeSinceInstantiated;
+    [HideInInspector]
+    public float t;
 
     void Start()
     {
         notetransform = new Vector3(0,0,gameObject.transform.position.z);
-        Player = GameObject.FindWithTag("Player");
+        Player = MusicManager.Instance.Player;
         timeInstantiated = MusicManager.GetAudioSourceTime();
     }
 
    
     void Update()
     {
-        double timeSinceInstantiated = MusicManager.GetAudioSourceTime() - timeInstantiated;
-        float t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 2));
+        timeSinceInstantiated = MusicManager.GetAudioSourceTime() - timeInstantiated;
+        t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 2));
         Debug.Log(notetransform.z-= Player.transform.position.z);
 
         if (t > 1)

@@ -11,6 +11,7 @@ public class Lane : MonoBehaviour
     public GameObject NotePrefap;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
+    public GameObject Enemy;
     GameObject Player;
 
     int SpawnIndex = 0;
@@ -43,6 +44,7 @@ public class Lane : MonoBehaviour
                 transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
+                Instantiate(Enemy, gameObject.transform);
                 SpawnIndex++;
             }
         }
