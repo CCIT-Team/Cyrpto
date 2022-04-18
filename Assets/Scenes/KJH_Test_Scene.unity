@@ -834,7 +834,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   map_Part1: {fileID: 95815745}
-  map_flow: 0.01
+  map_flow: 0
   map_Spawn: {fileID: 1489158976}
 --- !u!1 &1498739466
 GameObject:
