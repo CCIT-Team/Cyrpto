@@ -27,7 +27,7 @@ public class KJH_Test_Enemy : MonoBehaviour
                  
                 break;
             case Enemy_Type.b:
-                transform.Translate(new Vector3(Player.transform.position.z * 5 * Time.deltaTime, 0,0 ));
+                transform.Translate(new Vector3(0, 0, Player.transform.position.z * -5 * Time.deltaTime));
                 break;
         }
     }
