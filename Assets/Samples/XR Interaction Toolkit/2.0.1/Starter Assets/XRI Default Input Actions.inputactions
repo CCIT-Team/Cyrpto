@@ -181,6 +181,17 @@
                 },
                 {
                     "name": "",
+                    "id": "e990d432-98cc-43f7-963c-2ac1e57ca260",
+                    "path": "<XRInputV1::HTC::HTCViveControllerOpenXR>{LeftHand}/devicepose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "acdf9550-5529-4ff7-8558-73ecdf0d75bd",
                     "path": "<XRController>{LeftHand}/*",
                     "interactions": "",
@@ -696,6 +707,17 @@
                     "action": "Position",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5140a9ac-cb4e-445a-86fe-379937769255",
+                    "path": "<ViveController>{RightHand}/devicePose/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Position",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 },
                 {
                     "name": "",
