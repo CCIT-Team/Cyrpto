@@ -18,6 +18,8 @@ public class MusicManager : MonoBehaviour
     public float NoteTime;
     public float NoteSpawnY;
     public float NoteTapY;
+
+    public GameObject Player;
     public float NoteDespawnY
     {
         get
@@ -58,7 +60,6 @@ public class MusicManager : MonoBehaviour
     public void StartSong()
     {       
         audioSource.Play();
-        audioSource.volume = 1;
     }
     public static double GetAudioSourceTime()
     {

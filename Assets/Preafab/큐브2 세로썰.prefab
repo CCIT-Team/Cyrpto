@@ -11,9 +11,10 @@ GameObject:
   - component: {fileID: 1392790966970821627}
   - component: {fileID: 6434136856913039723}
   - component: {fileID: 1530263471082979437}
+  - component: {fileID: 4596416864765769193}
   m_Layer: 0
   m_Name: "\uD050\uBE0C2 \uC138\uB85C\uC370"
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 1738355018213060929}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 1473320459816078934}
   m_Father: {fileID: 0}
@@ -83,6 +84,19 @@ MonoBehaviour:
   - {fileID: 2486889326904299636}
   - {fileID: 715635824510753118}
   - {fileID: 770565212232742317}
+--- !u!114 &4596416864765769193
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1738355018213060929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99af1ce99509f0d47ae8bdd390d9c747, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ET: 1
 --- !u!1 &1831776495516813925
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,7 +108,7 @@ GameObject:
   - component: {fileID: 5670111875389450681}
   m_Layer: 0
   m_Name: LeftShoulder
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -126,7 +140,7 @@ GameObject:
   - component: {fileID: 3567792809700388801}
   m_Layer: 0
   m_Name: LeftArm
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -172,7 +186,7 @@ GameObject:
   - component: {fileID: 4028576257848910938}
   m_Layer: 0
   m_Name: Spine
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -216,7 +230,7 @@ GameObject:
   - component: {fileID: 3295133312056713978}
   m_Layer: 0
   m_Name: RightShoulder
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -248,7 +262,7 @@ GameObject:
   - component: {fileID: 4452462223100730788}
   m_Layer: 0
   m_Name: LeftUpLeg
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -293,7 +307,7 @@ GameObject:
   - component: {fileID: 6758305444333936426}
   m_Layer: 0
   m_Name: Spine.001
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -324,7 +338,7 @@ GameObject:
   - component: {fileID: 1305637196102432302}
   m_Layer: 0
   m_Name: LeftForeArm_end
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -355,7 +369,7 @@ GameObject:
   - component: {fileID: 5043369847596920590}
   m_Layer: 0
   m_Name: Head
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -400,7 +414,7 @@ GameObject:
   - component: {fileID: 5733627305568302253}
   m_Layer: 0
   m_Name: RightForeArm
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -446,7 +460,7 @@ GameObject:
   - component: {fileID: 5929743853589713852}
   m_Layer: 0
   m_Name: RightUpLeg
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,7 +506,7 @@ GameObject:
   - component: {fileID: 5976408307450614976}
   m_Layer: 0
   m_Name: RightArm
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -537,7 +551,7 @@ GameObject:
   - component: {fileID: 715635824510753118}
   m_Layer: 0
   m_Name: LeftLeg_end
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,7 +581,7 @@ GameObject:
   - component: {fileID: 4595966499525530239}
   m_Layer: 0
   m_Name: Neck
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -599,7 +613,7 @@ GameObject:
   - component: {fileID: 7360627257839618680}
   m_Layer: 0
   m_Name: Hip.002
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -645,7 +659,7 @@ GameObject:
   - component: {fileID: 7461641241076275906}
   m_Layer: 0
   m_Name: LeftForeArm
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -692,7 +706,7 @@ GameObject:
   - component: {fileID: 7290450495994621973}
   m_Layer: 0
   m_Name: Hip
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -807,7 +821,7 @@ GameObject:
   - component: {fileID: 8114525102216636895}
   m_Layer: 0
   m_Name: LeftLeg
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -852,7 +866,7 @@ GameObject:
   - component: {fileID: 770565212232742317}
   m_Layer: 0
   m_Name: Hip.002_end
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -882,7 +896,7 @@ GameObject:
   - component: {fileID: 6573948861516145217}
   m_Layer: 0
   m_Name: RightForeArm_end
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -912,7 +926,7 @@ GameObject:
   - component: {fileID: 4251541800220499746}
   m_Layer: 0
   m_Name: Spine.002
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -945,7 +959,7 @@ GameObject:
   - component: {fileID: 5766980904068442196}
   m_Layer: 0
   m_Name: Head_end
-  m_TagString: Untagged
+  m_TagString: RedCuttingMonster
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
