@@ -108,14 +108,17 @@ namespace NobleMuffins.LimbHacker.Guts
                 if (backIsNew)
                 {
                     var backSource = useAlternateForBack ? jobSpecification.Hackable.alternatePrefab : jobSpecification.Subject;
-                    bravoObject = (GameObject)Instantiate(backSource);
+
+                    bravoObject = (GameObject)Instantiate(backSource); // 좌우로 분리되면 좋겠다.
+
                     bravoObject.name = string.Format("{0} (Bravo)", jobSpecification.Subject);
                 }
                 else
                     bravoObject = jobSpecification.Subject;
 
                 var alfaSource = useAlternateForFront ? jobSpecification.Hackable.alternatePrefab : jobSpecification.Subject;
-                alfaObject = (GameObject)Instantiate(alfaSource);
+
+                alfaObject = (GameObject)Instantiate(alfaSource); // 좌우로 분리되면 좋겠다.
 
                 HandleHierarchy(alfaObject.transform, bonePresenceAlfaBuffer, jobSpecification.NodeMetadata);
                 HandleHierarchy(bravoObject.transform, bonePresenceBravoBuffer, jobSpecification.NodeMetadata);
