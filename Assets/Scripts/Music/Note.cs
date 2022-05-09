@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
+    public Lane lane;
     GameObject Player;
     double timeInstantiated;
     public float assignedTime;
@@ -34,6 +35,16 @@ public class Note : MonoBehaviour
         else
         {
             transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * Player.transform.position.z, t);
+        }
+    }
+
+     void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.tag == "Sword")
+        {
+            lane.isNoteCount = true;
+            lane.Hit();
+            lane.isNoteCount = false;
         }
     }
 }

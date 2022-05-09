@@ -1,6 +1,10 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SteamVR_Resources.meta
 guid: 572f8a325ba5e734587362af111f67ca
 folderAsset: yes
+========
+guid: 8b8ca8c292432544ebf5d98728c6535b
+>>>>>>>> main:Assets/StreamingAssets/Hot 1.mid.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
