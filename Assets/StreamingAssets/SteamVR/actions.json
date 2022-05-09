@@ -81,6 +81,22 @@
       "name": "/actions/mixedreality/in/ExternalCamera",
       "type": "pose",
       "requirement": "optional"
+    },
+    {
+      "name": "/actions/CustomSet/in/Trigger",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/Menu",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/Pose",
+      "type": "pose"
+    },
+    {
+      "name": "/actions/CustomSet/out/Haptic",
+      "type": "vibration"
     }
   ],
   "action_sets": [
@@ -98,6 +114,10 @@
     },
     {
       "name": "/actions/mixedreality",
+      "usage": "single"
+    },
+    {
+      "name": "/actions/CustomSet",
       "usage": "single"
     }
   ],
