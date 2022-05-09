@@ -41,10 +41,10 @@ public class Lane : MonoBehaviour
            if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {
                 var note = Instantiate(NotePrefap, gameObject.transform);
+                Instantiate(Enemy, note.transform);
                 transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
-                note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
-                Instantiate(Enemy, gameObject.transform);
+                note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];  
                 SpawnIndex++;
             }
         }
@@ -69,7 +69,21 @@ public class Lane : MonoBehaviour
                     print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                 }
             }
-            if(timeStamp + marginOfError <= audioTime)
+            if (col.)
+            {
+                if (Math.Abs(audioTime - timeStamp) < marginOfError)
+                {
+                    Hit();
+                    print($"Hit on {InputIndex} note");
+                    Destroy(notes[InputIndex].gameObject);
+                    InputIndex++;
+                }
+                else
+                {
+                    print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                }
+            }
+            if (timeStamp + marginOfError <= audioTime)
             {
                 Miss();
                 print($"Missed on {InputIndex} note");
@@ -86,5 +100,10 @@ public class Lane : MonoBehaviour
     private void Miss()
     {
         ScoreManager.Miss();
+    }
+
+     void OnCollisionEnter(Collision col)
+    {
+        
     }
 }
