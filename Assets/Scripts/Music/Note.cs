@@ -11,7 +11,7 @@ public class Note : MonoBehaviour
     [HideInInspector]
     public double timeSinceInstantiated;
     [HideInInspector]
-    public float t;
+    public static float t;
 
     void Start()
     {
@@ -25,7 +25,7 @@ public class Note : MonoBehaviour
     {
         timeSinceInstantiated = MusicManager.GetAudioSourceTime() - timeInstantiated;
         t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 2));
-        Debug.Log(notetransform.z-= Player.transform.position.z);
+        //Debug.Log(notetransform.z-= Player.transform.position.z);
 
         if (t > 1)
         {

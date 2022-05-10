@@ -9,6 +9,7 @@ public class AttackPlayer : MonoBehaviour
      GameObject player;
     float distance;
     public float ableDistance = 0.0001f; //근접모션을 취하기 시작하는 거리
+    public float Speed;
 
     private void Awake()
     {
@@ -16,19 +17,36 @@ public class AttackPlayer : MonoBehaviour
     }
     void Start()
     {
-        animator.SetFloat("Speed", 2f);
-        animator = GetComponent<Animator>();
+        animator = gameObject.GetComponent<Animator>();
+        animator.SetFloat("Speed", 2f);  
     }
 
 
     void Update()
     {
-        //transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * player.transform.position.z, Note.t);
-        distance = Vector3.Magnitude(transform.position - player.transform.position);
-        if (distance < ableDistance)
-            animator.SetTrigger("MeleeAttack");
+        transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * player.transform.position.z, Note.t - Speed);
+        distance = Vector3.Magnitude(Lane.note.transform.position - player.transform.position);
+        Debug.Log(distance);
+        //if (distance < ableDistance)
+        //    animator.SetTrigger("MeleeAttack");
+        if(distance < ableDistance) { animator.SetTrigger("MeleeAttack"); }
+    }
+    public static bool a = false;
+     void OnCollisionEnter(Collision col)
+    {
+       if(col.gameObject.tag == "Sword")
+        {
+            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!나 죽음!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            a = true;
+            Destroy(gameObject);
+            if(gameObject == null)
+            {
+                a = false;
+            }
+        }
     }
 }
+
 
 public enum AttackType
 {

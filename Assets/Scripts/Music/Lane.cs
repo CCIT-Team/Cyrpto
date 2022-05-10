@@ -19,7 +19,7 @@ public class Lane : MonoBehaviour
 
     void Start()
     {
-        Player = MusicManager.Instance.Player;
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
@@ -33,14 +33,14 @@ public class Lane : MonoBehaviour
             }
         }
     }
-    
+    public static GameObject note;
     void Update()
     {
         if(SpawnIndex < timeStamps.Count)
         {
            if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {              
-                var note = Instantiate(NotePrefap, gameObject.transform);
+                note = Instantiate(NotePrefap, gameObject.transform);
                 Instantiate(Enemy, note.transform);
                 transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
@@ -55,7 +55,7 @@ public class Lane : MonoBehaviour
             double marginOfError = MusicManager.Instance.marginOfError;
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
 
-            if(Input.GetKeyDown(input))
+            if(AttackPlayer.a == true)
             {
                 if(Math.Abs(audioTime - timeStamp) < marginOfError)
                 {
