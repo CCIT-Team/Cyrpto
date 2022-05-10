@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackPlayer : MonoBehaviour
 {
-    public enum AttackType;
+    public AttackType attack;
     Animator animator;
     public GameObject player;
     float distance;
@@ -29,7 +29,7 @@ public class AttackPlayer : MonoBehaviour
     }
 }
 
-enum AttackType
+public enum AttackType
 {
     Close,
     Far,
