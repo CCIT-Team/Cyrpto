@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AttackPlayer : MonoBehaviour
 {
-    public enum AttackType;
+    public AttackType attack;
     Animator animator;
     public GameObject player;
     float distance;
@@ -23,13 +23,14 @@ public class AttackPlayer : MonoBehaviour
 
     void Update()
     {
-        distance = Vector3.Magnitude(transform.position - player.transform.position);
-        if (distance < ableDistance)
-            animator.SetTrigger("MeleeAttack");
+        transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * player.transform.position.z, GetComponent<Note>().t);
+        //distance = Vector3.Magnitude(transform.position - player.transform.position);
+        //if (distance < ableDistance)
+        //    animator.SetTrigger("MeleeAttack");
     }
 }
 
-enum AttackType
+public enum AttackType
 {
     Close,
     Far,

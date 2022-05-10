@@ -344,7 +344,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &95815747 stripped
 Transform:
@@ -382,7 +382,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 2
   input: 274
-  NotePrefap: {fileID: 8340044510531873317, guid: adc5bb4414eb58740aea24e7f89d1bdc, type: 3}
+  NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
 --- !u!4 &227046343
@@ -593,6 +593,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 581646668}
     m_Modifications:
+    - target: {fileID: 6885310889154520930, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
+      propertyPath: m_TagString
+      value: Sword
+      objectReference: {fileID: 0}
     - target: {fileID: 6885310889746706725, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -640,6 +644,10 @@ PrefabInstance:
     - target: {fileID: 6885310889746706728, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
       propertyPath: m_Name
       value: XR Origin
+      objectReference: {fileID: 0}
+    - target: {fileID: 6885310889746706728, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
@@ -703,17 +711,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1133701741 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6885310889154520956, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
-  m_PrefabInstance: {fileID: 620208658}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 24e43a91b794c0c4cb34d10686d190e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1208477044
 GameObject:
   m_ObjectHideFlags: 0
@@ -745,7 +742,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 11
   input: 276
-  NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
+  NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
 --- !u!4 &1208477046
@@ -798,7 +795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 7
   input: 276
-  NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
+  NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
 --- !u!4 &1313789680
@@ -1071,7 +1068,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 0
   input: 273
-  NotePrefap: {fileID: 680743796404192991, guid: a13041264c7be1245b29b1cb8280362d, type: 3}
+  NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
 --- !u!4 &1498739468
@@ -1209,63 +1206,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6885310890461015626, guid: b0def91dff2be344f9eeb96949a80807, type: 3}
   m_PrefabInstance: {fileID: 620208658}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1625198777
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1625198779}
-  - component: {fileID: 1625198778}
-  - component: {fileID: 1625198780}
-  m_Layer: 0
-  m_Name: XR Interaction Manager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1625198778
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625198777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83e4e6cca11330d4088d729ab4fc9d9f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1625198779
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625198777}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.1099997, y: 0.8119998, z: -11.1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 13
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1625198780
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1625198777}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 190538cfe287a7e48a1ef222b5e2103d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  swordSelecter: {fileID: 1133701741}
 --- !u!1 &1809760720
 GameObject:
   m_ObjectHideFlags: 0
@@ -1297,7 +1237,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 9
   input: 276
-  NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
+  NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
 --- !u!4 &1809760722
@@ -1369,7 +1309,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2125929052
 GameObject:
@@ -1402,7 +1342,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   noteRestriction: 5
   input: 276
-  NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
+  NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
 --- !u!4 &2125929054
