@@ -19,7 +19,7 @@ public class Lane : MonoBehaviour
 
     void Start()
     {
-        Player = GameObject.FindWithTag("Player");
+        Player = MusicManager.Instance.Player;
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
@@ -39,7 +39,7 @@ public class Lane : MonoBehaviour
         if(SpawnIndex < timeStamps.Count)
         {
            if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
-            {
+            {              
                 var note = Instantiate(NotePrefap, gameObject.transform);
                 Instantiate(Enemy, note.transform);
                 transform.LookAt(Player.transform);
