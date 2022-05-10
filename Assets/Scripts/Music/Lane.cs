@@ -70,7 +70,6 @@ public class Lane : MonoBehaviour
         {
             if (Math.Abs(audioTime - timeStamp) < marginOfError)
             {
-                Hit();
                 print($"Hit on {InputIndex} note");
                 Destroy(notes[InputIndex].gameObject);
                 InputIndex++;
