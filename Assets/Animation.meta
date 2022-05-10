@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/SteamVR.meta
+guid: f4b84058de4309343a75fa8df9218252
+========
 guid: 955edffd8ab0aa7429ec935172125324
+>>>>>>>> main:Assets/Animation.meta
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}
