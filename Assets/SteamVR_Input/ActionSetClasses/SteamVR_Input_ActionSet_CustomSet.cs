@@ -17,11 +17,11 @@ namespace Valve.VR
     public class SteamVR_Input_ActionSet_CustomSet : Valve.VR.SteamVR_ActionSet
     {
         
-        public virtual SteamVR_Action_Boolean Trigger
+        public virtual SteamVR_Action_Boolean RTrigger
         {
             get
             {
-                return SteamVR_Actions.customSet_Trigger;
+                return SteamVR_Actions.customSet_RTrigger;
             }
         }
         
@@ -38,6 +38,14 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.customSet_Pose;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean LTrigger
+        {
+            get
+            {
+                return SteamVR_Actions.customSet_LTrigger;
             }
         }
         

@@ -55,11 +55,13 @@ namespace Valve.VR
         
         private static SteamVR_Action_Pose p_mixedreality_ExternalCamera;
         
-        private static SteamVR_Action_Boolean p_customSet_Trigger;
+        private static SteamVR_Action_Boolean p_customSet_RTrigger;
         
         private static SteamVR_Action_Boolean p_customSet_Menu;
         
         private static SteamVR_Action_Pose p_customSet_Pose;
+        
+        private static SteamVR_Action_Boolean p_customSet_LTrigger;
         
         private static SteamVR_Action_Vibration p_customSet_Haptic;
         
@@ -215,11 +217,11 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Boolean customSet_Trigger
+        public static SteamVR_Action_Boolean customSet_RTrigger
         {
             get
             {
-                return SteamVR_Actions.p_customSet_Trigger.GetCopy<SteamVR_Action_Boolean>();
+                return SteamVR_Actions.p_customSet_RTrigger.GetCopy<SteamVR_Action_Boolean>();
             }
         }
         
@@ -236,6 +238,14 @@ namespace Valve.VR
             get
             {
                 return SteamVR_Actions.p_customSet_Pose.GetCopy<SteamVR_Action_Pose>();
+            }
+        }
+        
+        public static SteamVR_Action_Boolean customSet_LTrigger
+        {
+            get
+            {
+                return SteamVR_Actions.p_customSet_LTrigger.GetCopy<SteamVR_Action_Boolean>();
             }
         }
         
@@ -269,9 +279,10 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
-                    SteamVR_Actions.customSet_Trigger,
+                    SteamVR_Actions.customSet_RTrigger,
                     SteamVR_Actions.customSet_Menu,
                     SteamVR_Actions.customSet_Pose,
+                    SteamVR_Actions.customSet_LTrigger,
                     SteamVR_Actions.customSet_Haptic};
             Valve.VR.SteamVR_Input.actionsIn = new Valve.VR.ISteamVR_Action_In[] {
                     SteamVR_Actions.default_InteractUI,
@@ -292,9 +303,10 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
                     SteamVR_Actions.mixedreality_ExternalCamera,
-                    SteamVR_Actions.customSet_Trigger,
+                    SteamVR_Actions.customSet_RTrigger,
                     SteamVR_Actions.customSet_Menu,
-                    SteamVR_Actions.customSet_Pose};
+                    SteamVR_Actions.customSet_Pose,
+                    SteamVR_Actions.customSet_LTrigger};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
                     SteamVR_Actions.default_Haptic,
                     SteamVR_Actions.customSet_Haptic};
@@ -316,8 +328,9 @@ namespace Valve.VR
                     SteamVR_Actions.platformer_Jump,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.customSet_Trigger,
-                    SteamVR_Actions.customSet_Menu};
+                    SteamVR_Actions.customSet_RTrigger,
+                    SteamVR_Actions.customSet_Menu,
+                    SteamVR_Actions.customSet_LTrigger};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
                     SteamVR_Actions.default_Squeeze,
                     SteamVR_Actions.buggy_Throttle};
@@ -343,8 +356,9 @@ namespace Valve.VR
                     SteamVR_Actions.buggy_Throttle,
                     SteamVR_Actions.buggy_Brake,
                     SteamVR_Actions.buggy_Reset,
-                    SteamVR_Actions.customSet_Trigger,
-                    SteamVR_Actions.customSet_Menu};
+                    SteamVR_Actions.customSet_RTrigger,
+                    SteamVR_Actions.customSet_Menu,
+                    SteamVR_Actions.customSet_LTrigger};
         }
         
         private static void PreInitActions()
@@ -368,9 +382,10 @@ namespace Valve.VR
             SteamVR_Actions.p_buggy_Brake = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Brake")));
             SteamVR_Actions.p_buggy_Reset = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/buggy/in/Reset")));
             SteamVR_Actions.p_mixedreality_ExternalCamera = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/mixedreality/in/ExternalCamera")));
-            SteamVR_Actions.p_customSet_Trigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/Trigger")));
+            SteamVR_Actions.p_customSet_RTrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/RTrigger")));
             SteamVR_Actions.p_customSet_Menu = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/Menu")));
             SteamVR_Actions.p_customSet_Pose = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/CustomSet/in/Pose")));
+            SteamVR_Actions.p_customSet_LTrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/LTrigger")));
             SteamVR_Actions.p_customSet_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/CustomSet/out/Haptic")));
         }
     }

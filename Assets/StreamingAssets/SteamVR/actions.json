@@ -83,7 +83,7 @@
       "requirement": "optional"
     },
     {
-      "name": "/actions/CustomSet/in/Trigger",
+      "name": "/actions/CustomSet/in/RTrigger",
       "type": "boolean"
     },
     {
@@ -93,6 +93,10 @@
     {
       "name": "/actions/CustomSet/in/Pose",
       "type": "pose"
+    },
+    {
+      "name": "/actions/CustomSet/in/LTrigger",
+      "type": "boolean"
     },
     {
       "name": "/actions/CustomSet/out/Haptic",
@@ -118,7 +122,7 @@
     },
     {
       "name": "/actions/CustomSet",
-      "usage": "single"
+      "usage": "leftright"
     }
   ],
   "default_bindings": [

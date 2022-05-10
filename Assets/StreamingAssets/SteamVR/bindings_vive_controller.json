@@ -116,7 +116,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/customset/in/trigger"
+                     "output" : "/actions/customset/in/ltrigger"
                   }
                },
                "mode" : "button",
@@ -125,7 +125,7 @@
             {
                "inputs" : {
                   "click" : {
-                     "output" : "/actions/customset/in/trigger"
+                     "output" : "/actions/customset/in/rtrigger"
                   }
                },
                "mode" : "button",
