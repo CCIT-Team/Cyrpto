@@ -20,6 +20,7 @@ public class MusicManager : MonoBehaviour
     public float NoteTapY;
 
     public GameObject Player;
+
     public float NoteDespawnY
     {
         get

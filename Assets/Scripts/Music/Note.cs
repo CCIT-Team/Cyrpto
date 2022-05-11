@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Note : MonoBehaviour
 {
-    public Lane lane;
     GameObject Player;
     double timeInstantiated;
     public float assignedTime;
@@ -12,7 +11,7 @@ public class Note : MonoBehaviour
     [HideInInspector]
     public double timeSinceInstantiated;
     [HideInInspector]
-    public float t;
+    public static float t;
 
     void Start()
     {
@@ -26,7 +25,7 @@ public class Note : MonoBehaviour
     {
         timeSinceInstantiated = MusicManager.GetAudioSourceTime() - timeInstantiated;
         t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 2));
-        Debug.Log(notetransform.z-= Player.transform.position.z);
+        //Debug.Log(notetransform.z-= Player.transform.position.z);
 
         if (t > 1)
         {
@@ -35,16 +34,6 @@ public class Note : MonoBehaviour
         else
         {
             transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * Player.transform.position.z, t);
-        }
-    }
-
-     void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Sword")
-        {
-            lane.isNoteCount = true;
-            lane.Hit();
-            lane.isNoteCount = false;
         }
     }
 }

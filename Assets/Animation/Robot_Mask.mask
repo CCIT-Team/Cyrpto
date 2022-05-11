@@ -1,0 +1,135 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!319 &31900000
+AvatarMask:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Robot_Mask
+  m_Mask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+  m_Elements:
+  - m_Path: 
+    m_Weight: 1
+  - m_Path: Armature
+    m_Weight: 1
+  - m_Path: Armature/root
+    m_Weight: 1
+  - m_Path: Armature/root/Bone
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/body.007
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/body.006
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/Bone.014
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/Bone.014/body.004
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/Bone.014/Bone.015
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/Bone.014/Bone.015/body.001
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/Bone.016
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/Bone.013/Bone.016/body.000
+    m_Weight: 1
+  - m_Path: Armature/root/Bone/LegBake-1.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/body.015
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/LegBake-2.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/LegBake-2.L/body.014
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/LegBake-2.L/LegBake-3.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/LegBake-2.L/LegBake-3.L/body.016
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/LegBake-2.L/LegBake-3.L/LegBake-4.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.L/LegBake-2.L/LegBake-3.L/LegBake-4.L/body.013
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/body.019
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/LegBake-2.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/LegBake-2.R/body.020
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/LegBake-2.R/LegBake-3.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/LegBake-2.R/LegBake-3.R/body.018
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/LegBake-2.R/LegBake-3.R/LegBake-4.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegBake-1.R/LegBake-2.R/LegBake-3.R/LegBake-4.R/body.021
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/body.009
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/LegTop-2.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/LegTop-2.L/body.010
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/LegTop-2.L/LegTop-3.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/LegTop-2.L/LegTop-3.L/body.003
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/LegTop-2.L/LegTop-3.L/LegTop-4.L
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.L/LegTop-2.L/LegTop-3.L/LegTop-4.L/body.011
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/body.025
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/LegTop-2.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/LegTop-2.R/body.024
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/LegTop-2.R/LegTop-3.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/LegTop-2.R/LegTop-3.R/body.026
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/LegTop-2.R/LegTop-3.R/LegTop-4.R
+    m_Weight: 0
+  - m_Path: Armature/root/Bone/LegTop-1.R/LegTop-2.R/LegTop-3.R/LegTop-4.R/body.023
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.L
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.L/ColenoBake_control.L
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.L/LegBake_PATKA-control.L
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.L/LegBake_PATKA-control.L/body.005
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.R
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.R/ColenoBake_control.R
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.R/LegBake_PATKA-control.R
+    m_Weight: 0
+  - m_Path: Armature/root/LegBake_IK-control.R/LegBake_PATKA-control.R/body.028
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.L
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.L/ColenoTop_control.L
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.L/LegTop_PATKA-control.L
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.L/LegTop_PATKA-control.L/body.002
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.R
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.R/ColenoTop_control.R
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.R/LegTop_PATKA-control.R
+    m_Weight: 0
+  - m_Path: Armature/root/LegTop_IK-control.R/LegTop_PATKA-control.R/body.027
+    m_Weight: 0
+  - m_Path: Empty
+    m_Weight: 0
