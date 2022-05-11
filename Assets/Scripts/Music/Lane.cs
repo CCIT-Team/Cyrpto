@@ -34,6 +34,7 @@ public class Lane : MonoBehaviour
         }
     }
     public static GameObject note;
+
     void Update()
     {
         if(SpawnIndex < timeStamps.Count)

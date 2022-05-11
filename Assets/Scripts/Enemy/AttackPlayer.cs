@@ -10,7 +10,7 @@ public class AttackPlayer : MonoBehaviour
     float distance;
     public float ableDistance = 0.0001f; //근접모션을 취하기 시작하는 거리
     public float Speed;
-
+    public float d;
     private void Awake()
     {
         player = MusicManager.Instance.Player;
@@ -24,7 +24,9 @@ public class AttackPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * player.transform.position.z, Note.t - Speed);
+        transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, 
+            Vector3.forward * MusicManager.Instance.NoteDespawnY * (player.transform.position.z - 5), Note.t - Speed);
+
         distance = Vector3.Magnitude(Lane.note.transform.position - player.transform.position);
         Debug.Log(distance);
         //if (distance < ableDistance)

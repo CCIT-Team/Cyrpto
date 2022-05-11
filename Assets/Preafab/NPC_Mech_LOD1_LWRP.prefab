@@ -553,7 +553,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934338966992129024}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.1124872, y: 0.31501454, z: -0.026104808}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 934338966991849624}
@@ -608,6 +608,7 @@ MonoBehaviour:
   attack: 0
   ableDistance: 55
   Speed: 5
+  d: -46.54
 --- !u!54 &5017326038096911647
 Rigidbody:
   m_ObjectHideFlags: 0
