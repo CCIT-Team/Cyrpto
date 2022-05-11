@@ -5,6 +5,7 @@ using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.IO;
 using UnityEngine.Networking;
+using UnityEngine.UI;
 
 public class MusicManager : MonoBehaviour
 {
@@ -18,7 +19,7 @@ public class MusicManager : MonoBehaviour
     public float NoteTime;
     public float NoteSpawnY;
     public float NoteTapY;
-
+    public Text text;
     public GameObject Player;
 
     public float NoteDespawnY
@@ -32,6 +33,7 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
+        text.GetComponent<Text>();
         audioSource.Play();
         Instance = this;
         ReadFromFile();
@@ -40,7 +42,7 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        
+        text.text = "" + Note.ComboTest;
     }
 
     void ReadFromFile()
