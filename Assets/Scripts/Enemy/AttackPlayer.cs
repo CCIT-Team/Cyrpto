@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AttackPlayer : MonoBehaviour
 {
-    public enum AttackType;
     Animator animator;
     public GameObject player;
     float distance;
