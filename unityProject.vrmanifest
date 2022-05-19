@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.crypto.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\Mars_GitHub\\Cyrpto\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "E:\\Mercury_GitHub\\Cyrpto\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Crypto [Testing]"

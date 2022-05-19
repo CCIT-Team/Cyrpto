@@ -485,10 +485,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 8340044510531873317, guid: adc5bb4414eb58740aea24e7f89d1bdc, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &227046343
 Transform:
   m_ObjectHideFlags: 0
@@ -542,10 +538,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 2845338539195244204, guid: 2b4f08375f69bcb4ebcd3ec4e1a3fac9, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &344992785
 Transform:
   m_ObjectHideFlags: 0
@@ -653,42 +645,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
---- !u!21 &844213599
-Material:
-  serializedVersion: 6
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Sprites/Default
-  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: 
-  m_LightmapFlags: 4
-  m_EnableInstancingVariants: 0
-  m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
-  stringTagMap: {}
-  disabledShaderPasses: []
-  m_SavedProperties:
-    serializedVersion: 3
-    m_TexEnvs:
-    - _AlphaTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _MainTex:
-        m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    m_Floats:
-    - PixelSnap: 0
-    - _EnableExternalAlpha: 0
-    m_Colors:
-    - _Color: {r: 1, g: 1, b: 1, a: 1}
-    - _Flip: {r: 1, g: 1, b: 1, a: 1}
-    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-  m_BuildTextureStacks: []
---- !u!43 &891353510
+--- !u!43 &857680802
 Mesh:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -963,7 +920,8 @@ MonoBehaviour:
   NoteTime: 8
   NoteSpawnY: 5
   NoteTapY: -11.1
-  Player: {fileID: 0}
+  text: {fileID: 0}
+  Player: {fileID: 1998838929}
 --- !u!4 &1000914063
 Transform:
   m_ObjectHideFlags: 0
@@ -1012,10 +970,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &1208477046
 Transform:
   m_ObjectHideFlags: 0
@@ -1064,10 +1018,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &1313789680
 Transform:
   m_ObjectHideFlags: 0
@@ -1177,6 +1127,41 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.4000001, y: 0.080571264, z: 0.00078364555}
   m_Center: {x: -0.17206176, y: -0.029501747, z: -0.010190536}
+--- !u!21 &1423956810
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Sprites/Default
+  m_Shader: {fileID: 10753, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: 
+  m_LightmapFlags: 4
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _AlphaTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - PixelSnap: 0
+    - _EnableExternalAlpha: 0
+    m_Colors:
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _Flip: {r: 1, g: 1, b: 1, a: 1}
+    - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
+  m_BuildTextureStacks: []
 --- !u!1 &1481256529
 GameObject:
   m_ObjectHideFlags: 0
@@ -1336,10 +1321,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 680743796404192991, guid: a13041264c7be1245b29b1cb8280362d, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &1498739468
 Transform:
   m_ObjectHideFlags: 0
@@ -1412,11 +1393,11 @@ PrefabInstance:
     - target: {fileID: 1135517850027531722, guid: 50f29551ec5d03e45b5f0068c1b2edf9, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 844213599}
+      objectReference: {fileID: 1423956810}
     - target: {fileID: 1135517850028596302, guid: 50f29551ec5d03e45b5f0068c1b2edf9, type: 3}
       propertyPath: m_Mesh
       value: 
-      objectReference: {fileID: 891353510}
+      objectReference: {fileID: 857680802}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 50f29551ec5d03e45b5f0068c1b2edf9, type: 3}
 --- !u!1 &1809760720
@@ -1453,10 +1434,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &1809760722
 Transform:
   m_ObjectHideFlags: 0
@@ -1471,6 +1448,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1998838929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1135517849057750199, guid: 50f29551ec5d03e45b5f0068c1b2edf9, type: 3}
+  m_PrefabInstance: {fileID: 1660637684}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &2081147489
 GameObject:
   m_ObjectHideFlags: 0
@@ -1483,7 +1465,7 @@ GameObject:
   - component: {fileID: 2081147492}
   - component: {fileID: 2081147491}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ingamehud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1506,7 +1488,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 500, y: 200}
+  m_SizeDelta: {x: 600, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2081147491
 MonoBehaviour:
@@ -1521,7 +1503,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.010602941, g: 0.990566, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1580,10 +1562,6 @@ MonoBehaviour:
   NotePrefap: {fileID: 312322711578927117, guid: 4c72cc085846a9448a17d68a3d30ac88, type: 3}
   timeStamps: []
   Enemy: {fileID: 934338966992129024, guid: 20153727cf4f07849bbb592706f95f3a, type: 3}
-  isNoteCount: 0
-  timeStamp: 0
-  marginOfError: 0
-  audioTime: 0
 --- !u!4 &2125929054
 Transform:
   m_ObjectHideFlags: 0

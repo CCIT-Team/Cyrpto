@@ -42,7 +42,7 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        text.text = "" + Note.ComboTest;
+        //text.text = "" + Note.ComboTest;
     }
 
     void ReadFromFile()
