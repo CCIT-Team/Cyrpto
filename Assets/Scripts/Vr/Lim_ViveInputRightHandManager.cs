@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Valve.VR;
-
 public class Lim_ViveInputRightHandManager : MonoBehaviour
 {
     public SteamVR_Action_Boolean rtrigger;
+    public SteamVR_Action_Boolean menu;
     public SteamVR_Action_Vibration haptic;
     public GameObject SwordObject;
     public GameObject Redsword;
@@ -28,9 +28,13 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(menu.GetState(SteamVR_Input_Sources.RightHand))
+        {
+            Debug.Log("R메뉴 눌림");
+        }
         if (rtrigger.GetState(SteamVR_Input_Sources.RightHand))
         {
-            Debug.Log("R 트리거 눌림");
+            //Debug.Log("R 트리거 눌림");
 
             Redsword.SetActive(false);
             Bluesword.SetActive(true);
@@ -40,6 +44,7 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
             Redsword.SetActive(true);
             Bluesword.SetActive(false);
         }
+        
     }
 }
     

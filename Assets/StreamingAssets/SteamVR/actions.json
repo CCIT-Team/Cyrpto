@@ -99,6 +99,22 @@
       "type": "boolean"
     },
     {
+      "name": "/actions/CustomSet/in/L_UITrigger",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/R_UITrigger",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/LGrip",
+      "type": "boolean"
+    },
+    {
+      "name": "/actions/CustomSet/in/RGrip",
+      "type": "boolean"
+    },
+    {
       "name": "/actions/CustomSet/out/Haptic",
       "type": "vibration"
     }

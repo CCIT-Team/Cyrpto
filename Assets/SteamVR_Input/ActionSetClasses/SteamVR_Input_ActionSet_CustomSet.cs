@@ -49,6 +49,38 @@ namespace Valve.VR
             }
         }
         
+        public virtual SteamVR_Action_Boolean L_UITrigger
+        {
+            get
+            {
+                return SteamVR_Actions.customSet_L_UITrigger;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean R_UITrigger
+        {
+            get
+            {
+                return SteamVR_Actions.customSet_R_UITrigger;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean LGrip
+        {
+            get
+            {
+                return SteamVR_Actions.customSet_LGrip;
+            }
+        }
+        
+        public virtual SteamVR_Action_Boolean RGrip
+        {
+            get
+            {
+                return SteamVR_Actions.customSet_RGrip;
+            }
+        }
+        
         public virtual SteamVR_Action_Vibration Haptic
         {
             get
