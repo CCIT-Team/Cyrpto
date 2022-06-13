@@ -9,7 +9,7 @@ public class InteractableUI : MonoBehaviour
 
     private BoxCollider boxCollider;
     private RectTransform rectTransform;
-    
+
     public GameObject chapters;
     void Start()
     {
@@ -21,9 +21,12 @@ public class InteractableUI : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        chapters.SetActive(true);
-        Debug.Log("버튼 클릭함");
-        //Destroy(gameObject);
-    }
+        if (other.tag == "Blue_Sword")
+        {
+            chapters.SetActive(true);
 
+            //Destroy(gameObject);
+        }
+
+    }
 }

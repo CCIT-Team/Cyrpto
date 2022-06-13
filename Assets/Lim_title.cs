@@ -8,12 +8,8 @@ public class Lim_title : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Red_Sword")
-        {
-            Instantiate(titlePrefab);
-            Destroy(gameObject);
-        }
-        else if(other.tag == "Blue_Sword")
+        
+        if(other.tag == "Blue_Sword")
         {
             Instantiate(titlePrefab);
             Destroy(gameObject, 0.1f);
