@@ -10,7 +10,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
 
     public Transform shootpos;
     public GameObject projectile;
-
+    public GameObject Lpause;
 
 
 
@@ -24,6 +24,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
         if (menu.GetState(SteamVR_Input_Sources.LeftHand))
         {
             Debug.Log("L메뉴 눌림");
+            Lpause.SetActive(false);
         }
 
         if (ltrigger.GetStateDown(SteamVR_Input_Sources.LeftHand))
