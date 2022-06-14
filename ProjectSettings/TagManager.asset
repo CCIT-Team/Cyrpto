@@ -7,6 +7,12 @@ TagManager:
   - BlueCuttingMonster
   - RedCuttingMonster
   - MapManager
+  - UI
+  - Title
+  - Red_Sword
+  - Blue_Sword
+  - Setting
+  - GameStart
   layers:
   - Default
   - TransparentFX
