@@ -10,23 +10,32 @@ public class InteractableUI : MonoBehaviour
     private BoxCollider boxCollider;
     private RectTransform rectTransform;
 
-    public GameObject chapters;
-    void Start()
+    public GameObject UI;
+
+    public void Start()
     {
-        rectTransform = GetComponent<RectTransform>();
 
-        boxCollider = gameObject.AddComponent<BoxCollider>();
+        //rectTransform = GetComponent<RectTransform>();
 
-        boxCollider.size = rectTransform.sizeDelta;
+        //boxCollider = gameObject.AddComponent<BoxCollider>();
+
+        //boxCollider.size = rectTransform.sizeDelta;
+        //StartCoroutine(active());
     }
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Blue_Sword")
         {
-            chapters.SetActive(true);
-
-            //Destroy(gameObject);
+            
+            UI.SetActive(true);
+           
         }
 
+    }
+
+    IEnumerator active()
+    {
+        yield return new WaitForSeconds(2.0f);
+        UI.SetActive(true);
     }
 }
