@@ -41,11 +41,12 @@ public class Lane : MonoBehaviour
         {
            if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {
-                Instantiate(Enemy, gameObject.transform);
-                Enemy.transform.DetachChildren();
-                note = Instantiate(NotePrefap, Enemy.transform);
+                //Instantiate(Enemy, gameObject.transform);
+                //Enemy.transform.DetachChildren();
                 //note = Instantiate(NotePrefap, gameObject.transform);
-                //Instantiate(Enemy, note.transform);
+                note = Instantiate(NotePrefap, gameObject.transform);
+                Instantiate(Enemy, note.transform);
+                Enemy.transform.DetachChildren();
                 transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];  

@@ -608,7 +608,7 @@ MonoBehaviour:
   attack: 1
   ableDistance: 55
   Speed: 5
-  d: -46.54
+  d: 0
 --- !u!54 &5017326038096911647
 Rigidbody:
   m_ObjectHideFlags: 0
