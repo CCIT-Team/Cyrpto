@@ -28,7 +28,7 @@ public class AttackPlayer : MonoBehaviour
             Vector3.forward * MusicManager.Instance.NoteDespawnY * (player.transform.position.z - 5), Note.t - Speed);
 
         distance = Vector3.Magnitude(Lane.note.transform.position - player.transform.position);
-        Debug.Log(distance);
+        //Debug.Log(distance);
         //if (distance < ableDistance)
         //    animator.SetTrigger("MeleeAttack");
         if(distance < ableDistance) { animator.SetTrigger("MeleeAttack"); }
@@ -36,7 +36,7 @@ public class AttackPlayer : MonoBehaviour
     public static bool a = false;
      void OnCollisionEnter(Collision col)
     {
-       if(col.gameObject.tag == "Sword")
+       if(col.gameObject.tag == "Red_Sword" || col.gameObject.tag == "Blue_Sword")
         {
             Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!³ª Á×À½!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             a = true;

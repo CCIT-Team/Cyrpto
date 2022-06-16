@@ -39,7 +39,7 @@ public class Note : MonoBehaviour
     }
     void OnCollisionEnter(Collision col)
     {
-        if (col.gameObject.tag == "Sword")
+        if (col.gameObject.tag == "Red_Sword" || col.gameObject.tag == "Blue_Sword")
         {
             Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!³ª Á×À½!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             ComboTest++;
