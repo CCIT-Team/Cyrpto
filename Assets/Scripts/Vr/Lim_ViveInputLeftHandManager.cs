@@ -11,8 +11,8 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public Transform shootpos;
     public GameObject projectile;
     public GameObject Lpause;
-
-
+    //public bool Ispause;
+    Lim_ViveInputRightHandManager rightHandManager;
 
     void Start()
     {
@@ -25,6 +25,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
         {
             Debug.Log("L메뉴 눌림");
             Lpause.SetActive(false);
+            rightHandManager.Ispause = false;
         }
 
         if (ltrigger.GetStateDown(SteamVR_Input_Sources.LeftHand))
