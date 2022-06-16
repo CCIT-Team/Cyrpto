@@ -6,6 +6,9 @@ public class gamestart : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
-        SceneManager.LoadScene("Game_Scene");
+        if (other.tag == "Blue_Sword")
+        {
+            SceneManager.LoadScene("Game_Scene");
+        }
     }
 }
