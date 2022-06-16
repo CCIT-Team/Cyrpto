@@ -14,12 +14,13 @@ public class MusicManager : MonoBehaviour
     public Lane[] lanes;
     public float SongDelayInSec;
     public int InputDelayInMilSec;
-    public double marginOfError;
+    public double[] marginOfError;
     public string FileLocation;
     public float NoteTime;
     public float NoteSpawnY;
     public float NoteTapY;
-  //  public Text text;
+    public Text ComboText;
+    public Text PanjungText;
     public GameObject Player;
 
     public float NoteDespawnY
@@ -42,7 +43,8 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        //text.text = "" + Note.ComboTest;
+        ComboText.text = "" + SwordAttack.Combo;
+        PanjungText.text = "" + Lane.panjung;
     }
 
     void ReadFromFile()
