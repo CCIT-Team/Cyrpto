@@ -46,7 +46,7 @@ public class Lane : MonoBehaviour
                 //note = Instantiate(NotePrefap, gameObject.transform);
                 note = Instantiate(NotePrefap, gameObject.transform);
                 Instantiate(Enemy, note.transform);
-                Enemy.transform.DetachChildren();
+                Enemy.transform.parent = null;
                 transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];  
