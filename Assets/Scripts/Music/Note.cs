@@ -37,18 +37,4 @@ public class Note : MonoBehaviour
             transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, Vector3.forward * MusicManager.Instance.NoteDespawnY * Player.transform.position.z, t);
         }
     }
-    void OnCollisionEnter(Collision col)
-    {
-        if (col.gameObject.tag == "Red_Sword" || col.gameObject.tag == "Blue_Sword")
-        {
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!³ª Á×À½!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            ComboTest++;
-           // a = true;
-            Destroy(gameObject);
-            if (gameObject == null)
-            {
-                //a = false;
-            }
-        }
-    }
 }

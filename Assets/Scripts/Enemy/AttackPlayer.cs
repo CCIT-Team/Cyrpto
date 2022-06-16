@@ -11,6 +11,7 @@ public class AttackPlayer : MonoBehaviour
     public float ableDistance = 0.0001f; //근접모션을 취하기 시작하는 거리
     public float Speed;
     public float d;
+    public static bool a = false;
     private void Awake()
     {
         player = MusicManager.Instance.Player;
@@ -32,20 +33,6 @@ public class AttackPlayer : MonoBehaviour
         //if (distance < ableDistance)
         //    animator.SetTrigger("MeleeAttack");
         if(distance < ableDistance) { animator.SetTrigger("MeleeAttack"); }
-    }
-    public static bool a = false;
-     void OnCollisionEnter(Collision col)
-    {
-       if(col.gameObject.tag == "Red_Sword" || col.gameObject.tag == "Blue_Sword")
-        {
-            Debug.Log("!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!나 죽음!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
-            a = true;
-            Destroy(gameObject);
-            if(gameObject == null)
-            {
-                a = false;
-            }
-        }
     }
 }
 

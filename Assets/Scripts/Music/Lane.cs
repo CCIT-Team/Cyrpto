@@ -73,6 +73,7 @@ public class Lane : MonoBehaviour
                 else
                 {
                     print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                    AttackPlayer.a = false;
                 }
             }
             
