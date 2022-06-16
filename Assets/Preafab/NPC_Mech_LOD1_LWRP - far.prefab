@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 6820202463743942439}
   - component: {fileID: 5017326038096911647}
   m_Layer: 0
-  m_Name: NPC_Mech_LOD1_LWRP
+  m_Name: NPC_Mech_LOD1_LWRP - far
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -588,7 +588,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934338966992129024}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.66231513, y: 2.2402103, z: 0.77096987}
@@ -605,7 +605,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 97a119c2446d9a1468971710bc4c9a47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attack: 0
+  attack: 1
   ableDistance: 55
   Speed: 5
   d: -46.54

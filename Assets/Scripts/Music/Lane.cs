@@ -40,9 +40,12 @@ public class Lane : MonoBehaviour
         if(SpawnIndex < timeStamps.Count)
         {
            if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
-            {              
-                note = Instantiate(NotePrefap, gameObject.transform);
-                Instantiate(Enemy, note.transform);
+            {
+                Instantiate(Enemy, gameObject.transform);
+                Enemy.transform.DetachChildren();
+                note = Instantiate(NotePrefap, Enemy.transform);
+                //note = Instantiate(NotePrefap, gameObject.transform);
+                //Instantiate(Enemy, note.transform);
                 transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];  

@@ -19,7 +19,7 @@ public class MusicManager : MonoBehaviour
     public float NoteTime;
     public float NoteSpawnY;
     public float NoteTapY;
-    public Text text;
+  //  public Text text;
     public GameObject Player;
 
     public float NoteDespawnY
@@ -33,7 +33,7 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
-        text.GetComponent<Text>();
+        //text.GetComponent<Text>();
         audioSource.Play();
         Instance = this;
         ReadFromFile();
