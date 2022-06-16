@@ -6,23 +6,21 @@ public class Lim_title : MonoBehaviour
 {
     public GameObject titlePrefab;
     public GameObject disable;
-    private void Start()
+    public bool uiactive;
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+    private void OnEnable()
     {
         gameObject.GetComponent<BoxCollider>().enabled = false;
         transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
         transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = false;
         transform.GetChild(2).gameObject.GetComponent<BoxCollider>().enabled = false;
         transform.GetChild(3).gameObject.GetComponent<BoxCollider>().enabled = false;
-        //StartCoroutine(active());
     }
 
     private void Update()
     {
-        //transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-        //transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = false;
-        //transform.GetChild(2).gameObject.GetComponent<BoxCollider>().enabled = false;
-        //transform.GetChild(3).gameObject.GetComponent<BoxCollider>().enabled = false;
         StartCoroutine(active());
+        //Destroy(titlePrefab, 3f);
     }
     public void OnTriggerEnter(Collider other)
     {
@@ -36,11 +34,13 @@ public class Lim_title : MonoBehaviour
     }
     IEnumerator active()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return waitForSeconds;
         gameObject.GetComponent<BoxCollider>().enabled = true;
         transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
         transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = true;
         transform.GetChild(2).gameObject.GetComponent<BoxCollider>().enabled = true;
         transform.GetChild(3).gameObject.GetComponent<BoxCollider>().enabled = true;
+        uiactive = true;
     }
+
 }
