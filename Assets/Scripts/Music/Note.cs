@@ -13,12 +13,14 @@ public class Note : MonoBehaviour
     [HideInInspector]
     public static float t;
     public static int ComboTest;
+    public static GameObject Note_Me;
 
     void Start()
     {
         notetransform = new Vector3(0,0,gameObject.transform.position.z);
         Player = MusicManager.Instance.Player;
         timeInstantiated = MusicManager.GetAudioSourceTime();
+        Note_Me = gameObject;
     }
 
    

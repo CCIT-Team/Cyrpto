@@ -13,6 +13,9 @@ TagManager:
   - Blue_Sword
   - Setting
   - GameStart
+  - Enemy_closs
+  - Enemy_far
+  - Note
   layers:
   - Default
   - TransparentFX
