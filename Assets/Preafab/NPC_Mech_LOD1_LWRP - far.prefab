@@ -538,6 +538,8 @@ GameObject:
   - component: {fileID: 7577570109442515954}
   - component: {fileID: 6820202463743942439}
   - component: {fileID: 5017326038096911647}
+  - component: {fileID: 8030335967449832924}
+  - component: {fileID: 2062889025602515894}
   m_Layer: 0
   m_Name: NPC_Mech_LOD1_LWRP - far
   m_TagString: Enemy_far
@@ -600,7 +602,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 934338966992129024}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 97a119c2446d9a1468971710bc4c9a47, type: 3}
   m_Name: 
@@ -625,6 +627,36 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8030335967449832924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934338966992129024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cce802878d50e1546a2a95ed021afb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  state: 1
+  line: 0
+  player: {fileID: 0}
+  ableDistance: 0
+--- !u!114 &2062889025602515894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 934338966992129024}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45bf3e95a64d2994fa8ef6b9a5ae09c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  assignedTime: 0
+  timeSinceInstantiated: 0
 --- !u!1 &934338966992129130
 GameObject:
   m_ObjectHideFlags: 0

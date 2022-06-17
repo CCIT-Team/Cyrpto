@@ -11,7 +11,7 @@ public class MechMove : MonoBehaviour
     Animator animator;
 
     //근접용
-    public Transform player;
+    Transform player;
     public float ableDistance;
 
     //원거리용
@@ -20,11 +20,13 @@ public class MechMove : MonoBehaviour
 
     void Start()
     {
+        player = MusicManager.Instance.Player.transform;
         animator = GetComponent<Animator>();
     }
 
     void Update()
     {
+        transform.LookAt(player.transform);
         switch (state)
         {
             case State.Melee:
@@ -57,8 +59,8 @@ public class MechMove : MonoBehaviour
 
     void Attack()
     {
-        animator.SetFloat("Speed", 2);
-        float distance = Vector3.Magnitude(transform.position - player.position);
+        animator.SetFloat("Speed", 2);   
+        float distance = Vector3.SqrMagnitude(transform.position - player.position);
         if (distance < ableDistance)
         {
             animator.SetInteger("MeleeType", Random.Range(0, 1));

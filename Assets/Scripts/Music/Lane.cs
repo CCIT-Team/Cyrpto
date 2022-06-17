@@ -48,7 +48,6 @@ public class Lane : MonoBehaviour
                 //Enemy.transform.DetachChildren();
                 //Instantiate(Enemy, note.transform);
                 //Enemy.transform.parent = null;
-                transform.LookAt(Player.transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];  
                 SpawnIndex++;
