@@ -43,6 +43,7 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
+        Time.timeScale = 0;
         ComboText.text = "" + SwordAttack.Combo;
         PanjungText.text = "" + Lane.panjung;
     }

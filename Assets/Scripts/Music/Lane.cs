@@ -36,7 +36,7 @@ public class Lane : MonoBehaviour
 
     void Update()
     {
-        if(SpawnIndex < timeStamps.Count)
+        if (SpawnIndex < timeStamps.Count)
         {
            if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {
