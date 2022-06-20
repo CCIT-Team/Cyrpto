@@ -8,7 +8,7 @@ public class HpSetter : MonoBehaviour
     void Start()
     {
         GameManager.Instance.maxHp = 100;
-
+        GameManager.Instance.hp = 0;
     }
 
     // Update is called once per frame
