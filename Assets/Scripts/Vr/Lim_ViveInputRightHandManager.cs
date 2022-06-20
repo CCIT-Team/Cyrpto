@@ -11,7 +11,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     public GameObject Redsword;
     public GameObject Bluesword;
     public GameObject Rpause;
-    public bool Ispause = false;
 
     private void Awake()
     {
@@ -32,10 +31,9 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     {
         if(menu.GetState(SteamVR_Input_Sources.RightHand))
         {
-            Debug.Log("R메뉴 눌림");
+
             Rpause.SetActive(true);
-            Ispause = true;
-            Debug.Log(Ispause);
+            Lim_GameManager.Instance.IsPause = true;
         }
         if (rtrigger.GetState(SteamVR_Input_Sources.RightHand))
         {

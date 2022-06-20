@@ -16,6 +16,7 @@ TagManager:
   - Enemy_closs
   - Enemy_far
   - Note
+  - bullet
   layers:
   - Default
   - TransparentFX

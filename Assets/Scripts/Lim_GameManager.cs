@@ -2,16 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class Lim_GameManager : MonoBehaviour
 {
-    public static GameManager Instance 
+    public static Lim_GameManager Instance 
         {
         get 
         {
             return Instance;
         }
     }
-    public static GameManager instance = null;
+    public static Lim_GameManager instance = null;
 
     public int maxHp = 0;
 
@@ -38,6 +38,12 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    private void Update()
+    {
+        //GameOver();
+        Gamepause();
+    }
+
     public void GameOver()
     {
         if (hp == 0)
@@ -48,6 +54,13 @@ public class GameManager : MonoBehaviour
         }
 
         
+    }
+    public void Gamepause()
+    {
+        if (IsPause == true)
+            Time.timeScale = 0.1f;
+        else if(IsPause == false)
+            Time.timeScale = 1f;
     }
     
 

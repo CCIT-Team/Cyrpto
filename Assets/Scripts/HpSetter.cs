@@ -7,8 +7,8 @@ public class HpSetter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        GameManager.Instance.maxHp = 100;
-        GameManager.Instance.hp = 0;
+        Lim_GameManager.Instance.maxHp = 100;
+        Lim_GameManager.Instance.hp = 0;
     }
 
     // Update is called once per frame
