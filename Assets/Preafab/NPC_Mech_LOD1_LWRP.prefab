@@ -641,7 +641,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   state: 0
   line: 0
-  ableDistance: 1644.6
+  ableDistance: 1643
 --- !u!114 &7812948708101045832
 MonoBehaviour:
   m_ObjectHideFlags: 0
