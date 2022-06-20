@@ -17,15 +17,15 @@ public class GameManager : MonoBehaviour
 
     public int hp = 0;
 
-    public int score = 0;
-
-    public int comdo = 0;
-
-    public int healcomdo = 5;
-
-    public int highscore = 0;
+    public int playtime = 0;
 
     public bool IsPause = false;
+
+    public bool IsGameOver = false;
+
+    public GameObject result;
+
+    public List<GameObject> text = new List<GameObject>();
 
     private void Awake()
     {
@@ -38,6 +38,17 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
+    public void GameOver()
+    {
+        if (hp == 0)
+        {
+            IsGameOver = true;
+
+            result.SetActive(true);
+        }
+
+        
+    }
     
 
 }
