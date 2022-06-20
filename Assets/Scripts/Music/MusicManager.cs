@@ -43,7 +43,9 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        Time.timeScale = 0;
+        NoteTapZ = Player.transform.position.z;
+        NoteSpawnZ = Lane.Lanetransform.position.z;
+        NoteTime =  (NoteSpawnZ - NoteTapZ)/2;
         ComboText.text = "" + SwordAttack.Combo;
         PanjungText.text = "" + Lane.panjung;
     }
