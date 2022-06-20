@@ -28,13 +28,14 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void Update()
     {
         if(menu.GetState(SteamVR_Input_Sources.RightHand))
         {
             Debug.Log("R메뉴 눌림");
             Rpause.SetActive(true);
             Ispause = true;
+            Debug.Log(Ispause);
         }
         if (rtrigger.GetState(SteamVR_Input_Sources.RightHand))
         {

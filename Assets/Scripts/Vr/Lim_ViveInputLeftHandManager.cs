@@ -19,7 +19,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
 
     }
 
-    void Update()
+    public void Update()
     {
         if (menu.GetState(SteamVR_Input_Sources.LeftHand))
         {
