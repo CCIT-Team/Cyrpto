@@ -32,7 +32,7 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
         if(menu.GetState(SteamVR_Input_Sources.RightHand))
         {
 
-            Rpause.SetActive(true);
+            //Rpause.SetActive(true);
             Lim_GameManager.Instance.IsPause = true;
         }
         if (rtrigger.GetState(SteamVR_Input_Sources.RightHand))

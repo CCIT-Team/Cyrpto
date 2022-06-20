@@ -4,13 +4,13 @@ using UnityEngine;
 
 public class Lim_GameManager : MonoBehaviour
 {
+    #region
     public static Lim_GameManager Instance 
-        {
-        get 
-        {
-            return Instance;
-        }
+    {
+        get { return instance; }
+        set{ }
     }
+    #endregion
     public static Lim_GameManager instance = null;
 
     public int maxHp = 0;
@@ -25,6 +25,8 @@ public class Lim_GameManager : MonoBehaviour
 
     public GameObject result;
 
+    public GameObject pause;
+
     public List<GameObject> text = new List<GameObject>();
 
     private void Awake()
@@ -38,9 +40,9 @@ public class Lim_GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    private void Update()
+    public void Update()
     {
-        //GameOver();
+        GameOver();
         Gamepause();
     }
 
@@ -49,8 +51,15 @@ public class Lim_GameManager : MonoBehaviour
         if (hp == 0)
         {
             IsGameOver = true;
+            if(IsGameOver == true)
+            {
+                result.SetActive(true);
+                Time.timeScale = 0.01f;
+                Debug.Log(Time.timeScale);
+            }
+            
 
-            result.SetActive(true);
+            
         }
 
         
@@ -58,9 +67,15 @@ public class Lim_GameManager : MonoBehaviour
     public void Gamepause()
     {
         if (IsPause == true)
+        {
+            pause.SetActive(true);
             Time.timeScale = 0.1f;
-        else if(IsPause == false)
+        }
+        else if (IsPause == false)
+        {
+            pause.SetActive(false);
             Time.timeScale = 1f;
+        }
     }
     
 
