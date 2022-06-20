@@ -17,17 +17,17 @@ public class MusicManager : MonoBehaviour
     public double[] marginOfError;
     public string FileLocation;
     public float NoteTime;
-    public float NoteSpawnY;
-    public float NoteTapY;
+    public float NoteSpawnZ;
+    public float NoteTapZ;
     public Text ComboText;
     public Text PanjungText;
     public GameObject Player;
 
-    public float NoteDespawnY
+    public float NoteDespawnZ
     {
         get
         {
-            return NoteTapY - (NoteSpawnY - NoteTapY);
+            return NoteTapZ - (NoteSpawnZ - NoteTapZ);
         }
     }
     public static MidiFile midiFile;
