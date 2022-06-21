@@ -8,7 +8,7 @@ public class pause : MonoBehaviour
     private BoxCollider boxCollider;
     private RectTransform rectTransform;
     public GameObject[] gameObjects;
-
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
     public void Start()
     {
         rectTransform = GetComponent<RectTransform>();
@@ -39,7 +39,7 @@ public class pause : MonoBehaviour
 
     IEnumerator setactive()
     {
-
+        yield return waitForSeconds;
     }
 
 }
