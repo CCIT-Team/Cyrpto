@@ -34,8 +34,6 @@ public class MusicManager : MonoBehaviour
 
     void Start()
     {
-        //text.GetComponent<Text>();
-        audioSource.Play();
         Instance = this;
         ReadFromFile();
     }
@@ -43,9 +41,13 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        NoteTapZ = Player.transform.position.z;
+        NoteTapZ = -Player.transform.position.z;
         NoteSpawnZ = Lane.Lanetransform.position.z;
-        NoteTime =  (NoteSpawnZ - NoteTapZ)/2;
+        NoteTime =  (NoteSpawnZ - NoteTapZ)/4;
+        if(NoteTime < 0)
+        {
+            NoteTime =  -1 * NoteTime;
+        }
         ComboText.text = "" + SwordAttack.Combo;
         PanjungText.text = "" + Lane.panjung;
     }
