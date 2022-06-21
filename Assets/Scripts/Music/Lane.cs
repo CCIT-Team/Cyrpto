@@ -6,6 +6,7 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
+    public static Transform Lanetransform;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public KeyCode input;
     public GameObject NotePrefap;
@@ -19,6 +20,7 @@ public class Lane : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        Lanetransform = gameObject.transform;
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)

@@ -25,8 +25,8 @@ public class AttackPlayer : MonoBehaviour
 
     void Update()
     {
-        transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnY, 
-            Vector3.forward * MusicManager.Instance.NoteDespawnY * (player.transform.position.z - 5), Note.t - Speed);
+        transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnZ, 
+            Vector3.forward * MusicManager.Instance.NoteDespawnZ * (player.transform.position.z - 5), Note.t - Speed);
 
         distance = Vector3.Magnitude(Lane.note.transform.position - player.transform.position);
         //Debug.Log(distance);
