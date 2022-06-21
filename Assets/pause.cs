@@ -7,13 +7,14 @@ public class pause : MonoBehaviour
 {
     
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
-    public void Start()
+    private void OnEnable()
     {
         gameObject.GetComponent<BoxCollider>().enabled = false;
         for (int i = 0; i < 3; i++)
         {
             transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = false;
         }
+
     }
     public void Update()
     {
@@ -21,20 +22,6 @@ public class pause : MonoBehaviour
         {
             setactive();
         }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(transform.GetChild(0).tag == "Blue_Sword")
-        {
-            Lim_GameManager.Instance.IsPause = false;
-            Debug.Log("111");
-        }
-        else if(other.tag == "Blue_Sword")
-        {
-            SceneManager.LoadScene("MainScene");
-            Debug.Log("222");
-        }
-
     }
 
     IEnumerator setactive()
