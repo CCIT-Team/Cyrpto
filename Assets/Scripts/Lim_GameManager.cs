@@ -54,7 +54,7 @@ public class Lim_GameManager : MonoBehaviour
             if(IsGameOver == true)
             {
                 result.SetActive(true);
-                Time.timeScale = 0.01f;
+                Time.timeScale = 0f;
                 Debug.Log(Time.timeScale);
             }
             
@@ -69,7 +69,7 @@ public class Lim_GameManager : MonoBehaviour
         if (IsPause == true)
         {
             pause.SetActive(true);
-            Time.timeScale = 0.1f;
+            Time.timeScale = 1f;
         }
         else if (IsPause == false)
         {
