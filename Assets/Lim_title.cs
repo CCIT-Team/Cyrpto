@@ -8,6 +8,7 @@ public class Lim_title : MonoBehaviour
     public GameObject disable;
     public bool uiactive;
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+
     private void OnEnable()
     {
         gameObject.GetComponent<BoxCollider>().enabled = false;
