@@ -5,11 +5,22 @@ using UnityEngine.SceneManagement;
 
 public class pause : MonoBehaviour
 {
+    private BoxCollider boxCollider;
+    private RectTransform rectTransform;
     public GameObject[] gameObjects;
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+    public void Start()
+    {
+        rectTransform = GetComponent<RectTransform>();
+        boxCollider = gameObject.AddComponent<BoxCollider>();
+
+        boxCollider.size = rectTransform.sizeDelta;
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(gameObjects[0].tag == "bullet")
+        if(gameObjects[0].tag == "Blue_Sword")
         {
             Lim_GameManager.Instance.IsPause = false;
             Debug.Log("111");
@@ -24,6 +35,11 @@ public class pause : MonoBehaviour
             gameObjects[3].SetActive(true);
             Debug.Log("333");
         }
+    }
+
+    IEnumerator setactive()
+    {
+        yield return waitForSeconds;
     }
 
 }

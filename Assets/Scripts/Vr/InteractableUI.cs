@@ -11,6 +11,7 @@ public class InteractableUI : MonoBehaviour
     private RectTransform rectTransform;
 
     public GameObject UI;
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
 
     public void Start()
     {
@@ -35,7 +36,7 @@ public class InteractableUI : MonoBehaviour
 
     IEnumerator active()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return waitForSeconds;
         UI.SetActive(true);
     }
 }
