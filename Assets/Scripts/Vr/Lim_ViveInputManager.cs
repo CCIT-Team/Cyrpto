@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Valve.VR;   //스팀 VR 네임스페이스
+using UnityEngine.SceneManagement;
 
 public class Lim_ViveInputManager : MonoBehaviour
 {
+    public Canvas PlayerUI;
     #region
     public static Lim_ViveInputManager Instance 
     {
@@ -24,5 +25,9 @@ public class Lim_ViveInputManager : MonoBehaviour
         instance = this;
         
         DontDestroyOnLoad(gameObject);
+        if(SceneManager.GetActiveScene().name == "MainScene")
+        {
+            PlayerUI.enabled = false;
+        }
     }
 }
