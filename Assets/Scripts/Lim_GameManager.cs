@@ -30,6 +30,8 @@ public class Lim_GameManager : MonoBehaviour
 
     public GameObject setting;
 
+    public GameObject Playerdestry;
+
     public List<GameObject> text = new List<GameObject>();
 
     private void Awake()
@@ -41,6 +43,8 @@ public class Lim_GameManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+
     }
 
     public void Update()
@@ -86,6 +90,7 @@ public class Lim_GameManager : MonoBehaviour
     {
         
         SceneManager.LoadScene("MainScene");
+
     }
 
     public void SettingPopup()

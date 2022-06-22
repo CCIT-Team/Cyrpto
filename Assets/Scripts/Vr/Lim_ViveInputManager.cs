@@ -5,24 +5,24 @@ using Valve.VR;   //스팀 VR 네임스페이스
 
 public class Lim_ViveInputManager : MonoBehaviour
 {
-    public SteamVR_Action_Boolean menu;
-
-
-
-    void Start()
+    #region
+    public static Lim_ViveInputManager Instance 
     {
-        
+        get { return instance; }
+        set { }
     }
+    #endregion
+    public static Lim_ViveInputManager instance = null;
 
-    
-    void Update()
+    private void Awake()
     {
-        //메뉴 버튼을 눌렀을때 1회
-        if(menu.GetStateDown(SteamVR_Input_Sources.Any)) //모든 컨트롤러 L,R 둘다
+        if (instance)
         {
-            Debug.Log("메뉴 눌림");
+            DestroyImmediate(gameObject);
+            return;
         }
-
-       
+        instance = this;
+        
+        DontDestroyOnLoad(gameObject);
     }
 }
