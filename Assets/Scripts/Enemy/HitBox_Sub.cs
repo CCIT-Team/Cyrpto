@@ -15,7 +15,7 @@ public class HitBox_Sub : MonoBehaviour
     {
         if(other.tag =="Blue_Sword" || other.tag == "Red_Sword")
         {
-            Hit.inHit = true;
+            GetComponentInParent<HItBox>().inHit = true;
         }
     }
 }

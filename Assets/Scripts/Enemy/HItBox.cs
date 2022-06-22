@@ -20,7 +20,7 @@ public class HItBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(inHit&&other.tag.Substring(0,4)==this.tag.Substring(0, 4))
+        if(inHit&&other.tag.Substring(0,2)==this.tag.Substring(0, 2))
         {
             Destroy(this.gameObject);
         }
