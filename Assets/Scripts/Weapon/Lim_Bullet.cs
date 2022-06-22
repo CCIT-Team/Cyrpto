@@ -5,6 +5,7 @@ using UnityEngine;
 public class Lim_Bullet : MonoBehaviour
 {
     public float bulletspeed = 100f;
+    
     private Transform tr;
     void Start()
     {

@@ -63,10 +63,6 @@ namespace Valve.VR
         
         private static SteamVR_Action_Boolean p_customSet_LTrigger;
         
-        private static SteamVR_Action_Boolean p_customSet_L_UITrigger;
-        
-        private static SteamVR_Action_Boolean p_customSet_R_UITrigger;
-        
         private static SteamVR_Action_Boolean p_customSet_LGrip;
         
         private static SteamVR_Action_Boolean p_customSet_RGrip;
@@ -257,22 +253,6 @@ namespace Valve.VR
             }
         }
         
-        public static SteamVR_Action_Boolean customSet_L_UITrigger
-        {
-            get
-            {
-                return SteamVR_Actions.p_customSet_L_UITrigger.GetCopy<SteamVR_Action_Boolean>();
-            }
-        }
-        
-        public static SteamVR_Action_Boolean customSet_R_UITrigger
-        {
-            get
-            {
-                return SteamVR_Actions.p_customSet_R_UITrigger.GetCopy<SteamVR_Action_Boolean>();
-            }
-        }
-        
         public static SteamVR_Action_Boolean customSet_LGrip
         {
             get
@@ -323,8 +303,6 @@ namespace Valve.VR
                     SteamVR_Actions.customSet_Menu,
                     SteamVR_Actions.customSet_Pose,
                     SteamVR_Actions.customSet_LTrigger,
-                    SteamVR_Actions.customSet_L_UITrigger,
-                    SteamVR_Actions.customSet_R_UITrigger,
                     SteamVR_Actions.customSet_LGrip,
                     SteamVR_Actions.customSet_RGrip,
                     SteamVR_Actions.customSet_Haptic};
@@ -351,8 +329,6 @@ namespace Valve.VR
                     SteamVR_Actions.customSet_Menu,
                     SteamVR_Actions.customSet_Pose,
                     SteamVR_Actions.customSet_LTrigger,
-                    SteamVR_Actions.customSet_L_UITrigger,
-                    SteamVR_Actions.customSet_R_UITrigger,
                     SteamVR_Actions.customSet_LGrip,
                     SteamVR_Actions.customSet_RGrip};
             Valve.VR.SteamVR_Input.actionsOut = new Valve.VR.ISteamVR_Action_Out[] {
@@ -379,8 +355,6 @@ namespace Valve.VR
                     SteamVR_Actions.customSet_RTrigger,
                     SteamVR_Actions.customSet_Menu,
                     SteamVR_Actions.customSet_LTrigger,
-                    SteamVR_Actions.customSet_L_UITrigger,
-                    SteamVR_Actions.customSet_R_UITrigger,
                     SteamVR_Actions.customSet_LGrip,
                     SteamVR_Actions.customSet_RGrip};
             Valve.VR.SteamVR_Input.actionsSingle = new Valve.VR.SteamVR_Action_Single[] {
@@ -411,8 +385,6 @@ namespace Valve.VR
                     SteamVR_Actions.customSet_RTrigger,
                     SteamVR_Actions.customSet_Menu,
                     SteamVR_Actions.customSet_LTrigger,
-                    SteamVR_Actions.customSet_L_UITrigger,
-                    SteamVR_Actions.customSet_R_UITrigger,
                     SteamVR_Actions.customSet_LGrip,
                     SteamVR_Actions.customSet_RGrip};
         }
@@ -442,8 +414,6 @@ namespace Valve.VR
             SteamVR_Actions.p_customSet_Menu = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/Menu")));
             SteamVR_Actions.p_customSet_Pose = ((SteamVR_Action_Pose)(SteamVR_Action.Create<SteamVR_Action_Pose>("/actions/CustomSet/in/Pose")));
             SteamVR_Actions.p_customSet_LTrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/LTrigger")));
-            SteamVR_Actions.p_customSet_L_UITrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/L_UITrigger")));
-            SteamVR_Actions.p_customSet_R_UITrigger = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/R_UITrigger")));
             SteamVR_Actions.p_customSet_LGrip = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/LGrip")));
             SteamVR_Actions.p_customSet_RGrip = ((SteamVR_Action_Boolean)(SteamVR_Action.Create<SteamVR_Action_Boolean>("/actions/CustomSet/in/RGrip")));
             SteamVR_Actions.p_customSet_Haptic = ((SteamVR_Action_Vibration)(SteamVR_Action.Create<SteamVR_Action_Vibration>("/actions/CustomSet/out/Haptic")));

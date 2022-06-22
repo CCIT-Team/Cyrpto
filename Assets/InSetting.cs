@@ -7,11 +7,13 @@ public class InSetting : MonoBehaviour
     public GameObject setting;
 
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider set)
     {
-        if(other.tag == "Bule_Sword")
+        if(set.tag == "Bule_Sword")
         {
+            Lim_GameManager.Instance.IsPause = false;
             setting.SetActive(true);
+            Time.timeScale = 0.1f;
         }
         
     }

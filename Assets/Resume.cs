@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class Resume : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider resume)
     {
-        if(other.tag == "Blue_Sword")
+        if(resume.tag == "Blue_Sword")
         {
             Lim_GameManager.Instance.IsPause = false;
         }

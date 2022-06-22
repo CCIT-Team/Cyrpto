@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Lim_GameManager : MonoBehaviour
 {
@@ -26,6 +27,8 @@ public class Lim_GameManager : MonoBehaviour
     public GameObject result;
 
     public GameObject pause;
+
+    public GameObject setting;
 
     public List<GameObject> text = new List<GameObject>();
 
@@ -76,7 +79,19 @@ public class Lim_GameManager : MonoBehaviour
             pause.SetActive(false);
             Time.timeScale = 1f;
         }
+
     }
     
+    public void returnscene()
+    {
+        
+        SceneManager.LoadScene("MainScene");
+    }
+
+    public void SettingPopup()
+    {
+        setting.SetActive(true);
+    }
+     
 
 }

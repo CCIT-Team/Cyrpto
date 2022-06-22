@@ -49,22 +49,6 @@ namespace Valve.VR
             }
         }
         
-        public virtual SteamVR_Action_Boolean L_UITrigger
-        {
-            get
-            {
-                return SteamVR_Actions.customSet_L_UITrigger;
-            }
-        }
-        
-        public virtual SteamVR_Action_Boolean R_UITrigger
-        {
-            get
-            {
-                return SteamVR_Actions.customSet_R_UITrigger;
-            }
-        }
-        
         public virtual SteamVR_Action_Boolean LGrip
         {
             get
