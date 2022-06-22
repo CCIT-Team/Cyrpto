@@ -59,21 +59,21 @@ public class Lane : MonoBehaviour
             {
                 if(Math.Abs(audioTime - timeStamp) < marginOfError[0])
                 {
-                    Perpect();
+                    ScoreManager.Instance.Perpect();
                     print($"Hit on {InputIndex} note");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
                 }
                 if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
                 {
-                    Great();
+                    ScoreManager.Instance.Great();
                     print($"Hit on {InputIndex} note");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
                 }
                 if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
                 {
-                    Good();
+                    ScoreManager.Instance.Good();
                     print($"Hit on {InputIndex} note");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
@@ -87,28 +87,11 @@ public class Lane : MonoBehaviour
             
             if (timeStamp + marginOfError[2] <= audioTime)
             {
-                Miss();
+                ScoreManager.Instance.Miss();
                 print($"Missed on {InputIndex} note");
                 InputIndex++;
             }
         }
-    }
-
-    private void Perpect()
-    {
-        panjung = "Perpect!";
-    }
-    private void Great()
-    {
-        panjung = "Great!";
-    }
-    private void Good()
-    {
-        panjung = "Good!";
-    }
-    private void Miss()
-    {
-        panjung = "Miss!";
     }
 
 }
