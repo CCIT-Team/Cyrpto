@@ -8,6 +8,7 @@ public class ScoreManager : MonoBehaviour
     public float finalScore;
     public int[] score = new int[] {0,0,0}; // 0 = per 1 = great 2 = good
     public int scoreNum; // 0 = per 1 = great 2 = good 이걸로 각 판정에 값을 가져와 if문으로 구현하면 될듯?
+    public string scorestring;
     public int grade = 0;// 0 = s 1 = a 2 = b ......
     public int comboScore;
     public float[] timer = { 1.5f, 1.5f, 1.5f };
@@ -82,6 +83,21 @@ public class ScoreManager : MonoBehaviour
     }
     void Update()
     {
-       
+       switch(scoreNum)
+        {
+            case 0:
+                scorestring = "Perpect";
+                break;
+            case 1:
+                scorestring = "Great";
+                break;
+            case 2:
+                scorestring = "Good";
+                break;
+            default:
+                scorestring = "";
+                break;
+
+        }
     }
 }

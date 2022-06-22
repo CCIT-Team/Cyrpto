@@ -48,8 +48,8 @@ public class MusicManager : MonoBehaviour
         {
             NoteTime =  -1 * NoteTime;
         }
-        ComboText.text = "" + SwordAttack.Combo;
-        PanjungText.text = "" + Lane.panjung;
+        ComboText.text = "" + ScoreManager.Instance.comboScore;
+        PanjungText.text = "" + ScoreManager.Instance.scorestring;
     }
 
     void ReadFromFile()
