@@ -6,7 +6,7 @@ public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager Instance;
     public float finalScore;
-    public int[] score = new int[] {0,0,0}; // 0 = per 1 = great 2 = good
+    public int[] score = new int[] { 0, 0, 0 }; // 0 = per 1 = great 2 = good
     public int scoreNum; // 0 = per 1 = great 2 = good 이걸로 각 판정에 값을 가져와 if문으로 구현하면 될듯?
     public string scorestring;
     public int grade = 0;// 0 = s 1 = a 2 = b ......
@@ -21,20 +21,20 @@ public class ScoreManager : MonoBehaviour
 
     public void Hit()
     {
-        comboScore += 1;      
+        comboScore += 1;
     }
 
     public void Miss()
     {
         comboScore = 0;
-      
+
     }
     public void Perpect()
     {
         scoreNum = 0;
         score[0] += 100;
         timer[0] -= Time.deltaTime;
-        if(timer[0] <= 0)
+        if (timer[0] <= 0)
         {
             scoreNum = 4;
         }
@@ -65,7 +65,7 @@ public class ScoreManager : MonoBehaviour
     public void FinalResult()
     {
         finalScore = score[0] + score[1] + score[2];
-        switch(finalScore)
+        switch (finalScore)
         {
             case 1000:
                 grade = 0;
@@ -80,10 +80,14 @@ public class ScoreManager : MonoBehaviour
                 grade = 3;
                 break;
         }
+        if (comboScore >= 20 && comboScore < 40) { finalScore *= 1.1f; };
+        if (comboScore >= 40 && comboScore < 80) { finalScore *= 1.2f; };
+        if (comboScore >= 80 && comboScore < 159) { finalScore *= 1.3f; };
+        if (comboScore >= 160) { finalScore *= 1.4f; };
     }
     void Update()
     {
-       switch(scoreNum)
+        switch (scoreNum)
         {
             case 0:
                 scorestring = "Perpect";
