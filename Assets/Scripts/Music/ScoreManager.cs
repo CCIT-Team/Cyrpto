@@ -10,7 +10,7 @@ public class ScoreManager : MonoBehaviour
     public int scoreNum; // 0 = per 1 = great 2 = good 이걸로 각 판정에 값을 가져와 if문으로 구현하면 될듯?
     public string scorestring;
     public int grade = 0;// 0 = s 1 = a 2 = b ......
-    public int comboScore;
+    public int comboScore = 0;
     public float[] timer = { 1.5f, 1.5f, 1.5f };
 
     void Start()
