@@ -24,10 +24,10 @@ public class IntroManager : MonoBehaviour
     IEnumerator active1()
     {
         yield return waitForSeconds;
-        transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(2).gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(3).gameObject.GetComponent<BoxCollider>().enabled = false;
-        
+        for (int i = 0; i < 4; i++)
+        {
+            transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
     }
 }

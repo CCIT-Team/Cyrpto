@@ -8,13 +8,15 @@ public class Lim_title : MonoBehaviour
     public GameObject disable;
     public bool uiactive;
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+
     private void OnEnable()
     {
         gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(2).gameObject.GetComponent<BoxCollider>().enabled = false;
-        transform.GetChild(3).gameObject.GetComponent<BoxCollider>().enabled = false;
+        for(int i = 0; i < 4; i++)
+        {
+            transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
     }
 
     private void Update()
@@ -36,10 +38,11 @@ public class Lim_title : MonoBehaviour
     {
         yield return waitForSeconds;
         gameObject.GetComponent<BoxCollider>().enabled = true;
-        transform.GetChild(0).gameObject.GetComponent<BoxCollider>().enabled = true;
-        transform.GetChild(1).gameObject.GetComponent<BoxCollider>().enabled = true;
-        transform.GetChild(2).gameObject.GetComponent<BoxCollider>().enabled = true;
-        transform.GetChild(3).gameObject.GetComponent<BoxCollider>().enabled = true;
+        gameObject.GetComponent<BoxCollider>().enabled = true;
+        for (int i = 0; i < 4; i++)
+        {
+            transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
         uiactive = true;
     }
 
