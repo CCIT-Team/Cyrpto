@@ -59,12 +59,13 @@ public class MusicManager : MonoBehaviour
     }
     void GetDataFromMidi()
     {
-        Invoke(nameof(StartSong), SongDelayInSec);
         var notes = midiFile.GetNotes();
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
         foreach (var lane in lanes) lane.SetTimeStamps(array);
+
+        Invoke(nameof(StartSong), SongDelayInSec);
     }
     public void StartSong()
     {       

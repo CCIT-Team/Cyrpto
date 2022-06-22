@@ -60,21 +60,24 @@ public class Lane : MonoBehaviour
                 if(Math.Abs(audioTime - timeStamp) < marginOfError[0])
                 {
                     ScoreManager.Instance.Perpect();
-                    print($"Hit on {InputIndex} note");
+                    ScoreManager.Instance.Hit();
+                    print($"Hit on {InputIndex} Perpect");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
                 }
                 if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
                 {
                     ScoreManager.Instance.Great();
-                    print($"Hit on {InputIndex} note");
+                    ScoreManager.Instance.Hit();
+                    print($"Hit on {InputIndex} Great");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
                 }
                 if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
                 {
                     ScoreManager.Instance.Good();
-                    print($"Hit on {InputIndex} note");
+                    ScoreManager.Instance.Hit();
+                    print($"Hit on {InputIndex}  Good");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
                 }
