@@ -12,7 +12,7 @@ public class GameGo : MonoBehaviour
     IEnumerator active()
     {
         yield return waitForSeconds;
-        SceneManager.LoadScene("Game_Scene");
+        SceneManager.LoadScene("MainScene");
 
     }
 }
