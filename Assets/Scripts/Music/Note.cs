@@ -27,7 +27,7 @@ public class Note : MonoBehaviour
     void Update()
     {
         timeSinceInstantiated = MusicManager.GetAudioSourceTime() - timeInstantiated;
-        t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 10));
+        t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 2));
         //Debug.Log(notetransform.z-= Player.transform.position.z);
 
         if (t > 1)
@@ -36,7 +36,7 @@ public class Note : MonoBehaviour
         }
         else
         {
-            transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnZ, Vector3.forward * MusicManager.Instance.NoteDespawnZ * Player.transform.position.z, t);
+            transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnZ, Vector3.forward * MusicManager.Instance.Player.transform.position.z, t * 100);
         }
     }
 }

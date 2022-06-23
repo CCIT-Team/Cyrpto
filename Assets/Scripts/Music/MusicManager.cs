@@ -27,7 +27,7 @@ public class MusicManager : MonoBehaviour
     {
         get
         {
-            return NoteTapZ - (NoteSpawnZ - NoteTapZ);
+            return NoteTapZ - (NoteSpawnZ*2 - NoteTapZ);
         }
     }
     public static MidiFile midiFile;
@@ -41,7 +41,7 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        NoteTapZ = -Player.transform.position.z;
+        NoteTapZ = Player.transform.position.z;
         NoteSpawnZ = Lane.Lanetransform.position.z;
         NoteTime =  (NoteSpawnZ - NoteTapZ)/2;
         if(NoteTime < 0)
