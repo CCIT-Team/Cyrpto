@@ -27,7 +27,7 @@ public class MusicManager : MonoBehaviour
     {
         get
         {
-            return NoteTapZ - (NoteSpawnZ*2 - NoteTapZ);
+            return NoteTapZ - (NoteSpawnZ - NoteTapZ);
         }
     }
     public static MidiFile midiFile;
