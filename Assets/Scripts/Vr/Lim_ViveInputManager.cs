@@ -25,10 +25,18 @@ public class Lim_ViveInputManager : MonoBehaviour
         instance = this;
         
         DontDestroyOnLoad(gameObject);
-        if(SceneManager.GetActiveScene().name == "MainScene")
+        
+    }
+
+    private void Update()
+    {
+        if (SceneManager.GetActiveScene().name == "MainScene")
         {
             PlayerUI.enabled = false;
-            Debug.Log("asd");
+        }
+        else
+        {
+            PlayerUI.enabled = true;
         }
     }
 }
