@@ -16,7 +16,6 @@ public class Lim_title : MonoBehaviour
         {
             transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-
     }
 
     private void Update()
@@ -37,7 +36,6 @@ public class Lim_title : MonoBehaviour
     IEnumerator active()
     {
         yield return waitForSeconds;
-        gameObject.GetComponent<BoxCollider>().enabled = true;
         gameObject.GetComponent<BoxCollider>().enabled = true;
         for (int i = 0; i < 4; i++)
         {

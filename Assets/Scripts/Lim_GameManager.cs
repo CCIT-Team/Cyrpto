@@ -14,6 +14,8 @@ public class Lim_GameManager : MonoBehaviour
     #endregion
     public static Lim_GameManager instance = null;
 
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+
     public int maxHp = 0;
 
     public int hp = 0;
@@ -41,6 +43,8 @@ public class Lim_GameManager : MonoBehaviour
         }
         instance = this;
         DontDestroyOnLoad(gameObject);
+
+
     }
 
     public void Update()
@@ -59,13 +63,8 @@ public class Lim_GameManager : MonoBehaviour
                 result.SetActive(true);
                 Time.timeScale = 0.01f;
                 Debug.Log(Time.timeScale);
-            }
-            
-
-            
+            } 
         }
-
-        
     }
     public void Gamepause()
     {
@@ -86,12 +85,12 @@ public class Lim_GameManager : MonoBehaviour
     {
         
         SceneManager.LoadScene("MainScene");
+
     }
 
     public void SettingPopup()
     {
         setting.SetActive(true);
     }
-     
 
 }

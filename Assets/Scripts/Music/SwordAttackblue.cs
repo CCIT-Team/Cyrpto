@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SwordAttack : MonoBehaviour
+public class SwordAttackblue : MonoBehaviour
 {
     public static int Combo = 0;
     void OnTriggerEnter(Collider col)
@@ -11,7 +11,7 @@ public class SwordAttack : MonoBehaviour
         {
             Destroy(col.gameObject);
             AttackPlayer.a = true;
-            Combo++;
+            ScoreManager.Instance.Hit();
         }
     }
 }

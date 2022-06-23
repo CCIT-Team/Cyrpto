@@ -43,13 +43,13 @@ public class MusicManager : MonoBehaviour
     {
         NoteTapZ = -Player.transform.position.z;
         NoteSpawnZ = Lane.Lanetransform.position.z;
-        NoteTime =  (NoteSpawnZ - NoteTapZ)/4;
+        NoteTime =  (NoteSpawnZ - NoteTapZ)/2;
         if(NoteTime < 0)
         {
             NoteTime =  -1 * NoteTime;
         }
-        ComboText.text = "" + SwordAttack.Combo;
-        PanjungText.text = "" + Lane.panjung;
+        ComboText.text = "" + ScoreManager.Instance.comboScore;
+        PanjungText.text = "" + ScoreManager.Instance.scorestring;
     }
 
     void ReadFromFile()
@@ -59,13 +59,12 @@ public class MusicManager : MonoBehaviour
     }
     void GetDataFromMidi()
     {
+        Invoke(nameof(StartSong), SongDelayInSec);
         var notes = midiFile.GetNotes();
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
         foreach (var lane in lanes) lane.SetTimeStamps(array);
-
-        Invoke(nameof(StartSong), SongDelayInSec);
     }
     public void StartSong()
     {       
