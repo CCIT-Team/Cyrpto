@@ -4,8 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - BlueCuttingMonster
-  - RedCuttingMonster
   - MapManager
   - UI
   - Title
@@ -17,6 +15,8 @@ TagManager:
   - Enemy_far
   - Note
   - bullet
+  - RedEnemy
+  - BlueEnemy
   layers:
   - Default
   - TransparentFX
