@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Lim_GameManager : MonoBehaviour
 {
@@ -16,9 +17,9 @@ public class Lim_GameManager : MonoBehaviour
 
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
 
-    public int maxHp = 0;
+    public int maxHp = 100;
 
-    public int hp = 0;
+    public int hp = 100;
 
     public int playtime = 0;
 
@@ -31,6 +32,10 @@ public class Lim_GameManager : MonoBehaviour
     public GameObject pause;
 
     public GameObject setting;
+
+    public Image HPbar;
+
+    public Text HPtext;
 
     public List<GameObject> text = new List<GameObject>();
 
@@ -51,6 +56,7 @@ public class Lim_GameManager : MonoBehaviour
     {
         GameOver();
         Gamepause();
+
     }
 
     public void GameOver()
@@ -93,4 +99,9 @@ public class Lim_GameManager : MonoBehaviour
         setting.SetActive(true);
     }
 
+    public void HPmanager()
+    {
+        HPbar.fillAmount = hp / maxHp;
+        HPtext.text = string.Format("{0}", hp);
+    }
 }
