@@ -10,6 +10,8 @@ public class MechMove : MonoBehaviour
     public int line;
     Animator animator;
 
+    string[] hitType = {"BlueCuttingMonster", "RedCuttingMonster" };
+
     //±ÙÁ¢¿ë
     Transform player;
     public float ableDistance;
@@ -40,6 +42,7 @@ public class MechMove : MonoBehaviour
 
     private void OnEnable()
     {
+        this.gameObject.tag = hitType[Random.Range(0, 1)];
         line = Random.Range(1, 8);
         if (line <= 2)
         {
