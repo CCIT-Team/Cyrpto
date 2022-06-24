@@ -9,8 +9,8 @@ public class MechMove : MonoBehaviour
     public State state;
     public int line;
     Animator animator;
-
-    string[] hitType = {"BlueCuttingMonster", "RedCuttingMonster" };
+    public GameObject[] color;
+    string[] hitType = {"RedEnemy", "BlueEnemy"};
 
     //±ÙÁ¢¿ë
     Transform player;
@@ -37,6 +37,17 @@ public class MechMove : MonoBehaviour
             case State.Shoot:
                 Shoot(p);
                 break;
+        }
+
+        if(gameObject.tag == "RedEnemy")
+        {
+            color[0].SetActive(true);
+            color[1].SetActive(false);
+        }
+        if (gameObject.tag == "BlueEnemy")
+        {
+            color[1].SetActive(true);
+            color[0].SetActive(false);
         }
     }
 

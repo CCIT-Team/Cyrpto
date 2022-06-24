@@ -41,13 +41,10 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-        NoteTapZ = Player.transform.position.z;
-        NoteSpawnZ = Lane.Lanetransform.position.z;
-        NoteTime =  (NoteSpawnZ - NoteTapZ)/2;
-        if(NoteTime < 0)
-        {
-            NoteTime =  -1 * NoteTime;
-        }
+       NoteTapZ = Player.transform.position.z;
+       //NoteSpawnZ = Lane.Lanetransform.position.z;
+      // NoteTime =  NoteSpawnZ - NoteTapZ;
+        
         ComboText.text = "" + ScoreManager.Instance.comboScore;
         PanjungText.text = "" + ScoreManager.Instance.scorestring;
     }
