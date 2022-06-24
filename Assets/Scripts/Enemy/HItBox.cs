@@ -7,6 +7,7 @@ public class HItBox : MonoBehaviour
     string typeMatch;
     public bool inHit = false;
     int hitDir = 0;
+    public GameObject[] hitbox;
 
     void Start()
     {
@@ -32,13 +33,13 @@ public class HItBox : MonoBehaviour
         switch(hitDir)
         {
             case 0:
-                transform.GetChild(2).gameObject.SetActive(true);
+                hitbox[0].gameObject.SetActive(true);
                 break;
             case 1:
-                transform.GetChild(3).gameObject.SetActive(true);
+                hitbox[1].gameObject.SetActive(true);
                 break;
             case 2:
-                transform.GetChild(4).gameObject.SetActive(true);
+                hitbox[2].gameObject.SetActive(true);
                 break;
         }
     }
