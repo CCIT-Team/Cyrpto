@@ -53,7 +53,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
             {
                 Lim_GameManager.Instance.IsPause = false;
             }
-            else if(hit.collider.name == "Reture")
+            else if(hit.collider.name == "Reture" || hit.collider.name == "Exit")
             {
                 Lim_GameManager.Instance.IsPause = false;
                 if (Lim_GameManager.Instance.IsPause == false)
