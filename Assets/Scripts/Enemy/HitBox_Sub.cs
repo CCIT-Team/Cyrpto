@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class HitBox_Sub : MonoBehaviour
 {
-    HItBox Hit;
+    public HItBox Hit;
     // Start is called before the first frame update
     void Start()
     {
-        Hit.GetComponentInParent<HItBox>();
+       
     }
 
     private void OnTriggerEnter(Collider other)

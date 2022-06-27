@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MechMove : MonoBehaviour
 {
@@ -9,8 +10,10 @@ public class MechMove : MonoBehaviour
     public State state;
     public int line;
     Animator animator;
-    public GameObject[] color;
+    public GameObject red;
+    public GameObject blue;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
+    public Image arrow;
 
     //±ÙÁ¢¿ë
     Transform player;
@@ -23,6 +26,8 @@ public class MechMove : MonoBehaviour
     void Start()
     {
         player = MusicManager.Instance.Player.transform;
+        red.SetActive(false);
+        blue.SetActive(false);
         animator = GetComponent<Animator>();
     }
 
@@ -41,19 +46,19 @@ public class MechMove : MonoBehaviour
 
         if(gameObject.tag == "RedEnemy")
         {
-            color[0].SetActive(true);
-            color[1].SetActive(false);
+            red.SetActive(true);
+            blue.SetActive(false);
         }
         if (gameObject.tag == "BlueEnemy")
         {
-            color[1].SetActive(true);
-            color[0].SetActive(false);
+            red.SetActive(false);
+            blue.SetActive(true);
         }
     }
 
     private void OnEnable()
     {
-        this.gameObject.tag = hitType[Random.Range(0, 1)];
+        gameObject.tag = hitType[Random.Range(0, 2)];
         line = Random.Range(1, 8);
         if (line <= 2)
         {
