@@ -28,9 +28,9 @@ public class Lane : MonoBehaviour
     {
         foreach (var note in array)
         {
-            if(note.NoteName == noteRestriction)
+            if (note.NoteName == noteRestriction)
             {
-                var metricTimeSpan =  TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, MusicManager.midiFile.GetTempoMap());
+                var metricTimeSpan = TimeConverter.ConvertTo<MetricTimeSpan>(note.Time, MusicManager.midiFile.GetTempoMap());
                 timeStamps.Add((double)metricTimeSpan.Minutes * 60f + metricTimeSpan.Seconds + (double)metricTimeSpan.Milliseconds / 1000f);
             }
         }
@@ -41,46 +41,46 @@ public class Lane : MonoBehaviour
     {
         if (SpawnIndex < timeStamps.Count)
         {
-           if(MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
+            if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {
                 note = Instantiate(NotePrefap, gameObject.transform);
                 notes.Add(note.GetComponent<Note>());
-                note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];  
+                note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
                 SpawnIndex++;
             }
         }
 
-        if(InputIndex < timeStamps.Count)
+        if (InputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[InputIndex];
             double[] marginOfError = MusicManager.Instance.marginOfError;
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
 
-            if(AttackPlayer.a == true)
+            if (AttackPlayer.a == true)
             {
-                if(Math.Abs(audioTime - timeStamp) < marginOfError[0])
+                if (Math.Abs(audioTime - timeStamp) < marginOfError[0])
                 {
                     ScoreManager.Instance.Perpect();
-                    ScoreManager.Instance.Hit();
                     print($"Hit on {InputIndex} Perpect");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
+                    AttackPlayer.a = false;
                 }
-                if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
+                else if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
                 {
                     ScoreManager.Instance.Great();
-                    ScoreManager.Instance.Hit();
                     print($"Hit on {InputIndex} Great");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
+                    AttackPlayer.a = false;
                 }
-                if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
+                else if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
                 {
                     ScoreManager.Instance.Good();
-                    ScoreManager.Instance.Hit();
                     print($"Hit on {InputIndex}  Good");
                     Destroy(notes[InputIndex].gameObject);
                     InputIndex++;
+                    AttackPlayer.a = false;
                 }
                 else
                 {
@@ -88,12 +88,13 @@ public class Lane : MonoBehaviour
                     AttackPlayer.a = false;
                 }
             }
-            
+
             if (timeStamp + marginOfError[2] <= audioTime)
             {
                 ScoreManager.Instance.Miss();
                 print($"Missed on {InputIndex} note");
                 InputIndex++;
+                AttackPlayer.a = false;
             }
         }
     }
