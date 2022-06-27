@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!114 &-9103998066215978664
+--- !u!114 &-1007380708480614671
 MonoBehaviour:
   m_ObjectHideFlags: 11
   m_CorrespondingSourceObject: {fileID: 0}
@@ -21,7 +21,7 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Setting
-  m_Shader: {fileID: -6465566751694194690, guid: c446da09e7c3c6745b4c57e4ef04df85, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 232bb8961bd78524683007be7e150a9e, type: 3}
   m_ShaderKeywords: 
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
@@ -32,6 +32,10 @@ Material:
   m_SavedProperties:
     serializedVersion: 3
     m_TexEnvs:
+    - Texture2D_fb8bd996224c4a3e84ec105f0f2f295f:
+        m_Texture: {fileID: 2800000, guid: e2ccf1b184235f84aa8328c3d2144292, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
     - _BaseMap:
         m_Texture: {fileID: 0}
         m_Scale: {x: 1, y: 1}
@@ -70,10 +74,6 @@ Material:
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
         m_Texture: {fileID: 0}
-        m_Scale: {x: 1, y: 1}
-        m_Offset: {x: 0, y: 0}
-    - _SampleTexture2D_05b7a881aabd41e0a21d58e9350502ef_Texture_1:
-        m_Texture: {fileID: 2800000, guid: f9b184586f57f3f43b90d7e4789c4813, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:

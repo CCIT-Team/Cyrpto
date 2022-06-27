@@ -11,6 +11,7 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     public GameObject Redsword;
     public GameObject Bluesword;
     public GameObject Rpause;
+    public bool rtriggeron;
 
     private void Awake()
     {
@@ -38,12 +39,13 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
         if (rtrigger.GetState(SteamVR_Input_Sources.RightHand))
         {
             //Debug.Log("R 트리거 눌림");
-
+            rtriggeron = true;
             Redsword.SetActive(false);
             Bluesword.SetActive(true);
         }
         else
         {
+            rtriggeron = false;
             Redsword.SetActive(true);
             Bluesword.SetActive(false);
         }
