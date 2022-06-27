@@ -21,6 +21,8 @@ public class MusicManager : MonoBehaviour
     public float NoteTapZ;
     public Text ComboText;
     public Text PanjungText;
+    public Text clock;
+    float time = 0;
     public GameObject Player;
 
     public float NoteDespawnZ
@@ -43,9 +45,10 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
        NoteTapZ = Player.transform.position.z - 10;
-        
+        time += Time.deltaTime;
         ComboText.text = "" + ScoreManager.Instance.comboScore;
         PanjungText.text = "" + ScoreManager.Instance.scorestring;
+        clock.text = "" + time;
     }
 
     void ReadFromFile()

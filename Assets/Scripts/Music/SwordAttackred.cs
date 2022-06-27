@@ -9,7 +9,7 @@ public class SwordAttackred:MonoBehaviour
     {
         if (col.tag == "RedEnemy" )
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
             AttackPlayer.a = true;
             ScoreManager.Instance.Hit();
         }

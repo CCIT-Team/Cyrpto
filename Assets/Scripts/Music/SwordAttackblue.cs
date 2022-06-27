@@ -9,7 +9,7 @@ public class SwordAttackblue:MonoBehaviour
     {
         if (col.tag == "BlueEnemy")
         {
-            Destroy(col.gameObject);
+            //Destroy(col.gameObject);
             AttackPlayer.a = true;
             ScoreManager.Instance.Hit();
         }

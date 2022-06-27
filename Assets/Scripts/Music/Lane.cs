@@ -6,12 +6,11 @@ using UnityEngine;
 
 public class Lane : MonoBehaviour
 {
-    public static Transform Lanetransform;
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
-    public KeyCode input;
     public GameObject NotePrefap;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
+    public static Transform Lanetransform;
     GameObject Player;
     public static string panjung;
     int SpawnIndex = 0;
