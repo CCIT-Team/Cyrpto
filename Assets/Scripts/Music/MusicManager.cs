@@ -27,7 +27,8 @@ public class MusicManager : MonoBehaviour
     {
         get
         {
-            return NoteTapZ - (NoteSpawnZ - NoteTapZ);
+            //return NoteTapZ - (NoteSpawnZ - NoteTapZ);
+            return Player.transform.position.z - 30;
         }
     }
     public static MidiFile midiFile;
@@ -42,8 +43,6 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
        NoteTapZ = Player.transform.position.z;
-       //NoteSpawnZ = Lane.Lanetransform.position.z;
-      // NoteTime =  NoteSpawnZ - NoteTapZ;
         
         ComboText.text = "" + ScoreManager.Instance.comboScore;
         PanjungText.text = "" + ScoreManager.Instance.scorestring;
@@ -56,13 +55,16 @@ public class MusicManager : MonoBehaviour
     }
     void GetDataFromMidi()
     {
+        Invoke(nameof(StartSong), SongDelayInSec);
+
         var notes = midiFile.GetNotes();
+
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 
         foreach (var lane in lanes) lane.SetTimeStamps(array);
 
-        Invoke(nameof(StartSong), SongDelayInSec);
+        //Invoke(nameof(StartSong), SongDelayInSec);
     }
     public void StartSong()
     {       
