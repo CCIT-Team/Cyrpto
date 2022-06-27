@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class MechMove : MonoBehaviour
 {
@@ -13,7 +12,6 @@ public class MechMove : MonoBehaviour
     public GameObject red;
     public GameObject blue;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
-    public Image arrow;
 
     //±ÙÁ¢¿ë
     Transform player;

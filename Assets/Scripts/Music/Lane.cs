@@ -20,6 +20,7 @@ public class Lane : MonoBehaviour
     void Start()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        gameObject.transform.LookAt(Player.transform.position);
         Lanetransform = gameObject.transform;
     }
 
