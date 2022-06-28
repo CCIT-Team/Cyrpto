@@ -19,7 +19,7 @@ public class Lim_GameManager : MonoBehaviour
 
     public int maxHp = 0, hp = 0, playtime = 0;
 
-    public bool IsPause = false, IsGameOver = false;
+    public bool IsPause = false, IsGameOver = false, IsSetting = false;
 
     public GameObject result, pause, setting, OffSetImage;
 
@@ -50,7 +50,7 @@ public class Lim_GameManager : MonoBehaviour
         GameOver();
         Gamepause();
         Chage_image();
-
+        SettingPopup();
     }
 
     public void GameOver()
@@ -90,8 +90,18 @@ public class Lim_GameManager : MonoBehaviour
 
     public void SettingPopup()
     {
-        setting.SetActive(true);
+        if (IsSetting == true)
+        {
+            setting.SetActive(true);
+            Time.timeScale = 0.1f;
+        }
+        else if(IsSetting == false)
+        {
+            setting.SetActive(false);
+            Time.timeScale = 1f;
+        }
     }
+
 
     public void HPmanager()
     {

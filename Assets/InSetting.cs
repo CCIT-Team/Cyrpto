@@ -4,17 +4,34 @@ using UnityEngine;
 
 public class InSetting : MonoBehaviour
 {
-    public GameObject setting;
+    //public GameObject sync, reset, exit;
 
 
-    private void OnTriggerEnter(Collider set)
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+    private void OnEnable()
     {
-        if(set.tag == "Bule_Sword")
+        gameObject.GetComponent<BoxCollider>().enabled = false;
+        for (int i = 0; i < 6; i++)
         {
-            Lim_GameManager.Instance.IsPause = false;
-            setting.SetActive(true);
-            Time.timeScale = 0.1f;
+            transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = false;
         }
-        
+
     }
+    public void Update()
+    {
+        if (Lim_GameManager.Instance.IsSetting == true)
+        {
+            setactive();
+        }
+    }
+
+    IEnumerator setactive()
+    {
+        yield return waitForSeconds;
+        for (int i = 0; i < 6; i++)
+        {
+            transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = true;
+        }
+    }
+
 }

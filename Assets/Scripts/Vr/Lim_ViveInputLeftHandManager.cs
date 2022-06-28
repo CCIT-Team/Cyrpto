@@ -53,7 +53,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
             {
                 Lim_GameManager.Instance.IsPause = false;
             }
-            else if(hit.collider.name == "Reture" || hit.collider.name == "Exit")
+            else if(hit.collider.name == "Reture" || hit.collider.name == "MainSettingExit")
             {
                 Lim_GameManager.Instance.IsPause = false;
                 if (Lim_GameManager.Instance.IsPause == false)
@@ -64,8 +64,24 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
             }
             else if(hit.collider.name == "Setting")
             {
-                Lim_GameManager.Instance.SettingPopup();
+                Lim_GameManager.Instance.IsSetting = true;
             }
+
+            if(hit.collider.name == "Sync")
+            {
+                Debug.Log("싱크 매니져 온");
+            }
+            else if(hit.collider.name == "Reset")
+            {
+                Debug.Log("셋팅 리셋함");
+                Lim_GameManager.Instance.IsSetting = false;
+            }
+            else if(hit.collider.name == "Exit")
+            {
+                Lim_GameManager.Instance.IsSetting = false;
+            }
+
+
 
         }
         

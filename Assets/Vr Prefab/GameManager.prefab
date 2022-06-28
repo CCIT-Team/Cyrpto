@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &866355858795009285
+--- !u!1 &8740655722538748291
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,8 +8,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 866355858795009287}
-  - component: {fileID: 866355858795009284}
+  - component: {fileID: 8740655722538748289}
+  - component: {fileID: 8740655722538748290}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -17,27 +17,27 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &866355858795009287
+--- !u!4 &8740655722538748289
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866355858795009285}
+  m_GameObject: {fileID: 8740655722538748291}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -12.53326, y: 3.269514, z: -25.573746}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &866355858795009284
+--- !u!114 &8740655722538748290
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 866355858795009285}
+  m_GameObject: {fileID: 8740655722538748291}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c89d7a15aaea2b146a15d56de7dc3c16, type: 3}
@@ -48,7 +48,18 @@ MonoBehaviour:
   playtime: 0
   IsPause: 0
   IsGameOver: 0
+  IsSetting: 0
   result: {fileID: 0}
   pause: {fileID: 0}
   setting: {fileID: 0}
-  text: []
+  OffSetImage: {fileID: 0}
+  HPbar: {fileID: 0}
+  HPtext: {fileID: 0}
+  combotext: {fileID: 0}
+  offsetimage:
+  - {fileID: 21300000, guid: ab2322a5a63dab3438887665ab3c8334, type: 3}
+  - {fileID: 21300000, guid: 23497f01490ee354ea2c686fd775335a, type: 3}
+  - {fileID: 21300000, guid: f294fe788e5856747b3cb9bc31f3f9ee, type: 3}
+  - {fileID: 21300000, guid: cdcca2ff4bab0a4498d0917420a472d6, type: 3}
+  offsettest: 0
+  fade: {fileID: 0}
