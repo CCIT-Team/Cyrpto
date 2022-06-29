@@ -5,8 +5,9 @@ using UnityEngine;
 
 public class HItBox : MonoBehaviour
 {
+    
     string typeMatch;
-    public bool inHit = false;
+    public static bool inHit = false;
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
@@ -18,15 +19,7 @@ public class HItBox : MonoBehaviour
 
     void Update()
     {
-        
-    }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        if(inHit&&other.tag.Substring(0,2)==this.tag.Substring(0, 2))
-        {
-            Destroy(this.gameObject);
-        }
     }
 
     private void OnEnable()
@@ -36,11 +29,11 @@ public class HItBox : MonoBehaviour
         {
             case 0:
                 hitbox[0].gameObject.SetActive(true);
-                arrow.transform.Rotate(0, 0, 180);
+                arrow.transform.Rotate(0, 0, 180);    
                 break;
             case 1:
                 hitbox[1].gameObject.SetActive(true);
-                //arrow.transform.Rotate(0, 0, 0);
+                arrow.transform.Rotate(0, 0, 0);
                 break;
             case 2:
                 hitbox[2].gameObject.SetActive(true);

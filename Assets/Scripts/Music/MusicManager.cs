@@ -35,7 +35,7 @@ public class MusicManager : MonoBehaviour
         get
         {
             //return NoteTapZ - (NoteSpawnZ - NoteTapZ);
-            return Player.transform.position.z + 100;
+            return Player.transform.position.z - 10;
         }
     }
     public static MidiFile midiFile;
@@ -49,7 +49,7 @@ public class MusicManager : MonoBehaviour
     
     void Update()
     {
-       NoteTapZ = Player.transform.position.z - 10;
+       NoteTapZ = Player.transform.position.z+5;
         time += Time.deltaTime;
         ComboText.text = "" + ScoreManager.Instance.comboScore;
         PanjungText.text = "" + ScoreManager.Instance.scorestring;
