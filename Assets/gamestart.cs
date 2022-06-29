@@ -8,7 +8,7 @@ public class gamestart : MonoBehaviour
     {
         if (other.tag == "Blue_Sword")
         {
-            SceneManager.LoadScene("Game_Scene");
+            SceneManager.LoadScene("musictest");
         }
     }
 }
