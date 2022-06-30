@@ -14,12 +14,16 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public Transform shootpos;
     public GameObject projectile;
     public GameObject Lpause;
+
+    public ParticleSystem muzzleFlash;
+    public AudioClip fireSound;
+    public AudioSource audioSource;
     //public bool Ispause;
 
 
     void Start()
     {
-
+        audioSource = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -42,6 +46,8 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public void Shoot()
     {
         Instantiate(projectile, shootpos.position, shootpos.rotation);
+        muzzleFlash.Play();
+        audioSource.PlayOneShot(fireSound);
         if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000))
         {
             if(hit.collider.tag == "Enemy_closs")
@@ -88,5 +94,4 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
 
 
     }
-
 }
