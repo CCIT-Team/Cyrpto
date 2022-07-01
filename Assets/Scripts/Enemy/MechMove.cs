@@ -9,8 +9,7 @@ public class MechMove : MonoBehaviour
     public State state;
     public int line;
     Animator animator;
-    public GameObject red;
-    public GameObject blue;
+    public GameObject arrow;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
 
     //±ÙÁ¢¿ë
@@ -24,8 +23,6 @@ public class MechMove : MonoBehaviour
     void Start()
     {
         player = MusicManager.Instance.Player.transform;
-        red.SetActive(false);
-        blue.SetActive(false);
         animator = GetComponent<Animator>();
     }
 
@@ -40,17 +37,6 @@ public class MechMove : MonoBehaviour
             case State.Shoot:
                 Shoot(p);
                 break;
-        }
-
-        if(gameObject.tag == "RedEnemy")
-        {
-            red.SetActive(true);
-            blue.SetActive(false);
-        }
-        if (gameObject.tag == "BlueEnemy")
-        {
-            red.SetActive(false);
-            blue.SetActive(true);
         }
     }
 
@@ -71,6 +57,15 @@ public class MechMove : MonoBehaviour
         else
         {
             state = State.Melee;
+        }
+
+        if (gameObject.tag == "RedEnemy")
+        {
+            arrow.name = "Red";
+        }
+        if (gameObject.tag == "BlueEnemy")
+        {
+            arrow.name = "Blue";
         }
     }
 
