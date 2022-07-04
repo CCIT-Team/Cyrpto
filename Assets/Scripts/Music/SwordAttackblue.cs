@@ -4,14 +4,13 @@ using UnityEngine;
 
 public class SwordAttackblue:MonoBehaviour
 {
-    public static int Combo = 0;
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "BlueEnemy")
         {
+            ScoreManager.Instance.Hit();
             Destroy(col.gameObject);
             AttackPlayer.a = true;
-            ScoreManager.Instance.Hit();
         }
     }
 }

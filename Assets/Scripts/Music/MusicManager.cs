@@ -30,10 +30,8 @@ public class MusicManager : MonoBehaviour
     float time = 0;
     public GameObject Player;
 
-    public float NoteDespawnZ
-    {
-        get
-        {
+    public float NoteDespawnZ {
+        get {
             //return NoteTapZ - (NoteSpawnZ - NoteTapZ);
             return Player.transform.position.z - 10;
         }
@@ -46,10 +44,10 @@ public class MusicManager : MonoBehaviour
         ReadFromFile();
     }
 
-    
+
     void Update()
     {
-       NoteTapZ = Player.transform.position.z+5;
+        NoteTapZ = Player.transform.position.z + 5;
         time += Time.deltaTime;
         ComboText.text = "" + ScoreManager.Instance.comboScore;
         PanjungText.text = "" + ScoreManager.Instance.scorestring;
@@ -78,7 +76,7 @@ public class MusicManager : MonoBehaviour
         Invoke(nameof(StartSong), SongDelayInSec);
     }
     public void StartSong()
-    {       
+    {
         audioSource.Play();
         GetAudioSourceTime();
     }

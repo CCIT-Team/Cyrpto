@@ -23,31 +23,31 @@ public class NoteCharge : MonoBehaviour
         switch (name)
         {
             case "Red":
-                if(Vector3.Distance(playerPos.position,mechPos.position)>30)
+                if(Vector3.Distance(playerPos.position,mechPos.position)>25)
                     img.sprite = redArrow[0];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 25)
-                    img.sprite = redArrow[1];
                 else if (Vector3.Distance(playerPos.position, mechPos.position) > 20)
-                    img.sprite = redArrow[2];
+                    img.sprite = redArrow[1];
                 else if (Vector3.Distance(playerPos.position, mechPos.position) > 15)
+                    img.sprite = redArrow[2];
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 10)
                     img.sprite = redArrow[3];
                 else
                     img.sprite = redArrow[4];
 
                 break;
             case "Blue":
-                if (Vector3.Distance(playerPos.position, mechPos.position) > 30)
+                if (Vector3.Distance(playerPos.position, mechPos.position) > 25)
                     img.sprite = blueArrow[0];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 25)
-                    img.sprite = blueArrow[1];
                 else if (Vector3.Distance(playerPos.position, mechPos.position) > 20)
-                    img.sprite = blueArrow[2];
+                    img.sprite = blueArrow[1];
                 else if (Vector3.Distance(playerPos.position, mechPos.position) > 15)
+                    img.sprite = blueArrow[2];
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 10)
                     img.sprite = blueArrow[3];
                 else
                     img.sprite = blueArrow[4];
                 break;
         }
-        Debug.Log(Vector3.Distance(playerPos.position, mechPos.position));
+        //Debug.Log(Vector3.Distance(playerPos.position, mechPos.position));
     }
 }
