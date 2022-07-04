@@ -72,7 +72,8 @@ public class MechMove : MonoBehaviour
     void Attack()
     {
         animator.SetFloat("Speed", 2);   
-        float distance = Vector3.SqrMagnitude(transform.position - player.position);
+        //float distance = Vector3.SqrMagnitude(transform.position - player.position);
+        float distance = Vector3.Distance(transform.position, player.position);
         if (distance < ableDistance)
         {
             animator.SetInteger("MeleeType", Random.Range(0, 1));
