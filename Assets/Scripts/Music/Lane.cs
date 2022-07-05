@@ -62,7 +62,8 @@ public class Lane : MonoBehaviour
                         print($"Hit on {InputIndex} Perpect");
                         Destroy(notes[InputIndex].gameObject);
                         InputIndex++;
-                        AttackPlayer.a = false;
+                        HItBox.inHit = false;
+                        AttackPlayer.a = false;             
                     }
                     else if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
                     {
@@ -70,6 +71,7 @@ public class Lane : MonoBehaviour
                         print($"Hit on {InputIndex} Great");
                         Destroy(notes[InputIndex].gameObject);
                         InputIndex++;
+                        HItBox.inHit = false;
                         AttackPlayer.a = false;
                     }
                     else if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
@@ -78,11 +80,13 @@ public class Lane : MonoBehaviour
                         print($"Hit on {InputIndex}  Good");
                         Destroy(notes[InputIndex].gameObject);
                         InputIndex++;
+                        HItBox.inHit = false;
                         AttackPlayer.a = false;
                     }
                     else
                     {
                         print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                        HItBox.inHit = false;
                         AttackPlayer.a = false;
                     }
                 }
@@ -92,10 +96,10 @@ public class Lane : MonoBehaviour
                     ScoreManager.Instance.Miss();
                     print($"Missed on {InputIndex} note");
                     InputIndex++;
+                    HItBox.inHit = false;
                     AttackPlayer.a = false;
                 }
             }
         }
     }
-
 }

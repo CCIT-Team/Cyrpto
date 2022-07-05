@@ -24,7 +24,7 @@ public class HItBox : MonoBehaviour
 
     private void OnEnable()
     {
-        hitDir = Random.Range(0, 2);
+        hitDir = Random.Range(0, 3);
         switch(hitDir)
         {
             case 0:
