@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SwordAttackblue:MonoBehaviour
 {
+    public GameObject test;
     void OnTriggerEnter(Collider col)
     {
         if (col.tag == "BlueEnemy")
