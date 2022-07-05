@@ -10,7 +10,8 @@ public class gamestart : MonoBehaviour
     {
         if (other.tag == "Blue_Sword")
         {
-            StartCoroutine(active());
+            //StartCoroutine(active());
+            SceneManager.LoadScene("musictest");
         }
     }
 
