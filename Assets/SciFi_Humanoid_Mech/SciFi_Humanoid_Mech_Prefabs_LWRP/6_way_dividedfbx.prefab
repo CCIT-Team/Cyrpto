@@ -693,6 +693,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7048922206927494370}
+  - component: {fileID: 8436629544173345451}
   m_Layer: 0
   m_Name: 6_way_dividedfbx
   m_TagString: Untagged
@@ -721,6 +722,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: -90}
+--- !u!114 &8436629544173345451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681203393346848344}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 906f02d7122c6f949800b7516af3ecec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mon: {fileID: 7681203393346848344}
 --- !u!1001 &4902563382923903915
 PrefabInstance:
   m_ObjectHideFlags: 0
