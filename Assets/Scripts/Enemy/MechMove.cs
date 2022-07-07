@@ -11,6 +11,7 @@ public class MechMove : MonoBehaviour
     Animator animator;
     public GameObject arrow;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
+    public static bool pigock = false;
 
     //±ÙÁ¢¿ë
     Transform player;

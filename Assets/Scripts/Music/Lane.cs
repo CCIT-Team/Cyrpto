@@ -54,50 +54,50 @@ public class Lane : MonoBehaviour
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
             if (HItBox.inHit == true)
             {
-                if (AttackPlayer.a == true)
+                if (MechMove.pigock == true)
                 {
                     if (Math.Abs(audioTime - timeStamp) < marginOfError[0])
                     {
                         ScoreManager.Instance.Perpect();
                         print($"Hit on {InputIndex} Perpect");
-                        Destroy(notes[InputIndex].gameObject);
                         InputIndex++;
                         HItBox.inHit = false;
-                        AttackPlayer.a = false;             
+                        MechMove.pigock = false;
+                        Destroy(notes[InputIndex].gameObject);
                     }
                     else if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
                     {
                         ScoreManager.Instance.Great();
                         print($"Hit on {InputIndex} Great");
-                        Destroy(notes[InputIndex].gameObject);
                         InputIndex++;
                         HItBox.inHit = false;
-                        AttackPlayer.a = false;
+                        MechMove.pigock = false;
+                        Destroy(notes[InputIndex].gameObject);
                     }
                     else if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
                     {
                         ScoreManager.Instance.Good();
                         print($"Hit on {InputIndex}  Good");
-                        Destroy(notes[InputIndex].gameObject);
                         InputIndex++;
                         HItBox.inHit = false;
-                        AttackPlayer.a = false;
+                        MechMove.pigock = false;
+                        Destroy(notes[InputIndex].gameObject);
                     }
                     else
                     {
                         print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
                         HItBox.inHit = false;
-                        AttackPlayer.a = false;
+                        MechMove.pigock = false;
                     }
                 }
 
-                if (timeStamp + marginOfError[2] <= audioTime)
+                if (timeStamp + marginOfError[2] <= audioTime || Player.transform.position == note.transform.position)
                 {
                     ScoreManager.Instance.Miss();
                     print($"Missed on {InputIndex} note");
                     InputIndex++;
                     HItBox.inHit = false;
-                    AttackPlayer.a = false;
+                    MechMove.pigock = false;
                 }
             }
         }
