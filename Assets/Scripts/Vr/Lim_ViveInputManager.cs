@@ -11,6 +11,10 @@ public class Lim_ViveInputManager : MonoBehaviour
     public GameObject maingiude;
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.5f);
     public GameObject findMenu;
+    public Image HPbar;
+    public Text HPtext;
+    public int Exmiss; //--예시 miss 판정
+
     public bool onfindMenu = false;
 
     public Lim_ViveInputRightHandManager rightHandManager;
@@ -42,6 +46,7 @@ public class Lim_ViveInputManager : MonoBehaviour
         PlayerHud();
         OnGuide();
         OnMainGuide();
+        hpbarfill();
     }
     public void PlayerHud()
     {
@@ -96,5 +101,32 @@ public class Lim_ViveInputManager : MonoBehaviour
     {
         yield return waitForSeconds;
         findMenu = GameObject.Find("MainMenu");
+    }
+
+    public void hpbarfill()
+    {
+        switch (Exmiss)
+        {
+            case 1:
+                HPbar.fillAmount = 0.75f;
+                HPtext.text = "75";
+                break;
+            case 2:
+                HPbar.fillAmount = 0.5f;
+                HPtext.text = "50";
+                break;
+            case 3:
+                HPbar.fillAmount = 0.25f;
+                HPtext.text = "25";
+                break;
+            case 4:
+                HPbar.fillAmount = 0.0f;
+                HPtext.text = "0";
+                break;
+        }
+    }
+    public void scorefill()
+    {
+
     }
 }

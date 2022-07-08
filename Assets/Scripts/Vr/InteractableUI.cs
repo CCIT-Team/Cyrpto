@@ -11,6 +11,8 @@ public class InteractableUI : MonoBehaviour
     private RectTransform rectTransform;
 
     public GameObject UI;
+    public GameObject UI1;
+    public GameObject UI2;
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
 
     public void Start()
@@ -29,7 +31,8 @@ public class InteractableUI : MonoBehaviour
         {
             
             UI.SetActive(true);
-           
+            UI1.SetActive(true);
+            UI2.SetActive(true);
         }
 
     }

@@ -5,16 +5,17 @@ using UnityEngine.UI;
 
 public class MainMenuimage : MonoBehaviour
 {
-    public Sprite[] chageim;
-    Image image;
+    public Sprite[] chageimg;
+    public Text stage1, stage2, stage3, stage4, highestScore;
 
     private void Start()
     {
-        image = GetComponent<Image>();
+        
     }
 
     void chageimage()
-    {
+    {   
+
      
     }
 }
