@@ -15,8 +15,10 @@ public class Lane : MonoBehaviour
     int SpawnIndex = 0;
     int InputIndex = 0;
 
+    public bool GameEND;
     void Start()
     {
+        GameEND = false;
         Player = MusicManager.Instance.Player;
         gameObject.transform.LookAt(Player.transform.position);
     }
@@ -44,6 +46,7 @@ public class Lane : MonoBehaviour
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
                 SpawnIndex++;
+                GameEND = true;
             }
         }
 
