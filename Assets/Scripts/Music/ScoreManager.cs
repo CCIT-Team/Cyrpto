@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance;
+    #region
+    public static ScoreManager Instance {
+        get { return instance; }
+        set { }
+    }
+    #endregion
+    public static ScoreManager instance = null;
+
     public float finalScore;
     public int[] score = new int[] { 0, 0, 0 }; // 0 = per 1 = great 2 = good
     public int scoreNum = 4; // 0 = per 1 = great 2 = good 이걸로 각 판정에 값을 가져와 if문으로 구현하면 될듯?
@@ -12,9 +19,19 @@ public class ScoreManager : MonoBehaviour
     public int grade = 0;// 0 = s 1 = a 2 = b ......
     public int comboScore = 0;
 
+    private void Awake()
+    {
+        if (instance)
+        {
+            DestroyImmediate(gameObject);
+            return;
+        }
+        instance = this;
+        DontDestroyOnLoad(gameObject);
+
+    }
     void Start()
     {
-        Instance = this;
         comboScore = 0;
     }
 
