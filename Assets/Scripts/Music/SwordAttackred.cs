@@ -8,9 +8,13 @@ public class SwordAttackred : MonoBehaviour
     {
         if (col.tag == "RedEnemy")
         {
-            ScoreManager.Instance.Hit();
-            Destroy(col.gameObject);
-            MechMove.pigock = true;
+            if(HItBox.inHit == true )
+            {
+                ScoreManager.Instance.Hit();
+                Destroy(col.gameObject);
+                MechMove.pigock = true;
+            }          
         }
      }
+
 }

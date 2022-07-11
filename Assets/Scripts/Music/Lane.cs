@@ -8,6 +8,7 @@ public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public GameObject NotePrefap;
+    public GameObject note;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
     GameObject Player;
@@ -15,12 +16,12 @@ public class Lane : MonoBehaviour
     int SpawnIndex = 0;
     int InputIndex = 0;
 
-    public bool GameEND;
     void Start()
     {
-        GameEND = false;
+        note = NotePrefap;
         Player = MusicManager.Instance.Player;
         gameObject.transform.LookAt(Player.transform.position);
+        //gameObject.transform.Rotate(new Vector3(transform.position.x, 180, transform.position.z));
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
@@ -34,7 +35,6 @@ public class Lane : MonoBehaviour
             }
         }
     }
-    public static GameObject note;
 
     void Update()
     {
@@ -46,10 +46,10 @@ public class Lane : MonoBehaviour
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
                 SpawnIndex++;
-                GameEND = true;
             }
         }
-
+        double etp = Vector3.Distance(Player.transform.position, note.transform.position);//enemy to player
+        Debug.Log("Enemy to Player Distance = " + etp + "This Lane = " + gameObject.name);
         if (InputIndex < timeStamps.Count)
         {
             double timeStamp = timeStamps[InputIndex];
@@ -59,7 +59,7 @@ public class Lane : MonoBehaviour
             {
                 if (MechMove.pigock == true)
                 {
-                    if (Math.Abs(audioTime - timeStamp) < marginOfError[0])
+                    if (0 < etp && etp < marginOfError[0])
                     {
                         ScoreManager.Instance.Perpect();
                         print($"Hit on {InputIndex} Perpect");
@@ -68,7 +68,7 @@ public class Lane : MonoBehaviour
                         MechMove.pigock = false;
                         Destroy(notes[InputIndex].gameObject);
                     }
-                    else if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
+                    else if (marginOfError[0] < etp && etp < marginOfError[1])
                     {
                         ScoreManager.Instance.Great();
                         print($"Hit on {InputIndex} Great");
@@ -77,7 +77,7 @@ public class Lane : MonoBehaviour
                         MechMove.pigock = false;
                         Destroy(notes[InputIndex].gameObject);
                     }
-                    else if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
+                    else if (marginOfError[1] < etp && etp < marginOfError[2])
                     {
                         ScoreManager.Instance.Good();
                         print($"Hit on {InputIndex}  Good");
@@ -86,15 +86,9 @@ public class Lane : MonoBehaviour
                         MechMove.pigock = false;
                         Destroy(notes[InputIndex].gameObject);
                     }
-                    else
-                    {
-                        print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                    }
                 }
 
-                if (timeStamp + marginOfError[2] <= audioTime || Player.transform.position == note.transform.position)
+                if (marginOfError[2] < etp || Player.transform.position == note.transform.position)
                 {
                     ScoreManager.Instance.Miss();
                     print($"Missed on {InputIndex} note");
@@ -102,6 +96,53 @@ public class Lane : MonoBehaviour
                     HItBox.inHit = false;
                     MechMove.pigock = false;
                 }
+                //if (HItBox.inHit == true)
+                //{
+                //    if (MechMove.pigock == true)
+                //    {
+                //        if (Math.Abs(audioTime - timeStamp) < marginOfError[0])
+                //        {
+                //            ScoreManager.Instance.Perpect();
+                //            print($"Hit on {InputIndex} Perpect");
+                //            InputIndex++;
+                //            HItBox.inHit = false;
+                //            MechMove.pigock = false;
+                //            Destroy(notes[InputIndex].gameObject);
+                //        }
+                //        else if (Math.Abs(audioTime - timeStamp) < marginOfError[1])
+                //        {
+                //            ScoreManager.Instance.Great();
+                //            print($"Hit on {InputIndex} Great");
+                //            InputIndex++;
+                //            HItBox.inHit = false;
+                //            MechMove.pigock = false;
+                //            Destroy(notes[InputIndex].gameObject);
+                //        }
+                //        else if (Math.Abs(audioTime - timeStamp) < marginOfError[2])
+                //        {
+                //            ScoreManager.Instance.Good();
+                //            print($"Hit on {InputIndex}  Good");
+                //            InputIndex++;
+                //            HItBox.inHit = false;
+                //            MechMove.pigock = false;
+                //            Destroy(notes[InputIndex].gameObject);
+                //        }
+                //        else
+                //        {
+                //            print($"Hit inaccurate on {InputIndex} note with {Math.Abs(audioTime - timeStamp)} delay");
+                //            HItBox.inHit = false;
+                //            MechMove.pigock = false;
+                //        }
+                //    }
+
+                //    if (timeStamp + marginOfError[2] <= audioTime || Player.transform.position == note.transform.position)
+                //    {
+                //        ScoreManager.Instance.Miss();
+                //        print($"Missed on {InputIndex} note");
+                //        InputIndex++;
+                //        HItBox.inHit = false;
+                //        MechMove.pigock = false;
+                //    }
             }
         }
     }

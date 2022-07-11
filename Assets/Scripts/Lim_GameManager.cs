@@ -132,18 +132,7 @@ public class Lim_GameManager : MonoBehaviour
         }
     }
 
-    public void ResultSet()
-    {
-        if(lane.GameEND == true)
-        {
-            beforeresult.SetActive(true);
-            Isbefore = true;
-            if(Isbefore == true)
-            {
-                StartCoroutine(beforeReSult());
-            }
-        }
-    }
+
 
     IEnumerator beforeReSult()
     {
