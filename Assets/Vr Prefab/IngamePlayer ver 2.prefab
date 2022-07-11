@@ -26303,6 +26303,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3133154812369214843}
   - component: {fileID: 5046140838577923980}
+  - component: {fileID: 3638834236028906825}
   m_Layer: 0
   m_Name: Katana_Red
   m_TagString: Red_Sword
@@ -26348,6 +26349,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3638834236028906825
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3470873067212008812}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9d13e1a32eb05aa4cb7d8ebe52045903, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &3740682303786760023
 GameObject:
   m_ObjectHideFlags: 0
@@ -28967,6 +28980,7 @@ GameObject:
   m_Component:
   - component: {fileID: 375305345211788281}
   - component: {fileID: 7015191371283860794}
+  - component: {fileID: 1455126343292015067}
   m_Layer: 0
   m_Name: Katana_Blue
   m_TagString: Blue_Sword
@@ -29012,6 +29026,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1455126343292015067
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5817459166795420070}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17154405a48b90d4aa75d5e0c3a004b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5857086662759527123
 GameObject:
   m_ObjectHideFlags: 0

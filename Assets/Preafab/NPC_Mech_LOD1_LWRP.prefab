@@ -669,7 +669,6 @@ MonoBehaviour:
   - {fileID: 8652347292870536397, guid: 49c49b2e7fa68a242908672b0a8e20e2, type: 3}
   - {fileID: 8652347292870536397, guid: 49c49b2e7fa68a242908672b0a8e20e2, type: 3}
   - {fileID: 1302551502524444268, guid: edf4be876cae9c548a519f20a928930c, type: 3}
-  hits: 0
   hitbox:
   - {fileID: 8737492894494633612}
   - {fileID: 1589380605122776175}
