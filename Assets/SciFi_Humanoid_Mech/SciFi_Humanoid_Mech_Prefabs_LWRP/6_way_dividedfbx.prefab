@@ -750,21 +750,25 @@ PrefabInstance:
       propertyPath: InitialModule.startSize.scalar
       value: 0.01
       objectReference: {fileID: 0}
+    - target: {fileID: 8746076380415371729, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
+      propertyPath: EmissionModule.m_Bursts.Array.data[0].countCurve.scalar
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 8855319618786674761, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8855319618786674761, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8855319618786674761, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8855319618786674761, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 8855319618786674761, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_LocalPosition.x

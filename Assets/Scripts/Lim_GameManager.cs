@@ -16,16 +16,19 @@ public class Lim_GameManager : MonoBehaviour
     public static Lim_GameManager instance = null;
 
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+    public static readonly WaitForSeconds waitForReslut = new WaitForSeconds(5.0f);
 
     public int maxHp = 0, hp = 0, playtime = 0;
 
-    public bool IsPause = false, IsGameOver = false, IsSetting = false;
+    public bool IsPause = false, IsGameOver = false, IsSetting = false, Isbefore = false;
 
-    public GameObject result, pause, setting, OffSetImage;
+    public GameObject result, pause, setting, OffSetImage, beforeresult;
 
     public Image HPbar;
 
     public Text HPtext, combotext;
+
+    public Lane lane;
 
     [Header("Offset")]
     public Sprite[] offsetimage;
@@ -44,6 +47,7 @@ public class Lim_GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
     }
+
 
     public void Update()
     {
@@ -126,5 +130,26 @@ public class Lim_GameManager : MonoBehaviour
                 OffSetImage.GetComponent<Image>().sprite = offsetimage[3];
                 break;
         }
+    }
+
+    public void ResultSet()
+    {
+        if(lane.GameEND == true)
+        {
+            beforeresult.SetActive(true);
+            Isbefore = true;
+            if(Isbefore == true)
+            {
+                StartCoroutine(beforeReSult());
+            }
+        }
+    }
+
+    IEnumerator beforeReSult()
+    {
+        yield return waitForReslut;
+        result.SetActive(true);
+
+
     }
 }
