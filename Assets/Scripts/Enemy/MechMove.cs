@@ -43,7 +43,7 @@ public class MechMove : MonoBehaviour
 
     private void OnEnable()
     {
-        gameObject.tag = hitType[Random.Range(0, 2)];
+        gameObject.tag = hitType[Random.Range(0, 2)];   //적,청
         line = Random.Range(1, 8);
         if (line <= 2)
         {
@@ -60,30 +60,47 @@ public class MechMove : MonoBehaviour
             state = State.Melee;
         }
 
-        if (gameObject.tag == "RedEnemy")
+        switch (state)      //판정 형태 결정
         {
-            arrow.name = "Red";
-        }
-        if (gameObject.tag == "BlueEnemy")
-        {
-            arrow.name = "Blue";
+            case State.Melee:
+                switch (gameObject.tag)
+                {
+                    case "RedEnemy":
+                        arrow.name = "Red";
+                        break;
+                    case "BlueEnemy":
+                        arrow.name = "Blue";
+                        break;
+                }
+                break;
+            case State.Shoot:
+                arrow.name = "AimPoint";
+                break;
         }
     }
 
-    void Attack()
+    void Attack()       //근접공격
     {
         animator.SetFloat("Speed", 2);   
         //float distance = Vector3.SqrMagnitude(transform.position - player.position);
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance < ableDistance)
         {
-            animator.SetInteger("MeleeType", Random.Range(0, 1));
+            animator.SetInteger("MeleeType", Random.Range(0, 2));
             animator.SetTrigger("MeleeAttack");
         }
     }
 
-    void Shoot(pos p)
+    void Shoot(pos p)       //원거리
     {
+        animator.SetFloat("Speed", 1);
+        float distance = Vector3.Distance(transform.position, player.position);
+        if (distance < ableDistance+10)
+        {
+            animator.SetTrigger("Shoot");
+        }
+
+        /*
         float side = 0;
         Vector3 mechPos;
         RaycastHit hit;
@@ -105,6 +122,6 @@ public class MechMove : MonoBehaviour
         if (transform.position.z > hit.point.z - 1 && transform.position.z < hit.point.z - 0.5)
         {
             animator.SetBool("Crouch", true);
-        }
+        } */
     }
 }

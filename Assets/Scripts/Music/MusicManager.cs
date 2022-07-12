@@ -47,7 +47,7 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
-        NoteTapZ = Player.transform.position.z + 5;
+        NoteTapZ = Player.transform.position.z;
         time += Time.deltaTime;
         ComboText.text = "" + ScoreManager.Instance.comboScore;
         PanjungText.text = "" + ScoreManager.Instance.scorestring;

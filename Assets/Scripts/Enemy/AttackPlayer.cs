@@ -28,7 +28,7 @@ public class AttackPlayer : MonoBehaviour
         transform.localPosition = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnZ, 
             Vector3.forward * MusicManager.Instance.NoteDespawnZ * (player.transform.position.z - 5), Note.t - Speed);
 
-        distance = Vector3.Magnitude(Lane.note.transform.position - player.transform.position);
+        //distance = Vector3.Magnitude(Lane.note.transform.position - player.transform.position);
         //Debug.Log(distance);
         //if (distance < ableDistance)
         //    animator.SetTrigger("MeleeAttack");
