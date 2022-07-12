@@ -5,15 +5,9 @@ using UnityEngine;
 public class HitBox_Sub : MonoBehaviour
 {
     public HItBox Hit;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
-
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag =="Blue_Sword" || other.tag == "Red_Sword")
+        if(other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
         {
             HItBox.inHit = true;
         }

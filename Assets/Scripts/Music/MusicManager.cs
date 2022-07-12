@@ -20,14 +20,6 @@ public class MusicManager : MonoBehaviour
     public float NoteSpawnZ;
     public float NoteTapZ;
     public Text ComboText;
-    public Text PanjungText;
-    public Text clock;
-    int audiotime;
-    public Text audiotimetext;
-    int fre;
-    public Text fretext;
-    public Text Geta;
-    float time = 0;
     public GameObject Player;
 
     public float NoteDespawnZ {
@@ -48,15 +40,7 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         NoteTapZ = Player.transform.position.z;
-        time += Time.deltaTime;
-        ComboText.text = "" + ScoreManager.Instance.comboScore;
-        PanjungText.text = "" + ScoreManager.Instance.scorestring;
-        clock.text = "" + time;
-        audiotime = audioSource.timeSamples;
-        fre = audioSource.clip.frequency;
-        audiotimetext.text = "" + audiotime;
-        fretext.text = "" + fre;
-        Geta.text = "" + GetAudioSourceTime();
+        ComboText.text = "" + ScoreManager.Instance.combocount;
     }
 
     void ReadFromFile()

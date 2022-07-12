@@ -9,7 +9,6 @@ public class HpSetter : MonoBehaviour
     {
         Lim_GameManager.Instance.maxHp = 100;
         Lim_GameManager.Instance.hp = 50;
-        Lim_GameManager.Instance.offsettest = 0.2f;
     }
 
     // Update is called once per frame

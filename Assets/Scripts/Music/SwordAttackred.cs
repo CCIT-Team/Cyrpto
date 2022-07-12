@@ -6,15 +6,14 @@ public class SwordAttackred : MonoBehaviour
 {
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "RedEnemy")
+        if (HItBox.inHit == true)
         {
-            if(HItBox.inHit == true )
+            if (col.tag == "RedEnemy")
             {
                 ScoreManager.Instance.Hit();
-                Destroy(col.gameObject);
                 MechMove.pigock = true;
-            }          
+                //Destroy(col.gameObject);
+            }
         }
-     }
-
+    }
 }
