@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class GameGo : MonoBehaviour
 {
+    //메인 메뉴도 이 방식으로 할 예정
     public Title title;
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(1f);
     public GameObject Fade;

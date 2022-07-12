@@ -73,6 +73,10 @@ public class Lim_ViveInputManager : MonoBehaviour
                 guide.SetActive(true);
             }
         }
+        else
+        {
+            maingiude.SetActive(false);
+        }
     }
 
     public void OnMainGuide()
@@ -90,10 +94,15 @@ public class Lim_ViveInputManager : MonoBehaviour
                 {
                     maingiude.SetActive(false);
                 }
-            }else
+            }
+            else
             {
                 maingiude.SetActive(false);
             }
+        }
+        else
+        {
+            maingiude.SetActive(false);
         }
     }
 
@@ -107,6 +116,10 @@ public class Lim_ViveInputManager : MonoBehaviour
     {
         switch (Exmiss)
         {
+            case 0:
+                HPbar.fillAmount = 1.0f;
+                HPtext.text = "100";
+                break;
             case 1:
                 HPbar.fillAmount = 0.75f;
                 HPtext.text = "75";

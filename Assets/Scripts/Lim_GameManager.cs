@@ -28,14 +28,9 @@ public class Lim_GameManager : MonoBehaviour
 
     public Text HPtext, combotext;
 
-    public Lane lane;
-
-    [Header("Offset")]
-    public Sprite[] offsetimage;
-    public float offsettest;
-
     [Header("Fade In Out")]
     public GameObject fade;
+
     private void Awake()
     {
         if(instance)
@@ -53,7 +48,6 @@ public class Lim_GameManager : MonoBehaviour
     {
         GameOver();
         Gamepause();
-        Chage_image();
         SettingPopup();
     }
 
@@ -66,7 +60,6 @@ public class Lim_GameManager : MonoBehaviour
             {
                 result.SetActive(true);
                 Time.timeScale = 0.01f;
-                Debug.Log(Time.timeScale);
             } 
         }
     }
@@ -113,36 +106,18 @@ public class Lim_GameManager : MonoBehaviour
         HPtext.text = string.Format("{0}", hp);
     }
 
-    public void Chage_image() //뮤직매니져랑 연결해주세요
-    {
-        switch(offsettest)
-        {
-            case 0.1f:
-                OffSetImage.GetComponent<Image>().sprite = offsetimage[0]; //이미지 순서가 빠를 수록 좋은 판정
-                break;
-            case 0.2f:
-                OffSetImage.GetComponent<Image>().sprite = offsetimage[1];
-                break;
-            case 0.3f:
-                OffSetImage.GetComponent<Image>().sprite = offsetimage[2];
-                break;
-            case 0.4f:
-                OffSetImage.GetComponent<Image>().sprite = offsetimage[3];
-                break;
-        }
-    }
 
     public void ResultSet()
     {
-        if(lane.GameEND == true)
-        {
-            beforeresult.SetActive(true);
-            Isbefore = true;
-            if(Isbefore == true)
-            {
-                StartCoroutine(beforeReSult());
-            }
-        }
+        //if(lane.GameEND == true)
+        //{
+        //    beforeresult.SetActive(true);
+        //    Isbefore = true;
+        //    if(Isbefore == true)
+        //    {
+        //        StartCoroutine(beforeReSult());
+        //    }
+        //}
     }
 
     IEnumerator beforeReSult()
