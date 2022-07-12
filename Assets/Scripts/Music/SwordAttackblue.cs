@@ -6,13 +6,13 @@ public class SwordAttackblue:MonoBehaviour
 {  
     void OnTriggerEnter(Collider col)
     {
-        if (col.tag == "BlueEnemy")
+        if (HItBox.inHit == true)
         {
-            if (HItBox.inHit == true)
-            {
+            if (col.tag == "BlueEnemy")
+            { 
                 ScoreManager.Instance.Hit();
-                Destroy(col.gameObject);
                 MechMove.pigock = true;
+               // Destroy(col.gameObject);
             }
         }
     }

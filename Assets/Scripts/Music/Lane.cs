@@ -7,8 +7,8 @@ using UnityEngine;
 public class Lane : MonoBehaviour
 {
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
-    public GameObject NotePrefap;
     public GameObject note;
+    public static Transform lanetransform;
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
     GameObject Player;
@@ -18,10 +18,9 @@ public class Lane : MonoBehaviour
 
     void Start()
     {
-        note = NotePrefap;
         Player = MusicManager.Instance.Player;
         gameObject.transform.LookAt(Player.transform.position);
-        //gameObject.transform.Rotate(new Vector3(transform.position.x, 180, transform.position.z));
+        lanetransform = transform;
     }
 
     public void SetTimeStamps(Melanchall.DryWetMidi.Interaction.Note[] array)
@@ -42,7 +41,7 @@ public class Lane : MonoBehaviour
         {
             if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {
-                note = Instantiate(NotePrefap, gameObject.transform);           
+                note = Instantiate(note, transform);
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
                 SpawnIndex++;
@@ -55,43 +54,40 @@ public class Lane : MonoBehaviour
             double timeStamp = timeStamps[InputIndex];
             double[] marginOfError = MusicManager.Instance.marginOfError;
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
-            if (HItBox.inHit == true)
+            if (HItBox.inHit == true && MechMove.pigock == true)
             {
-                if (MechMove.pigock == true)
+                if (0 < etp && etp < marginOfError[0])
                 {
-                    if (0 < etp && etp < marginOfError[0])
-                    {
-                        ScoreManager.Instance.Perpect();
-                        print($"Hit on {InputIndex} Perpect");
-                        InputIndex++;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                        Destroy(notes[InputIndex].gameObject);
-                    }
-                    else if (marginOfError[0] < etp && etp < marginOfError[1])
-                    {
-                        ScoreManager.Instance.Great();
-                        print($"Hit on {InputIndex} Great");
-                        InputIndex++;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                        Destroy(notes[InputIndex].gameObject);
-                    }
-                    else if (marginOfError[1] < etp && etp < marginOfError[2])
-                    {
-                        ScoreManager.Instance.Good();
-                        print($"Hit on {InputIndex}  Good");
-                        InputIndex++;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                        Destroy(notes[InputIndex].gameObject);
-                    }
+                    ScoreManager.Instance.Perpect();
+                    Debug.Log("Hit on" + InputIndex + "Perpect");
+                    InputIndex++;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
+                    Destroy(notes[InputIndex].gameObject);
+                }
+                else if (marginOfError[0] < etp && etp < marginOfError[1])
+                {
+                    ScoreManager.Instance.Great();
+                    Debug.Log("Hit on" + InputIndex + "Great");
+                    InputIndex++;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
+                    Destroy(notes[InputIndex].gameObject);
+                }
+                else if (marginOfError[1] < etp && etp < marginOfError[2])
+                {
+                    ScoreManager.Instance.Good();
+                    Debug.Log("Hit on" + InputIndex + "Good");
+                    InputIndex++;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
+                    Destroy(notes[InputIndex].gameObject);
                 }
 
                 if (marginOfError[2] < etp || Player.transform.position == note.transform.position)
                 {
                     ScoreManager.Instance.Miss();
-                    print($"Missed on {InputIndex} note");
+                    Debug.Log("Missed on" + InputIndex + "note");
                     InputIndex++;
                     HItBox.inHit = false;
                     MechMove.pigock = false;

@@ -29,7 +29,7 @@ public class MechMove : MonoBehaviour
 
     void Update()
     {
-        transform.LookAt(player.transform);
+       // transform.LookAt(player.transform);
         switch (state)
         {
             case State.Melee:

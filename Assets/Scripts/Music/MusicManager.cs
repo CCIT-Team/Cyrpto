@@ -48,15 +48,7 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         NoteTapZ = Player.transform.position.z;
-        time += Time.deltaTime;
         ComboText.text = "" + ScoreManager.Instance.comboScore;
-        PanjungText.text = "" + ScoreManager.Instance.scorestring;
-        clock.text = "" + time;
-        audiotime = audioSource.timeSamples;
-        fre = audioSource.clip.frequency;
-        audiotimetext.text = "" + audiotime;
-        fretext.text = "" + fre;
-        Geta.text = "" + GetAudioSourceTime();
     }
 
     void ReadFromFile()
