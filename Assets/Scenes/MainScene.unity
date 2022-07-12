@@ -547,6 +547,7 @@ GameObject:
   - component: {fileID: 439575327}
   - component: {fileID: 439575329}
   - component: {fileID: 439575328}
+  - component: {fileID: 439575330}
   m_Layer: 0
   m_Name: chapter
   m_TagString: Untagged
@@ -608,6 +609,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 439575326}
   m_CullTransparentMesh: 1
+--- !u!65 &439575330
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 439575326}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &555321942
 GameObject:
   m_ObjectHideFlags: 0
@@ -1933,6 +1947,7 @@ GameObject:
   - component: {fileID: 1313068328}
   - component: {fileID: 1313068330}
   - component: {fileID: 1313068329}
+  - component: {fileID: 1313068331}
   m_Layer: 0
   m_Name: Grade
   m_TagString: Untagged
@@ -1994,6 +2009,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1313068327}
   m_CullTransparentMesh: 1
+--- !u!65 &1313068331
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1313068327}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1317152712
 GameObject:
   m_ObjectHideFlags: 0
@@ -2005,6 +2033,7 @@ GameObject:
   - component: {fileID: 1317152713}
   - component: {fileID: 1317152715}
   - component: {fileID: 1317152714}
+  - component: {fileID: 1317152716}
   m_Layer: 0
   m_Name: chapter
   m_TagString: Untagged
@@ -2066,6 +2095,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1317152712}
   m_CullTransparentMesh: 1
+--- !u!65 &1317152716
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1317152712}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1411764782
 GameObject:
   m_ObjectHideFlags: 0
@@ -2486,6 +2528,7 @@ GameObject:
   - component: {fileID: 2046536568}
   - component: {fileID: 2046536570}
   - component: {fileID: 2046536569}
+  - component: {fileID: 2046536571}
   m_Layer: 0
   m_Name: Grade
   m_TagString: Untagged
@@ -2547,6 +2590,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2046536567}
   m_CullTransparentMesh: 1
+--- !u!65 &2046536571
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2046536567}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &954388017154602873
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,6 +3633,7 @@ GameObject:
   - component: {fileID: 8524272292485094189}
   - component: {fileID: 8524272292485094179}
   - component: {fileID: 8524272292485094178}
+  - component: {fileID: 8524272292485094190}
   m_Layer: 0
   m_Name: Grade
   m_TagString: Untagged
@@ -3603,6 +3660,19 @@ RectTransform:
   m_AnchoredPosition: {x: 0.734, y: 0.005}
   m_SizeDelta: {x: 450, y: 450}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &8524272292485094190
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524272292485094188}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &8524272292597180120
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4008,6 +4078,7 @@ GameObject:
   - component: {fileID: 8524272293691152413}
   - component: {fileID: 8524272293691152403}
   - component: {fileID: 8524272293691152402}
+  - component: {fileID: 8524272293691152414}
   m_Layer: 0
   m_Name: chapter
   m_TagString: Untagged
@@ -4034,6 +4105,19 @@ RectTransform:
   m_AnchoredPosition: {x: -0.7888, y: 0.048}
   m_SizeDelta: {x: 98.119, y: 102.4133}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!65 &8524272293691152414
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8524272293691152412}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &8524272293803759281
 GameObject:
   m_ObjectHideFlags: 0

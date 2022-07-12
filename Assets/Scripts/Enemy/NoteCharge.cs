@@ -24,42 +24,40 @@ public class NoteCharge : MonoBehaviour
         switch (name)
         {
             case "Red":
-                if(Vector3.Distance(playerPos.position,mechPos.position)>28)
+                if(Vector3.Distance(playerPos.position,mechPos.position)>26)
                     img.sprite = redArrow[0];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 23)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 20)
                     img.sprite = redArrow[1];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 18)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 14)
                     img.sprite = redArrow[2];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 13)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 8)
                     img.sprite = redArrow[3];
                 else
                     img.sprite = redArrow[4];
-
                 break;
             case "Blue":
-                if (Vector3.Distance(playerPos.position, mechPos.position) > 28)
+                if (Vector3.Distance(playerPos.position, mechPos.position) > 26)
                     img.sprite = blueArrow[0];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 23)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 20)
                     img.sprite = blueArrow[1];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 18)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 14)
                     img.sprite = blueArrow[2];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 13)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 8)
                     img.sprite = blueArrow[3];
                 else
                     img.sprite = blueArrow[4];
                 break;
             case "AimPoint":
-                if (Vector3.Distance(playerPos.position, mechPos.position) > 28)
+                if (Vector3.Distance(playerPos.position, mechPos.position) > 32)
                     img.sprite = AimingPoint[0];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 23)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 26)
                     img.sprite = AimingPoint[1];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 18)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 20)
                     img.sprite = AimingPoint[2];
-                else if (Vector3.Distance(playerPos.position, mechPos.position) > 13)
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 14)
                     img.sprite = AimingPoint[3];
                 else
                     img.sprite = AimingPoint[4];
-
                 break;
         }
         //Debug.Log(Vector3.Distance(playerPos.position, mechPos.position));
