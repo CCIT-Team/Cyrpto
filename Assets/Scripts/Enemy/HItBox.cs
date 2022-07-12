@@ -9,7 +9,6 @@ public class HItBox : MonoBehaviour
     int Breakmon = 0;
     public ParticleSystem[] Dead;
     public static bool inHit = false;
-    public bool hits = inHit;
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
@@ -66,6 +65,6 @@ public class HItBox : MonoBehaviour
             }
             Destroy(this.gameObject, 0.1f);
 
-        }
+        }    
     }
 }

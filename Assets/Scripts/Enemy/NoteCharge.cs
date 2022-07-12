@@ -7,6 +7,7 @@ public class NoteCharge : MonoBehaviour
 {
     public Sprite[] blueArrow;
     public Sprite[] redArrow;
+    public Sprite[] AimingPoint;
     Image img;
     Transform playerPos, mechPos;
     // Start is called before the first frame update
@@ -46,6 +47,19 @@ public class NoteCharge : MonoBehaviour
                     img.sprite = blueArrow[3];
                 else
                     img.sprite = blueArrow[4];
+                break;
+            case "AimPoint":
+                if (Vector3.Distance(playerPos.position, mechPos.position) > 28)
+                    img.sprite = AimingPoint[0];
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 23)
+                    img.sprite = AimingPoint[1];
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 18)
+                    img.sprite = AimingPoint[2];
+                else if (Vector3.Distance(playerPos.position, mechPos.position) > 13)
+                    img.sprite = AimingPoint[3];
+                else
+                    img.sprite = AimingPoint[4];
+
                 break;
         }
         //Debug.Log(Vector3.Distance(playerPos.position, mechPos.position));
