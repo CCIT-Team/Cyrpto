@@ -50,10 +50,11 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
         audioSource.PlayOneShot(fireSound);
         if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000))
         {
-            if(hit.collider.tag == "Enemy_closs")
+            if(hit.collider.tag == "RedEnemy"|| hit.collider.tag == "BlueEnemy")
             {
                 Debug.Log(hit.collider.name);
-                Destroy(hit.collider.gameObject, 0.1f);
+                if (hit.collider.GetComponent<MechMove>().state == MechMove.State.Shoot)
+                    hit.collider.GetComponent<HItBox>().Monbreak();
             }
             else if(hit.collider.name == "Resume")
             {
