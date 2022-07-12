@@ -17,6 +17,7 @@ TagManager:
   - bullet
   - RedEnemy
   - BlueEnemy
+  - farEnemy
   layers:
   - Default
   - TransparentFX

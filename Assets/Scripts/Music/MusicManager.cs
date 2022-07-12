@@ -15,6 +15,7 @@ public class MusicManager : MonoBehaviour
     public float SongDelayInSec;
     public int InputDelayInMilSec;
     public double[] marginOfError;
+    public double[] farmarginOfError;
     public string FileLocation;
     public float NoteTime;
     public float NoteSpawnZ;

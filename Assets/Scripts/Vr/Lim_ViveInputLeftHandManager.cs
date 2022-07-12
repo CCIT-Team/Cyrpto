@@ -18,6 +18,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public ParticleSystem muzzleFlash;
     public AudioClip fireSound;
     public AudioSource audioSource;
+    public static bool isgunhit = false;
     //public bool Ispause;
 
 
@@ -50,11 +51,13 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
         audioSource.PlayOneShot(fireSound);
         if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000))
         {
-            if(hit.collider.tag == "RedEnemy"|| hit.collider.tag == "BlueEnemy")
+            if(hit.collider.tag == "farEnemy")
             {
+                isgunhit = true;
                 Debug.Log(hit.collider.name);
                 if (hit.collider.GetComponent<MechMove>().state == MechMove.State.Shoot)
                     hit.collider.GetComponent<HItBox>().Monbreak();
+               
             }
             else if(hit.collider.name == "Resume")
             {

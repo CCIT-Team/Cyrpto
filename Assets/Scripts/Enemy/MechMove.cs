@@ -93,6 +93,7 @@ public class MechMove : MonoBehaviour
 
     void Shoot(pos p)       //¿ø°Å¸®
     {
+        gameObject.tag = "farEnemy";
         animator.SetFloat("Speed", 1);
         float distance = Vector3.Distance(transform.position, player.position);
         if (distance <= ableDistance+6)
