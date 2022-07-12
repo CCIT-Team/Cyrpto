@@ -21,18 +21,22 @@ public class MusicManager : MonoBehaviour
     public float NoteTapZ;
     public Text ComboText;
     public GameObject Player;
-
+    public int noteCount;
     public float NoteDespawnZ {
         get {
             //return NoteTapZ - (NoteSpawnZ - NoteTapZ);
-            return Player.transform.position.z - 10;
+            return Player.transform.position.z - 50;
         }
     }
     public static MidiFile midiFile;
 
-    void Start()
+    void Awake()
     {
-        Instance = this;
+        Instance = this; 
+    }
+    void Start()
+    {       
+        NoteSpawnZ = Lane.lanetransform.position.z;
         ReadFromFile();
     }
 
@@ -51,7 +55,6 @@ public class MusicManager : MonoBehaviour
     void GetDataFromMidi()
     {
         var notes = midiFile.GetNotes();
-
         var array = new Melanchall.DryWetMidi.Interaction.Note[notes.Count];
         notes.CopyTo(array, 0);
 

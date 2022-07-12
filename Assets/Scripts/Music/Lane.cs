@@ -9,17 +9,24 @@ public class Lane : MonoBehaviour
     public Melanchall.DryWetMidi.MusicTheory.NoteName noteRestriction;
     public GameObject note;
     public static Transform lanetransform;
+    [SerializeField]
     List<Note> notes = new List<Note>();
     public List<double> timeStamps = new List<double>();
+    [SerializeField]
     GameObject Player;
     public static string panjung;
+    [SerializeField]
     int SpawnIndex = 0;
+    [SerializeField]
     int InputIndex = 0;
 
     void Start()
     {
         Player = MusicManager.Instance.Player;
-        gameObject.transform.LookAt(Player.transform.position);
+        if (MusicManager.Instance.Player != null)
+        {
+            gameObject.transform.LookAt(Player.transform.position);
+        }   
         lanetransform = transform;
     }
 
@@ -41,7 +48,7 @@ public class Lane : MonoBehaviour
         {
             if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
             {
-                note = Instantiate(note, transform);
+                note = Instantiate(note, gameObject.transform);             
                 notes.Add(note.GetComponent<Note>());
                 note.GetComponent<Note>().assignedTime = (float)timeStamps[SpawnIndex];
                 SpawnIndex++;
