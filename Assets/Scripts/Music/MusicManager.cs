@@ -48,7 +48,7 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         NoteTapZ = Player.transform.position.z;
-        ComboText.text = "" + ScoreManager.Instance.comboScore;
+        ComboText.text = "" + ScoreManager.Instance.combocount;
     }
 
     void ReadFromFile()
