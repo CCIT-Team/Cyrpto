@@ -8,7 +8,8 @@ public class HItBox : MonoBehaviour
     public GameObject[] BreakMon;
     int Breakmon = 0;
     public ParticleSystem[] Dead;
-    public static bool inHit = false;
+    public bool isHit = false;
+    public static bool inHit;
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
@@ -20,7 +21,7 @@ public class HItBox : MonoBehaviour
 
     void Update()
     {
-
+        inHit = isHit;
     }
 
     private void OnEnable()

@@ -49,7 +49,7 @@ public class Lane : MonoBehaviour
         isbluecut = SwordAttackblue.isbluecut;
         Debug.Log(isredcut);
         Debug.Log(isbluecut);
-        Debug.Log(isgunhit);
+      //  Debug.Log(isgunhit);
   
         if (SpawnIndex < timeStamps.Count)
         {
