@@ -20,14 +20,6 @@ public class MusicManager : MonoBehaviour
     public float NoteSpawnZ;
     public float NoteTapZ;
     public Text ComboText;
-    public Text PanjungText;
-    public Text clock;
-    int audiotime;
-    public Text audiotimetext;
-    int fre;
-    public Text fretext;
-    public Text Geta;
-    float time = 0;
     public GameObject Player;
 
     public float NoteDespawnZ {
