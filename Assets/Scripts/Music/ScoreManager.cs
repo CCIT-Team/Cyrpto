@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class ScoreManager : MonoBehaviour
 {
     #region
@@ -17,12 +18,20 @@ public class ScoreManager : MonoBehaviour
     public int scoreNum = 4; // 0 = per 1 = great 2 = good 이걸로 각 판정에 값을 가져와 if문으로 구현하면 될듯?
     public string scorestring = "";
     public int grade = 0;// 0 = s 1 = a 2 = b ......
+    public float finalScorehave;
+    public int finalsocreup; //반올림을 위해서 사용하는 결과값
+    public float finalSocorefloat;
+
+    public int x;//------------------------------------현재는 모르는 값(모든 노트의 수)
 
     [Header("TEXT 판정")] //결과 부분과 연동
     public Text Perpecttext;
     public Text GreatText;
     public Text GoodText;
     public Text MissText;
+    public Text Resultscore;
+    public Image passimage;
+    public Text passText;
 
     [Header("각 Count")]
     public int peroectCount;
@@ -113,8 +122,30 @@ public class ScoreManager : MonoBehaviour
         if (combocount >= 80 && combocount < 159) { finalScore *= 1.3f; };
         if (combocount >= 160) { finalScore *= 1.4f; };
     }
+
+    public void percentScore()
+    {
+        finalScorehave = finalScore;
+        int allnoteCount = 0;
+        allnoteCount = peroectCount + greatCount + missCount + goodCount; //모든 노드 개수
+
+        finalScorehave = (finalScorehave / x) * 100; //------퍼센트
+
+        finalSocorefloat = (finalScorehave / x) * 0.01f;
+
+        passimage.fillAmount = finalSocorefloat;
+
+        finalsocreup = Mathf.RoundToInt(finalScorehave) / allnoteCount;
+
+
+        Resultscore.text = finalsocreup.ToString(); // 결과 퍼센트
+        passText.text = finalsocreup.ToString();
+
+
+    }
     void Update()
     {
-
+        FinalResult();
+        percentScore();
     }
 }
