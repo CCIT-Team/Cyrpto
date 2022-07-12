@@ -16,9 +16,9 @@ public class Lane : MonoBehaviour
     public static string panjung;
     int SpawnIndex = 0;
     int InputIndex = 0;
-    bool isgunhit = Lim_ViveInputLeftHandManager.isgunhit;
-    bool isredcut = SwordAttackred.isredcut;
-    bool isbluecut = SwordAttackblue.isbluecut;
+    bool isgunhit;
+    bool isredcut;
+    bool isbluecut;
 
     void Start()
     {
@@ -44,6 +44,13 @@ public class Lane : MonoBehaviour
 
     void Update()
     {
+        isgunhit = Lim_ViveInputLeftHandManager.isgunhit;
+        isredcut = SwordAttackred.isredcut;
+        isbluecut = SwordAttackblue.isbluecut;
+        Debug.Log(isredcut);
+        Debug.Log(isbluecut);
+        Debug.Log(isgunhit);
+  
         if (SpawnIndex < timeStamps.Count)
         {
             if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
