@@ -13,7 +13,7 @@ public class MapCreate : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        partCount = map_Part.Length -1;
+        partCount = map_Part.Length;
     }
 
     // Update is called once per frame
@@ -29,24 +29,24 @@ public class MapCreate : MonoBehaviour
                 break;
             case 1:
                 ActiveMaps.Add(Instantiate(map_Part[ran]));
-                ActiveMaps[1].transform.position = ActiveMaps[0].transform.position + new Vector3(0, 0, 99);
+                ActiveMaps[1].transform.position = ActiveMaps[0].transform.position + new Vector3(0, 0, 125);
                 activeCount++;
                 break;
             case 2:
                 ActiveMaps.Add(Instantiate(map_Part[ran]));
-                ActiveMaps[2].transform.position = ActiveMaps[1].transform.position + new Vector3(0, 0, 99);
+                ActiveMaps[2].transform.position = ActiveMaps[1].transform.position + new Vector3(0, 0,125);
                 activeCount++;
                 break;
             case 3:
                 ActiveMaps.Add(Instantiate(map_Part[ran]));
-                ActiveMaps[3].transform.position = ActiveMaps[2].transform.position + new Vector3(0, 0, 99);
+                ActiveMaps[3].transform.position = ActiveMaps[2].transform.position + new Vector3(0, 0, 125);
                 activeCount++;
                 break;
             case 4:
                 break;
         }
 
-        if (ActiveMaps[0].transform.position.z <= -100)
+        if (ActiveMaps[0].transform.position.z <= -126)
         {
             delete = ActiveMaps[0];
             ActiveMaps.Remove(ActiveMaps[0]);

@@ -16,9 +16,6 @@ public class Lane : MonoBehaviour
     public static string panjung;
     int SpawnIndex = 0;
     int InputIndex = 0;
-    bool isgunhit;
-    bool isredcut;
-    bool isbluecut;
 
     void Start()
     {
@@ -44,13 +41,10 @@ public class Lane : MonoBehaviour
 
     void Update()
     {
-        isgunhit = Lim_ViveInputLeftHandManager.isgunhit;
-        isredcut = SwordAttackred.isredcut;
-        isbluecut = SwordAttackblue.isbluecut;
-        Debug.Log(isredcut);
-        Debug.Log(isbluecut);
-      //  Debug.Log(isgunhit);
-  
+        //Debug.Log(SwordAttackred.isredcut);
+        //Debug.Log(SwordAttackblue.isbluecut);
+        //  Debug.Log(isgunhit);
+
         if (SpawnIndex < timeStamps.Count)
         {
             if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
@@ -69,59 +63,59 @@ public class Lane : MonoBehaviour
             double[] marginOfError = MusicManager.Instance.marginOfError;
             double[] farmarginOfError = MusicManager.Instance.farmarginOfError;
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
-            if (note.CompareTag("RedEnemy") || note.CompareTag("BlueEnemy"))
+            //if (note.CompareTag("RedEnemy") || note.CompareTag("BlueEnemy"))
+            // {
+            if (SwordAttackred.isredcut == true || SwordAttackblue.isbluecut == true)
             {
-                if (isredcut == true || isbluecut == true)
+                if (0 < etp && etp < marginOfError[0])
                 {
-                    if (0 < etp && etp < marginOfError[0])
-                    {
-                        ScoreManager.Instance.Perpect();
-                        Debug.Log("Hit on" + InputIndex + "Perpect");
-                        InputIndex++;
-                        Destroy(notes[InputIndex].gameObject);
-                        isredcut = false;
-                        isbluecut = false;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                    }
-                    else if (marginOfError[0] < etp && etp < marginOfError[1])
-                    {
-                        ScoreManager.Instance.Great();
-                        Debug.Log("Hit on" + InputIndex + "Great");
-                        InputIndex++;
-                        Destroy(notes[InputIndex].gameObject);
-                        isredcut = false;
-                        isbluecut = false;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                    }
-                    else if (marginOfError[1] < etp && etp < marginOfError[2])
-                    {
-                        ScoreManager.Instance.Good();
-                        Debug.Log("Hit on" + InputIndex + "Good");
-                        InputIndex++;
-                        Destroy(notes[InputIndex].gameObject);
-                        isredcut = false;
-                        isbluecut = false;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                    }
-
-                    if (marginOfError[2] < etp || Player.transform.position == note.transform.position)
-                    {
-                        ScoreManager.Instance.Miss();
-                        Debug.Log("Missed on" + InputIndex + "note");
-                        InputIndex++;
-                        isredcut = false;
-                        isbluecut = false;
-                        HItBox.inHit = false;
-                        MechMove.pigock = false;
-                    }
+                    ScoreManager.Instance.Perpect();
+                    Debug.Log("Hit on" + InputIndex + "Perpect");
+                    InputIndex++;
+                    Destroy(notes[InputIndex].gameObject);
+                    SwordAttackred.isredcut = false;
+                    SwordAttackblue.isbluecut = false;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
                 }
-            }
-            else
-            {
-                if (isgunhit == true)
+                else if (marginOfError[0] < etp && etp < marginOfError[1])
+                {
+                    ScoreManager.Instance.Great();
+                    Debug.Log("Hit on" + InputIndex + "Great");
+                    InputIndex++;
+                    Destroy(notes[InputIndex].gameObject);
+                    SwordAttackred.isredcut = false;
+                    SwordAttackblue.isbluecut = false;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
+                }
+                else if (marginOfError[1] < etp && etp < marginOfError[2])
+                {
+                    ScoreManager.Instance.Good();
+                    Debug.Log("Hit on" + InputIndex + "Good");
+                    InputIndex++;
+                    Destroy(notes[InputIndex].gameObject);
+                    SwordAttackred.isredcut = false;
+                    SwordAttackblue.isbluecut = false;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
+                }
+
+                if (marginOfError[2] < etp || Player.transform.position == note.transform.position)
+                {
+                    ScoreManager.Instance.Miss();
+                    Debug.Log("Missed on" + InputIndex + "note");
+                    InputIndex++;
+                    SwordAttackred.isredcut = false;
+                    SwordAttackblue.isbluecut = false;
+                    HItBox.inHit = false;
+                    MechMove.pigock = false;
+                }
+                //}
+                //}
+                //else
+                //{
+                if (Lim_ViveInputLeftHandManager.isgunhit == true)
                 {
                     if (0 < etp && etp < farmarginOfError[0])
                     {
@@ -129,7 +123,7 @@ public class Lane : MonoBehaviour
                         Debug.Log("Hit on" + InputIndex + "Perpect");
                         InputIndex++; ;
                         Destroy(notes[InputIndex].gameObject);
-                        isgunhit = false;
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
                     }
                     else if (farmarginOfError[0] < etp && etp < farmarginOfError[1])
                     {
@@ -137,7 +131,7 @@ public class Lane : MonoBehaviour
                         Debug.Log("Hit on" + InputIndex + "Great");
                         InputIndex++;
                         Destroy(notes[InputIndex].gameObject);
-                        isgunhit = false;
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
                     }
                     else if (farmarginOfError[1] < etp && etp < farmarginOfError[2])
                     {
@@ -145,7 +139,7 @@ public class Lane : MonoBehaviour
                         Debug.Log("Hit on" + InputIndex + "Good");
                         InputIndex++;
                         Destroy(notes[InputIndex].gameObject);
-                        isgunhit = false;
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
                     }
 
                     if (farmarginOfError[2] < etp || Player.transform.position == note.transform.position)
@@ -153,9 +147,11 @@ public class Lane : MonoBehaviour
                         ScoreManager.Instance.Miss();
                         Debug.Log("Missed on" + InputIndex + "note");
                         InputIndex++;
-                        isgunhit = false;
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
                     }
                 }
+                //}
+                //}
             }
         }
     }
