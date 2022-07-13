@@ -10,7 +10,7 @@ public class SwordAttackred : MonoBehaviour
 
         if (HItBox.inHit == true)
         {
-            if (col.tag == "RedEnemy")
+            if (col.CompareTag("RedEnemy"))
             {
                 MechMove.pigock = true;
                 if(HItBox.inHit == true && MechMove.pigock == true)

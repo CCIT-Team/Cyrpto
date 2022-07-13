@@ -8,19 +8,25 @@ public class HItBox : MonoBehaviour
     public GameObject[] BreakMon;
     int Breakmon = 0;
     public ParticleSystem[] Dead;
-    public static bool inHit = false;
+    public bool isHit = false;
+    public static bool inHit;
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
-    public bool closemondead = false;
+    GameObject breakParts;
+
+    public bool breaktest = false;
 
     void Start()
     {
+
     }
 
     void Update()
     {
-
+        inHit = isHit;
+        if (breaktest)
+            Monbreak();
     }
 
     private void OnEnable()
@@ -51,7 +57,6 @@ public class HItBox : MonoBehaviour
         if (inHit && ((tag == "RedEnemy" && other.tag == "Red_Sword")|| (tag == "BlueEnemy" && other.tag == "Blue_Sword")))
         {
             Monbreak();
-            closemondead = true;
         }    
     }
 
@@ -61,16 +66,20 @@ public class HItBox : MonoBehaviour
         switch (Breakmon)
         {
             case 0:
-                Instantiate(BreakMon[0]);
+                breakParts = Instantiate(BreakMon[0]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
             case 1:
-                Instantiate(BreakMon[1]);
+                breakParts = Instantiate(BreakMon[1]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
             case 2:
-                Instantiate(BreakMon[2]);
+                breakParts = Instantiate(BreakMon[2]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
             case 3:
-                Instantiate(BreakMon[3]);
+                breakParts = Instantiate(BreakMon[3]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
         }
         Destroy(this.gameObject, 0.1f);

@@ -9,7 +9,7 @@ public class SwordAttackblue:MonoBehaviour
     {
         if (HItBox.inHit == true)
         {
-            if (col.tag == "BlueEnemy")
+            if (col.CompareTag("BlueEnemy"))
             {
                 MechMove.pigock = true;
                 if (HItBox.inHit == true && MechMove.pigock == true)
