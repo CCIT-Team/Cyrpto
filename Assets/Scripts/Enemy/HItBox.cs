@@ -13,6 +13,9 @@ public class HItBox : MonoBehaviour
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
+    GameObject breakParts;
+
+    public bool breaktest = false;
 
     void Start()
     {
@@ -22,6 +25,8 @@ public class HItBox : MonoBehaviour
     void Update()
     {
         inHit = isHit;
+        if (breaktest)
+            Monbreak();
     }
 
     private void OnEnable()
@@ -61,16 +66,20 @@ public class HItBox : MonoBehaviour
         switch (Breakmon)
         {
             case 0:
-                Instantiate(BreakMon[0]);
+                breakParts = Instantiate(BreakMon[0]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
             case 1:
-                Instantiate(BreakMon[1]);
+                breakParts = Instantiate(BreakMon[1]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
             case 2:
-                Instantiate(BreakMon[2]);
+                breakParts = Instantiate(BreakMon[2]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
             case 3:
-                Instantiate(BreakMon[3]);
+                breakParts = Instantiate(BreakMon[3]);
+                breakParts.transform.position = this.gameObject.transform.position;
                 break;
         }
         Destroy(this.gameObject, 0.1f);
