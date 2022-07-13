@@ -12,12 +12,4 @@ public class HitBox_Sub : MonoBehaviour
             Hit.GetComponent<HItBox>().isHit = true;
         }
     }
-
-    //private void OnTriggerExit(Collider other)
-    //{
-    //    if (other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
-    //    {
-    //            HItBox.inHit = true;
-    //    }
-    //}
 }

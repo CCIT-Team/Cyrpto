@@ -7,17 +7,15 @@ public class SwordAttackblue:MonoBehaviour
     public static bool isbluecut = false;
     void OnTriggerEnter(Collider col)
     {
-        if (HItBox.inHit == true)
+        if (HItBox.inHit == true && col.CompareTag("BlueEnemy"))
         {
-            if (col.CompareTag("BlueEnemy"))
+            MechMove.pigock = true;
+            if (MechMove.pigock == true)
             {
-                MechMove.pigock = true;
-                if (HItBox.inHit == true && MechMove.pigock == true)
-                {
-                    isbluecut = true;
-                    ScoreManager.Instance.Hit();
-                    //Destroy(col.gameObject);
-                }
+                isbluecut = true;
+                ScoreManager.Instance.Hit();
+                //Destroy(col.gameObject);
+                Debug.Log(isbluecut);
             }
         }
     }

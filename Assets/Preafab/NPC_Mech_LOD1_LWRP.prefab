@@ -630,7 +630,6 @@ MonoBehaviour:
   state: 0
   line: 0
   arrow: {fileID: 4129785385534163362}
-  ableDistance: 12
 --- !u!114 &7812948708101045832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -667,6 +666,7 @@ MonoBehaviour:
   - {fileID: 8652347292870536397, guid: 49c49b2e7fa68a242908672b0a8e20e2, type: 3}
   - {fileID: 8652347292870536397, guid: 49c49b2e7fa68a242908672b0a8e20e2, type: 3}
   - {fileID: 1302551502524444268, guid: edf4be876cae9c548a519f20a928930c, type: 3}
+  isHit: 0
   hitbox:
   - {fileID: 8737492894494633612}
   - {fileID: 1589380605122776175}
@@ -1809,7 +1809,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3005567802140691320}
   - component: {fileID: 645989944947126123}
-  - component: {fileID: 3125730363124954219}
+  - component: {fileID: 8030609967638485959}
   m_Layer: 0
   m_Name: HitL
   m_TagString: Untagged
@@ -1844,7 +1844,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.1982032, z: 1.3285526}
   m_Center: {x: 0, y: -0.030898228, z: 0.1642757}
---- !u!114 &3125730363124954219
+--- !u!114 &8030609967638485959
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1973,7 +1973,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341162016565917083}
   - component: {fileID: 1231993926929221690}
-  - component: {fileID: 1746999619299954900}
+  - component: {fileID: 9119531918408469052}
   m_Layer: 0
   m_Name: HitU
   m_TagString: Untagged
@@ -2008,7 +2008,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.73353237, y: 0.54047674, z: 0.99320257}
   m_Center: {x: 0.000000034769382, y: 0.020238934, z: -0.0033988596}
---- !u!114 &1746999619299954900
+--- !u!114 &9119531918408469052
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2131,7 +2131,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6694161459306184850}
   - component: {fileID: 4342398794826492920}
-  - component: {fileID: 665893068260405586}
+  - component: {fileID: 2575467992377688522}
   m_Layer: 0
   m_Name: HitR
   m_TagString: Untagged
@@ -2166,7 +2166,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 1.195113, z: 1.328554}
   m_Center: {x: 0, y: -0.03244294, z: 0.16427498}
---- !u!114 &665893068260405586
+--- !u!114 &2575467992377688522
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

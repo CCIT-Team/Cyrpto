@@ -54,10 +54,22 @@ public class HItBox : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (inHit && ((tag == "RedEnemy" && other.tag == "Red_Sword")|| (tag == "BlueEnemy" && other.tag == "Blue_Sword")))
+        if (inHit && ((tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword")))
         {
             Monbreak();
-        }    
+        }
+        if (hitbox[0].CompareTag("Blue_Sword") || hitbox[0].CompareTag("Red_Sword"))
+        {
+            isHit = true;
+        }
+        if (hitbox[1].CompareTag("Blue_Sword") || hitbox[1].CompareTag("Red_Sword"))
+        {
+            isHit = true;
+        }
+        if (hitbox[2].CompareTag("Blue_Sword") || hitbox[2].CompareTag("Red_Sword"))
+        {
+            isHit = true;
+        }
     }
 
     public void Monbreak()

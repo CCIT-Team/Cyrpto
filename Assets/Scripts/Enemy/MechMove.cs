@@ -29,6 +29,7 @@ public class MechMove : MonoBehaviour
 
     void Update()
     {
+        Debug.Log(pigock);
        // transform.LookAt(player.transform);
         switch (state)
         {
