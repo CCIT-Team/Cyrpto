@@ -16,8 +16,8 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public GameObject Lpause;
 
     public ParticleSystem muzzleFlash;
-    public AudioClip fireSound;
-    public AudioSource audioSource;
+    public AudioClip fireSound, farSound;
+    public AudioSource audioSource, farSource;
     public static bool isgunhit = false;
     //public bool Ispause;
 
@@ -57,6 +57,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
                 Debug.Log(hit.collider.name);
                 if (hit.collider.GetComponent<MechMove>().state == MechMove.State.Shoot)
                     hit.collider.GetComponent<HItBox>().Monbreak();
+                farSource.PlayOneShot(farSound);
                
             }
             else if(hit.collider.name == "Resume")

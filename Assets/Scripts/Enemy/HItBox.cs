@@ -12,10 +12,10 @@ public class HItBox : MonoBehaviour
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
+    public bool closemondead = false;
 
     void Start()
     {
-
     }
 
     void Update()
@@ -51,6 +51,7 @@ public class HItBox : MonoBehaviour
         if (inHit && ((tag == "RedEnemy" && other.tag == "Red_Sword")|| (tag == "BlueEnemy" && other.tag == "Blue_Sword")))
         {
             Monbreak();
+            closemondead = true;
         }    
     }
 
