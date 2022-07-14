@@ -5,6 +5,7 @@ using UnityEngine;
 public class MapCreate : MonoBehaviour
 {
     public GameObject[] map_Part;
+    public GameObject backGroundMap;
     int partCount;
     List<GameObject> ActiveMaps = new List<GameObject>();
     GameObject delete;
@@ -14,6 +15,7 @@ public class MapCreate : MonoBehaviour
     void Start()
     {
         partCount = map_Part.Length;
+        Instantiate(backGroundMap).transform.position = new Vector3(0, 0, 200);
     }
 
     // Update is called once per frame
