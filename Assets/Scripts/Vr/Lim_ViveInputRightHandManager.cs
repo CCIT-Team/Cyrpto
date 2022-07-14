@@ -4,6 +4,7 @@ using UnityEngine;
 using Valve.VR;
 public class Lim_ViveInputRightHandManager : MonoBehaviour
 {
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.5f);
     public SteamVR_Action_Boolean rtrigger;
     public SteamVR_Action_Boolean menu;
     public SteamVR_Action_Vibration haptic;
@@ -24,7 +25,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
         Bluesword = SwordObject.transform.GetChild(1).gameObject;
         Redsword.SetActive(true);
         Bluesword.SetActive(false);
-
     }
 
     // Update is called once per frame
@@ -49,7 +49,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
             Redsword.SetActive(true);
             Bluesword.SetActive(false);
         }
-        
     }
 }
     

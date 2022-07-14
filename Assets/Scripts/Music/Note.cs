@@ -29,6 +29,7 @@ public class Note : MonoBehaviour
         else
         {
             transform.localPosition = Vector3.Lerp(Vector3.back * MusicManager.Instance.NoteSpawnZ, Vector3.back * MusicManager.Instance.NoteDespawnZ, t);
+            //transform.position = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnZ, Vector3.forward * MusicManager.Instance.NoteDespawnZ, t);           
         }
     }
 }

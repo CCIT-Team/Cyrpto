@@ -11,11 +11,12 @@ public class MechMove : MonoBehaviour
     Animator animator;
     public GameObject arrow;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
+    public bool isdie = false;
     public static bool pigock = false;
 
     //근접용
     Transform player;
-    public float ableDistance;
+    float ableDistance = 7;
 
     //원거리용
     public enum pos { left, right };
@@ -29,6 +30,7 @@ public class MechMove : MonoBehaviour
 
     void Update()
     {
+   
        // transform.LookAt(player.transform);
         switch (state)
         {
@@ -38,6 +40,10 @@ public class MechMove : MonoBehaviour
             case State.Shoot:
                 Shoot(p);
                 break;
+        }
+        if(isdie == true)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -84,7 +90,7 @@ public class MechMove : MonoBehaviour
         animator.SetFloat("Speed", 2);   
         //float distance = Vector3.SqrMagnitude(transform.position - player.position);
         float distance = Vector3.Distance(transform.position, player.position);
-        if (distance < ableDistance)
+        if (distance <= ableDistance)
         {
             animator.SetInteger("MeleeType", Random.Range(0, 2));
             animator.SetTrigger("MeleeAttack");
@@ -93,9 +99,10 @@ public class MechMove : MonoBehaviour
 
     void Shoot(pos p)       //원거리
     {
+        gameObject.tag = "farEnemy";
         animator.SetFloat("Speed", 1);
         float distance = Vector3.Distance(transform.position, player.position);
-        if (distance < ableDistance+10)
+        if (distance <= ableDistance+6)
         {
             animator.SetTrigger("Shoot");
         }

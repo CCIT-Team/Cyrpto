@@ -16,10 +16,10 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public GameObject Lpause;
 
     public ParticleSystem muzzleFlash;
-    public AudioClip fireSound;
-    public AudioSource audioSource;
+    public AudioClip fireSound, farSound;
+    public AudioSource audioSource, farSource;
+    public static bool isgunhit = false;
     //public bool Ispause;
-
 
     void Start()
     {
@@ -38,7 +38,6 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
             //Debug.Log("트리거 눌림");
             Vector3 forward = transform.TransformDirection(0,0,1) * 10;
             Shoot();
-
         }
 
     }
@@ -50,10 +49,14 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
         audioSource.PlayOneShot(fireSound);
         if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000))
         {
-            if(hit.collider.tag == "Enemy_closs")
+            if(hit.collider.tag == "farEnemy")
             {
+                isgunhit = true;
                 Debug.Log(hit.collider.name);
-                Destroy(hit.collider.gameObject, 0.1f);
+                if (hit.collider.GetComponent<MechMove>().state == MechMove.State.Shoot)
+                    hit.collider.GetComponent<HItBox>().Monbreak();
+                farSource.PlayOneShot(farSound);
+               
             }
             else if(hit.collider.name == "Resume")
             {

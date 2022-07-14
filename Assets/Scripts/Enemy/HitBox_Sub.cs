@@ -7,9 +7,9 @@ public class HitBox_Sub : MonoBehaviour
     public HItBox Hit;
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
+        if (other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
         {
-            HItBox.inHit = true;
+            Hit.GetComponent<HItBox>().isHit = true;
         }
     }
 }
