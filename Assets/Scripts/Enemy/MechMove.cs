@@ -11,6 +11,7 @@ public class MechMove : MonoBehaviour
     Animator animator;
     public GameObject arrow;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
+    public bool isdie = false;
     public static bool pigock = false;
 
     //±ÙÁ¢¿ë
@@ -29,7 +30,7 @@ public class MechMove : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(pigock);
+   
        // transform.LookAt(player.transform);
         switch (state)
         {
@@ -39,6 +40,10 @@ public class MechMove : MonoBehaviour
             case State.Shoot:
                 Shoot(p);
                 break;
+        }
+        if(isdie == true)
+        {
+            Destroy(gameObject);
         }
     }
 

@@ -129,9 +129,9 @@ public class ScoreManager : MonoBehaviour
         int allnoteCount = 0;
         allnoteCount = peroectCount + greatCount + missCount + goodCount; //모든 노드 개수
 
-        finalScorehave = (finalScorehave / x) * 100; //------퍼센트
+        finalScorehave = (finalScorehave / 101) * 100; //------퍼센트
 
-        finalSocorefloat = (finalScorehave / x) * 0.01f;
+        finalSocorefloat = (finalScorehave / 101) * 0.01f;
 
         passimage.fillAmount = finalSocorefloat;
 

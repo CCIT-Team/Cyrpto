@@ -25,37 +25,37 @@ public class NoteCharge : MonoBehaviour
         switch (name)
         {
             case "Red":
-                if(dis > 27)
+                if(dis > 22)
                     img.sprite = redArrow[0];
-                else if (dis > 21)
+                else if (dis > 18)
                     img.sprite = redArrow[1];
-                else if (dis > 15)
+                else if (dis > 12)
                     img.sprite = redArrow[2];
-                else if (dis > 9)
+                else if (dis > 8)
                     img.sprite = redArrow[3];
                 else
                     img.sprite = redArrow[4];
                 break;
             case "Blue":
-                if (dis > 27)
+                if (dis > 22)
                     img.sprite = blueArrow[0];
-                else if (dis > 21)
+                else if (dis > 18)
                     img.sprite = blueArrow[1];
-                else if (dis > 15)
+                else if (dis > 12)
                     img.sprite = blueArrow[2];
-                else if (dis > 9)
+                else if (dis > 8)
                     img.sprite = blueArrow[3];
                 else
                     img.sprite = blueArrow[4];
                 break;
             case "AimPoint":
-                if (dis > 33)
+                if (dis > 30)
                     img.sprite = AimingPoint[0];
                 else if (dis > 27)
                     img.sprite = AimingPoint[1];
-                else if (dis > 21)
+                else if (dis > 19)
                     img.sprite = AimingPoint[2];
-                else if (dis > 15)
+                else if (dis > 14)
                     img.sprite = AimingPoint[3];
                 else
                     img.sprite = AimingPoint[4];

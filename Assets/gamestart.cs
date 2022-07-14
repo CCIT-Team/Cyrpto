@@ -11,7 +11,7 @@ public class gamestart : MonoBehaviour
         if (other.tag == "Blue_Sword")
         {
             //StartCoroutine(active());
-            SceneManager.LoadScene("musictest");
+            SceneManager.LoadScene("chapter1");
         }
     }
 

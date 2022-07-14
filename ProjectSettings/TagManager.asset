@@ -18,6 +18,7 @@ TagManager:
   - RedEnemy
   - BlueEnemy
   - farEnemy
+  - panj
   layers:
   - Default
   - TransparentFX

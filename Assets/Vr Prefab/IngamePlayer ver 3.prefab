@@ -5499,7 +5499,7 @@ Transform:
   m_GameObject: {fileID: 426975855742292762}
   m_LocalRotation: {x: 0.06162845, y: -0.70441604, z: -0.06162845, w: 0.70441604}
   m_LocalPosition: {x: 0, y: -0.098, z: 0.369}
-  m_LocalScale: {x: 0.20000002, y: 0.2, z: 0.20000002}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 8513676488133313081}
   - {fileID: 5472980348252945006}
@@ -5539,7 +5539,7 @@ GameObject:
   - component: {fileID: 5472980348252945006}
   - component: {fileID: 7891456938266039556}
   - component: {fileID: 8804267232141604715}
-  - component: {fileID: 297137814731549521}
+  - component: {fileID: 8130923405334396671}
   m_Layer: 0
   m_Name: "\uCE7C\uB0A01-1"
   m_TagString: Blue_Sword
@@ -5610,20 +5610,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &297137814731549521
-MeshCollider:
+--- !u!65 &8130923405334396671
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 492879758782931612}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3660628557399388394, guid: e3c9fa2f93cc41141be65e33d59f5dec, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.03684404, y: 0.00051434047, z: 0.0031653752}
+  m_Center: {x: 0.006528933, y: 0.00000065321217, z: 0.0008778431}
 --- !u!1 &526532098106175492
 GameObject:
   m_ObjectHideFlags: 0
@@ -64375,7 +64374,7 @@ Transform:
   m_GameObject: {fileID: 7312768991430848464}
   m_LocalRotation: {x: 0.06162845, y: -0.70441604, z: -0.06162845, w: 0.70441604}
   m_LocalPosition: {x: 0, y: -0.098, z: 0.369}
-  m_LocalScale: {x: 0.20000002, y: 0.2, z: 0.20000002}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 1816493927836551429}
   - {fileID: 5227473332568452729}
@@ -64464,7 +64463,7 @@ GameObject:
   - component: {fileID: 5227473332568452729}
   - component: {fileID: 7558323464186268159}
   - component: {fileID: 7685562636236269401}
-  - component: {fileID: 297137814731549520}
+  - component: {fileID: 6939479509369985770}
   m_Layer: 0
   m_Name: "\uCE7C\uB0A01-1"
   m_TagString: Red_Sword
@@ -64535,20 +64534,19 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &297137814731549520
-MeshCollider:
+--- !u!65 &6939479509369985770
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7582590397109391992}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 3660628557399388394, guid: e3c9fa2f93cc41141be65e33d59f5dec, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 0.03684404, y: 0.00051434047, z: 0.0031653752}
+  m_Center: {x: 0.006528933, y: 0.00000065321217, z: 0.0008778431}
 --- !u!1 &7663275261239001314
 GameObject:
   m_ObjectHideFlags: 0
@@ -74834,7 +74832,9 @@ MonoBehaviour:
   Lpause: {fileID: 4071670625478500220}
   muzzleFlash: {fileID: 3982090656190021561}
   fireSound: {fileID: 8300000, guid: 4680f6dac324e477d97a4bb81dc225d4, type: 3}
+  farSound: {fileID: 0}
   audioSource: {fileID: 297137816166764130}
+  farSource: {fileID: 0}
 --- !u!82 &297137816166764130
 AudioSource:
   m_ObjectHideFlags: 0

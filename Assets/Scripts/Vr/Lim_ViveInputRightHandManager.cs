@@ -13,10 +13,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     public GameObject Bluesword;
     public GameObject Rpause;
     public bool rtriggeron;
-    public GameObject mon;
-    public HItBox hItBox;
-    public AudioClip close;
-    public AudioSource closeSource;
 
     private void Awake()
     {
@@ -29,8 +25,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
         Bluesword = SwordObject.transform.GetChild(1).gameObject;
         Redsword.SetActive(true);
         Bluesword.SetActive(false);
-        closeSource.GetComponent<AudioSource>();
-        StartCoroutine(closemon());
     }
 
     // Update is called once per frame
@@ -55,18 +49,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
             Redsword.SetActive(true);
             Bluesword.SetActive(false);
         }
-
-        if(hItBox.closemondead == true)
-        {
-            closeSource.PlayOneShot(close);
-        }
-    }
-
-    IEnumerator closemon()
-    {
-        yield return waitForSeconds;
-        mon = GameObject.Find("NPC_Mech_LOD1_LWRP");
-        hItBox = mon.GetComponent<HItBox>();
     }
 }
     

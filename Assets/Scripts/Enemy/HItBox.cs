@@ -13,6 +13,7 @@ public class HItBox : MonoBehaviour
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
+    BoxCollider box;
     GameObject breakParts;
 
     public bool breaktest = false;
@@ -50,12 +51,20 @@ public class HItBox : MonoBehaviour
                     break;
             }
         }
+        else
+        {
+            box = GetComponent<BoxCollider>();
+            box.center = new Vector3(0,1.1f,box.center.z);
+            box.size = new Vector3(0.9f, 2.2f, box.size.z);
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (inHit && ((tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword")))
+
+        if (isHit && ((gameObject.CompareTag("RedEnemy") && other.CompareTag("Red_Sword")) || (gameObject.CompareTag("BlueEnemy") && other.CompareTag("Blue_Sword"))))
         {
+
             Monbreak();
         }
         if (hitbox[0].CompareTag("Blue_Sword") || hitbox[0].CompareTag("Red_Sword"))
@@ -94,7 +103,7 @@ public class HItBox : MonoBehaviour
                 breakParts.transform.position = this.gameObject.transform.position;
                 break;
         }
-        Destroy(this.gameObject, 0.1f);
+        Destroy(this.gameObject);
     }
 
 }

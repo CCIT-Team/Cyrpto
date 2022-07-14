@@ -21,7 +21,6 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public static bool isgunhit = false;
     //public bool Ispause;
 
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
@@ -39,7 +38,6 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
             //Debug.Log("트리거 눌림");
             Vector3 forward = transform.TransformDirection(0,0,1) * 10;
             Shoot();
-
         }
 
     }
