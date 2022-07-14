@@ -13,6 +13,7 @@ public class HItBox : MonoBehaviour
     int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
+    BoxCollider col;
     GameObject breakParts;
 
     public bool breaktest = false;
@@ -49,6 +50,12 @@ public class HItBox : MonoBehaviour
                     arrow.transform.Rotate(0, 0, -90);
                     break;
             }
+        }
+        else
+        {
+            col = GetComponent<BoxCollider>();
+            col.center = new Vector3(0, 1.1f, col.center.z);
+            col.size = new Vector3(0.9f,2.2f,col.size.z);   
         }
     }
 

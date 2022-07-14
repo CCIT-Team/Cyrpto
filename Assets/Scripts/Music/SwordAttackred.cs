@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordAttackred : MonoBehaviour
 {
+    public AudioClip close;
+    public AudioSource closeSource;
     public static bool isredcut = false;
     void OnTriggerEnter(Collider col)
     {
@@ -17,6 +19,7 @@ public class SwordAttackred : MonoBehaviour
                 //Destroy(col.gameObject);
                 Debug.Log(isredcut);
             }
+            closeSource.PlayOneShot(close);
         }
     }
 }

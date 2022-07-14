@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class SwordAttackblue:MonoBehaviour
 {
+    public AudioClip close;
+    public AudioSource closeSource;
     public static bool isbluecut = false;
     void OnTriggerEnter(Collider col)
     {
@@ -17,6 +19,7 @@ public class SwordAttackblue:MonoBehaviour
                 //Destroy(col.gameObject);
                 Debug.Log(isbluecut);
             }
+            closeSource.PlayOneShot(close);
         }
     }
 }
