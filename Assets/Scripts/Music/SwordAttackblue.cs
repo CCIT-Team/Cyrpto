@@ -7,8 +7,15 @@ public class SwordAttackblue:MonoBehaviour
     public AudioClip close;
     public AudioSource closeSource;
     public static bool isbluecut = false;
+
+    private void Start()
+    {
+        closeSource = GetComponent<AudioSource>();
+    }
+
     void OnTriggerEnter(Collider col)
     {
+        /*
         if (HItBox.inHit == true && col.CompareTag("BlueEnemy"))
         {
             MechMove.pigock = true;
@@ -19,6 +26,9 @@ public class SwordAttackblue:MonoBehaviour
                 //Destroy(col.gameObject);
                 Debug.Log(isbluecut);
             }
+        }*/
+        if (col.GetComponent<HItBox>().isbreak)
+        {
             closeSource.PlayOneShot(close);
         }
     }
