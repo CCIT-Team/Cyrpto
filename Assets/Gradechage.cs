@@ -22,21 +22,21 @@ public class Gradechage : MonoBehaviour
 
     public void Chage_image() //스코어 매니져랑 연동중
     {
-        switch (ScoreManager.instance.finalScore)
+        switch (ScoreManager.instance.finalsocreup)
         {
-            case 1000:
+            case 100:
                 image.sprite = offsetimage[0]; //이미지 순서가 빠를 수록 좋은 판정
                 break;
-            case 800:
+            case 80:
                 image.sprite = offsetimage[1];
                 break;
-            case 600:
+            case 60:
                 image.sprite = offsetimage[2];
                 break;
-            case 400:
+            case 40:
                 image.sprite = offsetimage[3];
                 break;
-            case 200:
+            default:
                 image.sprite = offsetimage[4];
                 break;
 

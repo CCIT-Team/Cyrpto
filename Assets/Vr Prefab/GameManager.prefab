@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8740655722538748289}
   - component: {fileID: 8740655722538748290}
+  - component: {fileID: 1456962128000530273}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -49,17 +50,55 @@ MonoBehaviour:
   IsPause: 0
   IsGameOver: 0
   IsSetting: 0
+  Isbefore: 0
   result: {fileID: 0}
   pause: {fileID: 0}
   setting: {fileID: 0}
   OffSetImage: {fileID: 0}
+  beforeresult: {fileID: 0}
   HPbar: {fileID: 0}
   HPtext: {fileID: 0}
-  combotext: {fileID: 0}
-  offsetimage:
-  - {fileID: 21300000, guid: ab2322a5a63dab3438887665ab3c8334, type: 3}
-  - {fileID: 21300000, guid: 23497f01490ee354ea2c686fd775335a, type: 3}
-  - {fileID: 21300000, guid: f294fe788e5856747b3cb9bc31f3f9ee, type: 3}
-  - {fileID: 21300000, guid: cdcca2ff4bab0a4498d0917420a472d6, type: 3}
-  offsettest: 0
   fade: {fileID: 0}
+--- !u!114 &1456962128000530273
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8740655722538748291}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2c885186dcda5846bafa2dadb655d00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalScore: 0
+  score: 000000000000000000000000
+  scoreNum: 4
+  scorestring: 
+  grade: 0
+  finalScorehave: 0
+  finalsocreup: 0
+  finalSocorefloat: 0
+  x: 0
+  Perpecttext: {fileID: 0}
+  GreatText: {fileID: 0}
+  GoodText: {fileID: 0}
+  MissText: {fileID: 0}
+  Resultscore: {fileID: 0}
+  passimage: {fileID: 0}
+  passText: {fileID: 0}
+  peroectCount: 0
+  greatCount: 0
+  goodCount: 0
+  missCount: 0
+  combotext: {fileID: 0}
+  combocount: 0
+  totalScore: {fileID: 0}
+  resultwindow: {fileID: 0}
+  image: {fileID: 0}
+  image1: {fileID: 0}
+  image2: {fileID: 0}
+  image3: {fileID: 0}
+  image4: {fileID: 0}
+  image5: {fileID: 0}
+  gameend: 0

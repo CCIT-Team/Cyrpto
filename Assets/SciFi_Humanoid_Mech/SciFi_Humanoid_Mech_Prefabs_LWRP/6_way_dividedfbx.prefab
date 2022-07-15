@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5326816775118330624}
   - component: {fileID: 5107795058386771477}
   - component: {fileID: 3647213907752609698}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -127,7 +127,7 @@ GameObject:
   - component: {fileID: 377415521941020184}
   - component: {fileID: 488741093128078359}
   - component: {fileID: 1357801535779469063}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ GameObject:
   - component: {fileID: 4773041875531175729}
   - component: {fileID: 2882739412482871196}
   - component: {fileID: 6395410295256780518}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.011
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -355,7 +355,7 @@ GameObject:
   - component: {fileID: 8135766289382143063}
   - component: {fileID: 1872788453757426993}
   - component: {fileID: 6472726015421418219}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -469,7 +469,7 @@ GameObject:
   - component: {fileID: 5209467432742310530}
   - component: {fileID: 4948149624496407410}
   - component: {fileID: 5097903310627767243}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.006
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -583,7 +583,7 @@ GameObject:
   - component: {fileID: 6939456251291475950}
   - component: {fileID: 6484390476535803996}
   - component: {fileID: 8101929121126724057}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.010
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -694,7 +694,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7048922206927494370}
   - component: {fileID: 8436629544173345451}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: 6_way_dividedfbx
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -745,6 +745,10 @@ PrefabInstance:
     - target: {fileID: 2603516976837779621, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_Name
       value: MonsterDeadSpake (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603516976837779621, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8746076380415371729, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: InitialModule.startSize.scalar

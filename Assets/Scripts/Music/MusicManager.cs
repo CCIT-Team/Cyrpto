@@ -20,7 +20,6 @@ public class MusicManager : MonoBehaviour
     public float NoteTime;
     public float NoteSpawnZ;
     public float NoteTapZ;
-    public Text ComboText;
     public GameObject Player;
     public int noteCount;
     public float NoteDespawnZ {
@@ -45,7 +44,6 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         NoteTapZ = Player.transform.position.z;
-        ComboText.text = "" + ScoreManager.Instance.combocount;
     }
 
     void ReadFromFile()

@@ -13,8 +13,13 @@ public class Lim_ViveInputManager : MonoBehaviour
     public GameObject findMenu;
     public Image HPbar;
     public Text HPtext;
-    public int Exmiss; //--예시 miss 판정
-
+    public Image nimage;
+    public Image image;
+    public Image image1;
+    public Image image2;
+    public Image image3;
+    public Image image4;
+    public Image image5;
     public bool onfindMenu = false;
 
     public Lim_ViveInputRightHandManager rightHandManager;
@@ -64,6 +69,13 @@ public class Lim_ViveInputManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainScene")
         {
+            nimage.color = new Color(0, 0, 0, 0);
+            image.color = new Color(0, 0, 0, 0);
+            image1.color = new Color(0, 0, 0, 0);
+            image2.color = new Color(0, 0, 0, 0);
+            image3.color = new Color(0, 0, 0, 0);
+            image4.color = new Color(0, 0, 0, 0);
+            image5.color = new Color(0, 0, 0, 0);
             if (rightHandManager.rtriggeron == true)
             {
                 guide.SetActive(false);
@@ -114,25 +126,49 @@ public class Lim_ViveInputManager : MonoBehaviour
 
     public void hpbarfill()
     {
-        switch (Exmiss)
+        switch (ScoreManager.instance.missCount)
         {
             case 0:
                 HPbar.fillAmount = 1.0f;
                 HPtext.text = "100";
                 break;
             case 1:
-                HPbar.fillAmount = 0.75f;
-                HPtext.text = "75";
+                HPbar.fillAmount = 0.9f;
+                HPtext.text = "90";
                 break;
             case 2:
+                HPbar.fillAmount = 0.8f;
+                HPtext.text = "80";
+                break;
+            case 3:
+                HPbar.fillAmount = 0.7f;
+                HPtext.text = "70";
+                break;
+            case 4:
+                HPbar.fillAmount = 0.6f;
+                HPtext.text = "60";
+                break;
+            case 5:
                 HPbar.fillAmount = 0.5f;
                 HPtext.text = "50";
                 break;
-            case 3:
-                HPbar.fillAmount = 0.25f;
-                HPtext.text = "25";
+            case 6:
+                HPbar.fillAmount = 0.4f;
+                HPtext.text = "40";
                 break;
-            case 4:
+            case 7:
+                HPbar.fillAmount = 0.3f;
+                HPtext.text = "30";
+                break;
+            case 8:
+                HPbar.fillAmount = 0.2f;
+                HPtext.text = "20";
+                break;
+            case 9:
+                HPbar.fillAmount = 0.1f;
+                HPtext.text = "10";
+                break;
+            case 10:
                 HPbar.fillAmount = 0.0f;
                 HPtext.text = "0";
                 break;

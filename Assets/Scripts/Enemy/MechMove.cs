@@ -50,7 +50,7 @@ public class MechMove : MonoBehaviour
     private void OnEnable()
     {
         gameObject.tag = hitType[Random.Range(0, 2)];   //ภ๛,รป
-        line = Random.Range(1, 8);
+        line = Random.Range(0, 8);
         if (line <= 2)
         {
             state = State.Shoot;

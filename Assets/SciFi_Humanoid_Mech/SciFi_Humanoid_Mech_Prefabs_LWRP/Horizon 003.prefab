@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6355497968420128968}
   - component: {fileID: 159451394724081184}
   - component: {fileID: 332211967425499224}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 565729030582235500}
   - component: {fileID: 471547086987656118}
   - component: {fileID: 7120861543026812713}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6749007580341259559}
   - component: {fileID: 2173222387391530750}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Horizon 003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,6 +283,10 @@ PrefabInstance:
     - target: {fileID: 2603516976837779621, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_Name
       value: MonsterDeadSpake (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603516976837779621, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8855319618786674761, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_RootOrder

@@ -3,40 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-public class GameGo : MonoBehaviour
+public class resultnext : MonoBehaviour
 {
-    //메인 메뉴도 이 방식으로 할 예정
-    public Title title;
-    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2f);
+    public ResultWindow resultWindow;
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(3f);
     public static readonly WaitForSeconds waitForSeconds1 = new WaitForSeconds(0.01f);
+    public GameObject reslut;
     public Image image;
+
+
     public void Start()
     {
 
     }
+
     private void Update()
     {
-        if(title.Next == true)
+        if (resultWindow.isresult == true)
         {
-            StartCoroutine(fadenextstep());
+            //StartCoroutine(fadenextstep());
             StartCoroutine(active());
+            StartCoroutine(fadenextstep());
+            reslut.SetActive(false);
+            //image.color = new Color(0, 0, 0, 0);
+
         }
     }
     IEnumerator active()
     {
         yield return waitForSeconds;
         SceneManager.LoadScene("MainScene");
-
+        resultWindow.isresult = false;
     }
     IEnumerator fadenextstep()
     {
-        float fadecount = 0;
-        while (fadecount < 1.0f)
+        float fadecount = 1;
+        while (fadecount < 0.0f)
         {
-            fadecount += 0.01f;
+            fadecount -= 0.01f;
             yield return waitForSeconds1;
             image.color = new Color(0, 0, 0, fadecount);
-
         }
     }
 }

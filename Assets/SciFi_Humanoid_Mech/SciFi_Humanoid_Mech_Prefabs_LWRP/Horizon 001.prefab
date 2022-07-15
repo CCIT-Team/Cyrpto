@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1123946692386321391}
   - component: {fileID: 8877760600496194326}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Horizon 001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 1399497113614085667}
   - component: {fileID: 6056061313091720516}
   - component: {fileID: 3794769468864224893}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 5885273440078363155}
   - component: {fileID: 8055010208531949037}
   - component: {fileID: 7295963523415681476}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: NPC_Mech_LOD0.001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -283,6 +283,10 @@ PrefabInstance:
     - target: {fileID: 2603516976837779621, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: m_Name
       value: MonsterDeadSpake (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2603516976837779621, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 8746076380415371729, guid: 7d579e45d40252344bce0820cdd8b454, type: 3}
       propertyPath: looping
