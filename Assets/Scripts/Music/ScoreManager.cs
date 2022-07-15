@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class ScoreManager : MonoBehaviour
 {
@@ -40,9 +42,26 @@ public class ScoreManager : MonoBehaviour
     public int missCount;
 
     [Header("COMBO")]
+    public Text combotext;
     public int combocount;
 
     public Text totalScore;
+
+    [Header("Result")]
+    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(0.01f);
+    public static readonly WaitForSeconds waitForSeconds1 = new WaitForSeconds(4f);
+    public GameObject resultwindow;
+
+    [Header("fade")]
+    public Image image;
+    public Image image1;
+    public Image image2;
+    public Image image3;
+    public Image image4;
+    public Image image5;
+
+
+    public bool gameend;
 
     //판정에 대한 파라미터와 이미지는 게임매니저가 가지고 있음
     //바이브인풋매니져에 예시 미스판정시 체력이 까이는 코드가 있음
@@ -61,7 +80,7 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        combocount = 0; peroectCount = 0; greatCount = 0; goodCount = 0; missCount = 0;
+        
     }
 
     public void Hit()
@@ -78,6 +97,7 @@ public class ScoreManager : MonoBehaviour
     }
     public void Perpect()
     {
+        Hit();
         scoreNum = 0;
         score[0] += 100;
         peroectCount++;
@@ -86,6 +106,7 @@ public class ScoreManager : MonoBehaviour
     }
     public void Great()
     {
+        Hit();
         scoreNum = 1;
         score[1] += 50;
         greatCount++;
@@ -94,6 +115,7 @@ public class ScoreManager : MonoBehaviour
     }
     public void Good()
     {
+        Hit();
         scoreNum = 2;
         score[2] += 20;
         goodCount++;
@@ -102,21 +124,22 @@ public class ScoreManager : MonoBehaviour
     public void FinalResult()
     {
         finalScore = score[0] + score[1] + score[2];
-        switch (finalScore)
-        {
-            case 1000:
-                grade = 0;
-                break;
-            case 900:
-                grade = 1;
-                break;
-            case 800:
-                grade = 2;
-                break;
-            case 700:
-                grade = 3;
-                break;
-        }
+        //switch (finalsocreup)
+        //{
+        //    case 100:
+        //        grade = 0; //S
+        //        break;
+        //    case 85:
+        //        grade = 1; //A
+        //        break;
+        //    case 60:
+        //        grade = 2; //B
+        //        break;
+        //    case 40:
+        //        grade = 3; //C
+        //        break;
+        //        //D
+        //}
         if (combocount >= 20 && combocount < 40) { finalScore *= 1.1f; };
         if (combocount >= 40 && combocount < 80) { finalScore *= 1.2f; };
         if (combocount >= 80 && combocount < 159) { finalScore *= 1.3f; };
@@ -129,23 +152,73 @@ public class ScoreManager : MonoBehaviour
         int allnoteCount = 0;
         allnoteCount = peroectCount + greatCount + missCount + goodCount; //모든 노드 개수
 
-        finalScorehave = (finalScorehave / 101) * 100; //------퍼센트
+        finalScorehave = (finalScorehave / 99) * 100; //------퍼센트
 
-        finalSocorefloat = (finalScorehave / 101) * 0.01f;
+        finalSocorefloat = (finalScorehave / 99) * 0.01f;
 
         passimage.fillAmount = finalSocorefloat;
 
-        finalsocreup = Mathf.RoundToInt(finalScorehave) / allnoteCount;
+        finalsocreup = Mathf.RoundToInt(finalScorehave) / 99;
 
 
         Resultscore.text = finalsocreup.ToString(); // 결과 퍼센트
         passText.text = finalsocreup.ToString();
 
-
+        combotext.text = "" + ScoreManager.Instance.combocount;
     }
     void Update()
     {
-        FinalResult();
         percentScore();
+        FinalResult();
+        GameEnd();
+        Reset1();
+    }
+
+    public void GameEnd()
+    {
+        if (missCount == 10) //------------------------------------------------------------------- 4로 변경하면 끝
+        {
+            gameend = true;
+            resluton();
+        }
+        else { gameend = false; }
+    }
+
+    public void resluton()
+    {
+        
+            StartCoroutine(waitfade());
+            StartCoroutine(faderesult());
+        
+    }
+    public void Reset1()
+    {
+        //if (SceneManager.GetActiveScene().name == "MainScene")
+        //{
+        //    combocount = 0; peroectCount = 0; greatCount = 0; goodCount = 0; missCount = 0; finalScore = 0; finalSocorefloat = 0; finalScorehave = 0; finalsocreup = 0;
+        //}
+    }
+    IEnumerator waitfade()
+    {
+        yield return waitForSeconds1;
+        resultwindow.SetActive(true);
+    }
+
+    IEnumerator faderesult()
+    {
+        float fadecount = 0;
+        while (fadecount < 1.0f)
+        {
+            fadecount += 0.01f;
+            yield return waitForSeconds;
+            image.color = new Color(0, 0, 0, fadecount);
+            image1.color = new Color(0, 0, 0, fadecount);
+            image2.color = new Color(0, 0, 0, fadecount);
+            image3.color = new Color(0, 0, 0, fadecount);
+            image4.color = new Color(0, 0, 0, fadecount);
+            image5.color = new Color(0, 0, 0, fadecount);
+
+
+        }
     }
 }

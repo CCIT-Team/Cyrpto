@@ -19,6 +19,8 @@ TagManager:
   - BlueEnemy
   - farEnemy
   - panj
+  - BlueCuttingMonster
+  - RedCuttingMonster
   layers:
   - Default
   - TransparentFX
@@ -26,7 +28,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - MonBreak
   - 
   - 
   - 

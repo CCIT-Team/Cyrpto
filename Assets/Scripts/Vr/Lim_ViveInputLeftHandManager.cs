@@ -19,6 +19,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
     public AudioClip fireSound, farSound;
     public AudioSource audioSource, farSource;
     public static bool isgunhit = false;
+    public int layerMask = 6;
     //public bool Ispause;
 
     void Start()
@@ -44,10 +45,11 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
 
     public void Shoot()
     {
+
         Instantiate(projectile, shootpos.position, shootpos.rotation);
         muzzleFlash.Play();
         audioSource.PlayOneShot(fireSound);
-        if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000))
+        if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000,~layerMask))
         {
             if(hit.collider.tag == "farEnemy")
             {

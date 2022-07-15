@@ -26,7 +26,7 @@ public class Lim_GameManager : MonoBehaviour
 
     public Image HPbar;
 
-    public Text HPtext, combotext;
+    public Text HPtext;
 
     [Header("Fade In Out")]
     public GameObject fade;

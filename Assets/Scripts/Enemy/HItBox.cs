@@ -10,13 +10,17 @@ public class HItBox : MonoBehaviour
     public ParticleSystem[] Dead;
     public bool isHit = false;
     public static bool inHit;
-    int hitDir = 0;
+    [HideInInspector]
+    public int hitDir = 0;
     public GameObject[] hitbox;
     public GameObject arrow;
     BoxCollider col;
     GameObject breakParts;
-
-    public bool breaktest = false;
+    bool hitboxright = false;
+    bool hitboxleft = false;
+    bool hitboxup = false;
+    public bool isbreak = false;
+    internal bool colorMatch;
 
     void Start()
     {
@@ -26,8 +30,7 @@ public class HItBox : MonoBehaviour
     void Update()
     {
         inHit = isHit;
-        if (breaktest)
-            Monbreak();
+       
     }
 
     private void OnEnable()
@@ -55,28 +58,70 @@ public class HItBox : MonoBehaviour
         {
             col = GetComponent<BoxCollider>();
             col.center = new Vector3(0, 1.1f, col.center.z);
-            col.size = new Vector3(0.9f,2.2f,col.size.z);   
+            col.size = new Vector3(0.9f, 2.2f, col.size.z);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (inHit && ((tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword")))
+        colorMatch = (tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword") ? true : false;
+        if(colorMatch == true)
         {
+            Debug.Log("HitBOOOOOOOOOOOOOOOOOOOOOOOOOOOOOX");
+        }
+        else { Debug.Log("DON  HIT"); }
+        if (isHit && colorMatch)
+        {
+            ScoreManager.Instance.Perpect();
+            isbreak = true;
             Monbreak();
         }
-        if (hitbox[0].CompareTag("Blue_Sword") || hitbox[0].CompareTag("Red_Sword"))
+
+        if(other.tag == "panj")
         {
-            isHit = true;
+            ScoreManager.instance.Miss();
         }
-        if (hitbox[1].CompareTag("Blue_Sword") || hitbox[1].CompareTag("Red_Sword"))
-        {
-            isHit = true;
-        }
-        if (hitbox[2].CompareTag("Blue_Sword") || hitbox[2].CompareTag("Red_Sword"))
-        {
-            isHit = true;
-        }
+        //else if (isHit && !colorMatch)
+        //{
+        //    ScoreManager.Instance.Miss();
+        //    isbreak = true;
+        //    Monbreak();
+        //}
+        //else if (isHit && ((tag == "far" && other.tag == "Blue_Sword") || (tag == "far" && other.tag == "Red_Sword")))
+        //{
+        //    ScoreManager.Instance.Miss();
+        //    isbreak = true;
+        //    Monbreak();
+        //}
+        //else if(!isHit && Player.transform.position == gameObject.transform.position || inHit && Player.transform.position == gameObject.transform.position)
+        //{
+        //    ScoreManager.Instance.Miss();
+        //}
+        //if (isHit && hitboxleft == true & hitboxright == true)
+        //{
+        //   // ScoreManager.Instance.Great();
+        //    isbreak = true;
+        //    //Monbreak();
+        //}
+        //if (isHit && hitboxright == true & hitboxleft == true) 
+        //{
+        //   // ScoreManager.Instance.Great();
+        //    isbreak = true;
+        //    //Monbreak();
+        //}
+        //else if (isHit && hitboxup == true & hitboxright == true)
+        //{
+        //    ScoreManager.Instance.Good();
+        //    isbreak = true;
+        //    Monbreak();
+        //}
+        //else if (isHit && hitboxup == true & hitboxleft == true)
+        //{
+        //    ScoreManager.Instance.Good();
+        //    isbreak = true;
+        //    Monbreak();
+        //}
+
     }
 
     public void Monbreak()
@@ -86,22 +131,22 @@ public class HItBox : MonoBehaviour
         {
             case 0:
                 breakParts = Instantiate(BreakMon[0]);
-                breakParts.transform.position = this.gameObject.transform.position;
+                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
                 break;
             case 1:
                 breakParts = Instantiate(BreakMon[1]);
-                breakParts.transform.position = this.gameObject.transform.position;
+                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
                 break;
             case 2:
                 breakParts = Instantiate(BreakMon[2]);
-                breakParts.transform.position = this.gameObject.transform.position;
+                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0,0.2f,0);
                 break;
             case 3:
                 breakParts = Instantiate(BreakMon[3]);
-                breakParts.transform.position = this.gameObject.transform.position;
+                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
                 break;
         }
-        Destroy(this.gameObject, 0.1f);
+        Destroy(gameObject);
     }
 
 }

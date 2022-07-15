@@ -5639,7 +5639,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   close: {fileID: 8300000, guid: 54256fd9429dd134ea762cf6cd21939e, type: 3}
-  closeSource: {fileID: 0}
+  closeSource: {fileID: 7026902636519727802}
 --- !u!82 &7026902636519727802
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38989,6 +38989,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   GameEnd: 0
+  titlePrefab: {fileID: 0}
+  setative: {fileID: 0}
+  isresult: 0
 --- !u!1 &4071670625478500220
 GameObject:
   m_ObjectHideFlags: 0
@@ -64676,7 +64679,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   close: {fileID: 8300000, guid: 54256fd9429dd134ea762cf6cd21939e, type: 3}
-  closeSource: {fileID: 0}
+  closeSource: {fileID: 1661516305540852258}
 --- !u!82 &1661516305540852258
 AudioSource:
   m_ObjectHideFlags: 0
@@ -74799,7 +74802,13 @@ MonoBehaviour:
   findMenu: {fileID: 0}
   HPbar: {fileID: 1588238816359627444}
   HPtext: {fileID: 5887140094957344396}
-  Exmiss: 1
+  nimage: {fileID: 0}
+  image: {fileID: 0}
+  image1: {fileID: 0}
+  image2: {fileID: 0}
+  image3: {fileID: 0}
+  image4: {fileID: 0}
+  image5: {fileID: 0}
   onfindMenu: 0
   rightHandManager: {fileID: 7654914921404629634}
 --- !u!114 &5265706548669961999
@@ -75061,6 +75070,7 @@ MonoBehaviour:
   farSound: {fileID: 0}
   audioSource: {fileID: 297137816166764130}
   farSource: {fileID: 0}
+  layerMask: 6
 --- !u!82 &297137816166764130
 AudioSource:
   m_ObjectHideFlags: 0
@@ -75251,8 +75261,6 @@ MonoBehaviour:
   Bluesword: {fileID: 426975855742292762}
   Rpause: {fileID: 4071670625478500220}
   rtriggeron: 0
-  mon: {fileID: 0}
-  hItBox: {fileID: 0}
 --- !u!1 &9048303803401059681
 GameObject:
   m_ObjectHideFlags: 0
