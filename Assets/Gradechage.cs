@@ -36,8 +36,11 @@ public class Gradechage : MonoBehaviour
             case 40:
                 image.sprite = offsetimage[3];
                 break;
-            default:
+            case 30:
                 image.sprite = offsetimage[4];
+                break;
+            default:
+                image.sprite = offsetimage[5];
                 break;
 
         }

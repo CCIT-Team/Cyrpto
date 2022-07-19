@@ -21,6 +21,10 @@ public class Lim_ViveInputManager : MonoBehaviour
     public Image image4;
     public Image image5;
     public bool onfindMenu = false;
+    [Header("Sound")]
+    public AudioClip hit;
+    public AudioSource Source;
+    public AudioClip playerDead;
 
     public Lim_ViveInputRightHandManager rightHandManager;
 
@@ -135,42 +139,52 @@ public class Lim_ViveInputManager : MonoBehaviour
             case 1:
                 HPbar.fillAmount = 0.9f;
                 HPtext.text = "90";
+               Source.PlayOneShot(hit);
                 break;
             case 2:
                 HPbar.fillAmount = 0.8f;
                 HPtext.text = "80";
+                Source.PlayOneShot(hit);
                 break;
             case 3:
                 HPbar.fillAmount = 0.7f;
                 HPtext.text = "70";
+                Source.PlayOneShot(hit);
                 break;
             case 4:
                 HPbar.fillAmount = 0.6f;
                 HPtext.text = "60";
+                Source.PlayOneShot(hit);
                 break;
             case 5:
                 HPbar.fillAmount = 0.5f;
                 HPtext.text = "50";
+                Source.PlayOneShot(hit);
                 break;
             case 6:
                 HPbar.fillAmount = 0.4f;
                 HPtext.text = "40";
+                Source.PlayOneShot(hit);
                 break;
             case 7:
                 HPbar.fillAmount = 0.3f;
                 HPtext.text = "30";
+                Source.PlayOneShot(hit);
                 break;
             case 8:
                 HPbar.fillAmount = 0.2f;
                 HPtext.text = "20";
+                Source.PlayOneShot(hit);
                 break;
             case 9:
                 HPbar.fillAmount = 0.1f;
                 HPtext.text = "10";
+                Source.PlayOneShot(hit);
                 break;
             case 10:
                 HPbar.fillAmount = 0.0f;
                 HPtext.text = "0";
+                Source.PlayOneShot(playerDead);
                 break;
         }
     }

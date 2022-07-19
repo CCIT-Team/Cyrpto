@@ -70,12 +70,6 @@ public class HItBox : MonoBehaviour
             Debug.Log("HitBOOOOOOOOOOOOOOOOOOOOOOOOOOOOOX");
         }
         else { Debug.Log("DON  HIT"); }
-        if (isHit && colorMatch)
-        {
-            ScoreManager.Instance.Perpect();
-            isbreak = true;
-            Monbreak();
-        }
 
         if(other.tag == "panj")
         {

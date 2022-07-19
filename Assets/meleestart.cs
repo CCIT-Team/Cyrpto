@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-public class gamestart : MonoBehaviour
+public class meleestart : MonoBehaviour
 {
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(1.5f);
 
@@ -10,7 +10,7 @@ public class gamestart : MonoBehaviour
     {
         if (other.tag == "Blue_Sword")
         {
-            SceneManager.LoadScene("chapter1");
+            SceneManager.LoadScene("melee only");
         }
     }
 

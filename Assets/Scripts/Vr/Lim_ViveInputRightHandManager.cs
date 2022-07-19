@@ -14,6 +14,12 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
     public GameObject Rpause;
     public bool rtriggeron;
 
+    [Header("Sound")]
+    public AudioClip closemiss;
+    public AudioClip swordSound;
+    public AudioSource closeSource;
+    public static bool isbluecut = false;
+
     private void Awake()
     {
         SwordObject = this.transform.gameObject;
@@ -25,6 +31,7 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
         Bluesword = SwordObject.transform.GetChild(1).gameObject;
         Redsword.SetActive(true);
         Bluesword.SetActive(false);
+        closeSource = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +55,18 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
             rtriggeron = false;
             Redsword.SetActive(true);
             Bluesword.SetActive(false);
+        }
+    }
+    void OnTriggerEnter(Collider col)
+    {
+        if (col.GetComponent<HItBox>().isHit)
+        {
+            Debug.Log("----------------------------------------------------------------------»ç¿îµå---------------------------------------------------------------------------");
+            closeSource.PlayOneShot(closemiss);
+        }
+        else
+        {
+            closeSource.PlayOneShot(swordSound);
         }
     }
 }

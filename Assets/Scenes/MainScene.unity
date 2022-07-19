@@ -193,7 +193,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIVACE
+  m_Text: 'MELEE
+
+'
 --- !u!222 &97602919
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -383,7 +385,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIVACE
+  m_Text: 'MELEE
+
+'
 --- !u!222 &120980735
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -850,7 +854,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ANDANTE
+  m_Text: 'SHOOT
+
+'
 --- !u!222 &629740805
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -929,7 +935,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ANDANTE
+  m_Text: 'SHOOT
+
+'
 --- !u!222 &647255444
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -952,7 +960,7 @@ GameObject:
   - component: {fileID: 738504031}
   - component: {fileID: 738504030}
   m_Layer: 0
-  m_Name: MainMenuChild
+  m_Name: SHOOT ONLY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1105,7 +1113,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 875135301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a10bdbb52640bb74ca8348f1b8ef5578, type: 3}
+  m_Script: {fileID: 11500000, guid: bb808425ca1f95a4c9f90c7aee2078fa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &875135304
@@ -1191,7 +1199,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIVACE
+  m_Text: 'MELEE
+
+'
 --- !u!222 &880203350
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1270,7 +1280,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ANDANTE
+  m_Text: 'SHOOT
+
+'
 --- !u!222 &905043880
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1745,7 +1757,7 @@ GameObject:
   - component: {fileID: 1108831025}
   - component: {fileID: 1108831024}
   m_Layer: 0
-  m_Name: MainMenuChild
+  m_Name: MELEE ONLY
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2154,7 +2166,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1411764782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a10bdbb52640bb74ca8348f1b8ef5578, type: 3}
+  m_Script: {fileID: 11500000, guid: d91671be6fb180f4eb1af593e3938c8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!65 &1411764785
@@ -2240,7 +2252,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: VIVACE
+  m_Text: 'MELEE
+
+'
 --- !u!222 &1503437168
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2324,7 +2338,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ANDANTE
+  m_Text: 'SHOOT
+
+'
 --- !u!222 &1576916000
 CanvasRenderer:
   m_ObjectHideFlags: 0

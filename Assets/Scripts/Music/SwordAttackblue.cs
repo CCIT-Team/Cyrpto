@@ -12,8 +12,7 @@ public class SwordAttackblue:MonoBehaviour
     {
         closeSource = GetComponent<AudioSource>();
     }
-
-    void OnTriggerEnter(Collider col)
+void OnTriggerEnter(Collider col)
     {
         /*
         if (HItBox.inHit == true && col.CompareTag("BlueEnemy"))
@@ -29,7 +28,10 @@ public class SwordAttackblue:MonoBehaviour
         }*/
         if (col.GetComponent<HItBox>().isbreak)
         {
+            Debug.Log("----------------------------------------------------------------------»ç¿îµå---------------------------------------------------------------------------");
             closeSource.PlayOneShot(close);
         }
+        
     }
+    
 }

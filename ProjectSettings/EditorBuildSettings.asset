@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/chapter1.unity
     guid: ef24e820a987279469c72e8ae2513304
+  - enabled: 1
+    path: Assets/Scenes/shoot only.unity
+    guid: 33e979d7ecdc5fd419f7a028f851a50b
+  - enabled: 1
+    path: Assets/Scenes/melee only.unity
+    guid: c7678a5a077f44043ab9c27571b48bf3
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 87375c3cf0d10d54c9dd31725b6052f9, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: e2b23bfd7f9bc3842b5094e5b3a8deac, type: 2}

@@ -11,16 +11,13 @@ public class MechMove : MonoBehaviour
     Animator animator;
     public GameObject arrow;
     string[] hitType = {"RedEnemy", "BlueEnemy"};
-    public bool isdie = false;
+    public bool meleeOnly= false;
+    public bool shotOnly = false;
     public static bool pigock = false;
 
     //근접용
     Transform player;
     float ableDistance = 7;
-
-    //원거리용
-    public enum pos { left, right };
-    pos p;
 
     void Start()
     {
@@ -38,33 +35,34 @@ public class MechMove : MonoBehaviour
                 Attack();
                 break;
             case State.Shoot:
-                Shoot(p);
+                Shoot();
                 break;
         }
-        if(isdie == true)
-        {
-            Destroy(gameObject);
-        }
+        if (meleeOnly)
+            state = State.Melee;
+        else if (shotOnly)
+            state = State.Shoot;
     }
 
     private void OnEnable()
     {
-        gameObject.tag = hitType[Random.Range(0, 2)];   //적,청
-        line = Random.Range(0, 8);
-        if (line <= 2)
-        {
+        if (meleeOnly)
+            state = State.Melee;
+        else if (shotOnly)
             state = State.Shoot;
-            p = pos.left;
-        }
-        else if (line >= 7)
-        {
-            state = State.Shoot;
-            p = pos.right;
-        }
         else
         {
-            state = State.Melee;
+            line = Random.Range(0, 6);
+            if (line <= 2)
+            {
+                state = State.Shoot;
+            }
+            else
+            {
+                state = State.Melee;
+            }
         }
+        gameObject.tag = hitType[Random.Range(0, 2)];   //적,청
 
         switch (state)      //판정 형태 결정
         {
@@ -97,7 +95,7 @@ public class MechMove : MonoBehaviour
         }
     }
 
-    void Shoot(pos p)       //원거리
+    void Shoot()       //원거리
     {
         gameObject.tag = "farEnemy";
         animator.SetFloat("Speed", 1);
