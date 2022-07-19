@@ -37,6 +37,7 @@ public class HItBox : MonoBehaviour
     {
         if (arrow.name != "AimPoint")
         {
+            Breakmon = 0;
             hitDir = Random.Range(0, 3);
             switch (hitDir)
             {
@@ -56,13 +57,14 @@ public class HItBox : MonoBehaviour
         }
         else
         {
+            Breakmon = 1;
             col = GetComponent<BoxCollider>();
             col.center = new Vector3(0, 1.1f, col.center.z);
             col.size = new Vector3(0.9f, 2.2f, col.size.z);
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         colorMatch = (tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword") ? true : false;
         if(colorMatch == true)
@@ -71,10 +73,6 @@ public class HItBox : MonoBehaviour
         }
         else { Debug.Log("DON  HIT"); }
 
-        if(other.tag == "panj")
-        {
-            ScoreManager.instance.Miss();
-        }
         //else if (isHit && !colorMatch)
         //{
         //    ScoreManager.Instance.Miss();
@@ -118,9 +116,16 @@ public class HItBox : MonoBehaviour
 
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "panj")
+        {
+            ScoreManager.instance.Miss();
+        }
+    }
+
     public void Monbreak()
     {
-        Breakmon = Random.Range(0, 4);
         switch (Breakmon)
         {
             case 0:
@@ -131,16 +136,7 @@ public class HItBox : MonoBehaviour
                 breakParts = Instantiate(BreakMon[1]);
                 breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
                 break;
-            case 2:
-                breakParts = Instantiate(BreakMon[2]);
-                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0,0.2f,0);
-                break;
-            case 3:
-                breakParts = Instantiate(BreakMon[3]);
-                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
-                break;
         }
         Destroy(gameObject);
     }
-
 }

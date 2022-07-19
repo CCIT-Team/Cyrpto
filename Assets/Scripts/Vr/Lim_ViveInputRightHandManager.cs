@@ -57,18 +57,6 @@ public class Lim_ViveInputRightHandManager : MonoBehaviour
             Bluesword.SetActive(false);
         }
     }
-    void OnTriggerEnter(Collider col)
-    {
-        if (col.GetComponent<HItBox>().isHit)
-        {
-            Debug.Log("----------------------------------------------------------------------»ç¿îµå---------------------------------------------------------------------------");
-            closeSource.PlayOneShot(closemiss);
-        }
-        else
-        {
-            closeSource.PlayOneShot(swordSound);
-        }
-    }
 }
     
 

@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -40,6 +39,7 @@ public class ScoreManager : MonoBehaviour
     public int greatCount;
     public int goodCount;
     public int missCount;
+    public int allnoteCount = 0;
 
     [Header("COMBO")]
     public Text combotext;
@@ -62,6 +62,8 @@ public class ScoreManager : MonoBehaviour
 
 
     public bool gameend;
+    AudioSource audioSource;
+    AudioClip audioClip;
 
     //판정에 대한 파라미터와 이미지는 게임매니저가 가지고 있음
     //바이브인풋매니져에 예시 미스판정시 체력이 까이는 코드가 있음
@@ -80,7 +82,8 @@ public class ScoreManager : MonoBehaviour
     }
     void Start()
     {
-        
+        audioSource = Lim_GameManager.instance.audioSource;
+        audioClip = Lim_GameManager.instance.resultsound;
     }
 
     public void Hit()
@@ -124,22 +127,7 @@ public class ScoreManager : MonoBehaviour
     public void FinalResult()
     {
         finalScore = score[0] + score[1] + score[2];
-        //switch (finalsocreup)
-        //{
-        //    case 100:
-        //        grade = 0; //S
-        //        break;
-        //    case 85:
-        //        grade = 1; //A
-        //        break;
-        //    case 60:
-        //        grade = 2; //B
-        //        break;
-        //    case 40:
-        //        grade = 3; //C
-        //        break;
-        //        //D
-        //}
+
         if (combocount >= 20 && combocount < 40) { finalScore *= 1.1f; };
         if (combocount >= 40 && combocount < 80) { finalScore *= 1.2f; };
         if (combocount >= 80 && combocount < 159) { finalScore *= 1.3f; };
@@ -149,7 +137,6 @@ public class ScoreManager : MonoBehaviour
     public void percentScore()
     {
         finalScorehave = finalScore;
-        int allnoteCount = 0;
         allnoteCount = peroectCount + greatCount + missCount + goodCount; //모든 노드 개수
 
         finalScorehave = (finalScorehave / 99) * 100; //------퍼센트
@@ -160,9 +147,9 @@ public class ScoreManager : MonoBehaviour
 
         finalsocreup = Mathf.RoundToInt(finalScorehave) / 99;
 
-
-        Resultscore.text = finalsocreup.ToString(); // 결과 퍼센트
-        passText.text = finalsocreup.ToString();
+        float a = Mathf.Clamp(finalsocreup, 0, 100);
+        Resultscore.text = a.ToString(); // 결과 퍼센트
+        passText.text = a.ToString();
 
         combotext.text = "" + ScoreManager.Instance.combocount;
     }
@@ -177,6 +164,12 @@ public class ScoreManager : MonoBehaviour
     public void GameEnd()
     {
         if (missCount == 10) //------------------------------------------------------------------- 4로 변경하면 끝
+        {
+            gameend = true;
+            resluton();
+        }
+        else { gameend = false; }
+        if(allnoteCount == 99)
         {
             gameend = true;
             resluton();
@@ -202,6 +195,8 @@ public class ScoreManager : MonoBehaviour
     {
         yield return waitForSeconds1;
         resultwindow.SetActive(true);
+        audioSource.PlayOneShot(audioClip);
+        
     }
 
     IEnumerator faderesult()

@@ -28,9 +28,10 @@ public class Lim_GameManager : MonoBehaviour
 
     public Text HPtext;
 
-    [Header("Fade In Out")]
-    public GameObject fade;
-
+    [Header("Audio")]
+    public AudioClip settingsound;
+    public AudioClip resultsound;
+    public AudioSource audioSource;
     private void Awake()
     {
         if(instance)
@@ -89,6 +90,7 @@ public class Lim_GameManager : MonoBehaviour
     {
         if (IsSetting == true)
         {
+            audioSource.PlayOneShot(settingsound);
             setting.SetActive(true);
             Time.timeScale = 0.1f;
         }

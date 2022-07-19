@@ -73,6 +73,7 @@ public class Lim_ViveInputManager : MonoBehaviour
     {
         if (SceneManager.GetActiveScene().name == "MainScene")
         {
+            //ScoreManager.instance.resultwindow.SetActive(false);
             nimage.color = new Color(0, 0, 0, 0);
             image.color = new Color(0, 0, 0, 0);
             image1.color = new Color(0, 0, 0, 0);
@@ -187,9 +188,5 @@ public class Lim_ViveInputManager : MonoBehaviour
                 Source.PlayOneShot(playerDead);
                 break;
         }
-    }
-    public void scorefill()
-    {
-
     }
 }
