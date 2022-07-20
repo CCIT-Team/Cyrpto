@@ -18,5 +18,6 @@ public class scorereset : MonoBehaviour
         ScoreManager.instance.score[0] = 0;
         ScoreManager.instance.score[1] = 0;
         ScoreManager.instance.score[2] = 0;
+        ScoreManager.instance.gameend = false;
     }
 }

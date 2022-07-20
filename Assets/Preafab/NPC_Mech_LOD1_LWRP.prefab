@@ -597,7 +597,7 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.44280857, y: 1.845267, z: 0.8732082}
+  m_Size: {x: 0.6, y: 1.845267, z: 0.8732082}
   m_Center: {x: 0, y: 0.93686473, z: 0.08796325}
 --- !u!54 &5017326038096911647
 Rigidbody:
@@ -1954,14 +1954,12 @@ MonoBehaviour:
   - {fileID: 21300000, guid: c2d0f34441a43a448ad91004b6c35f7f, type: 3}
   - {fileID: 21300000, guid: 43fc5ca9337af4e4592eebe30dad2240, type: 3}
   - {fileID: 21300000, guid: b88e8110b06e97944bce21ae1c1cca43, type: 3}
-  - {fileID: 21300000, guid: 7ccfc17d260ccd54cb64092710947d03, type: 3}
   redArrow:
   - {fileID: 21300000, guid: a1057d1dccf44e34faf571464be0aa45, type: 3}
   - {fileID: 21300000, guid: 690ed48e9be0d95468a6e29378e3fd5e, type: 3}
   - {fileID: 21300000, guid: fb2fbec13e8837445a39b2fe92b484a7, type: 3}
   - {fileID: 21300000, guid: 8422276f92a0f934084bf802bff284bf, type: 3}
   - {fileID: 21300000, guid: cf4949625959d0a478ff2e9153c2562e, type: 3}
-  - {fileID: 21300000, guid: 96f42ef118100654facb05444947f390, type: 3}
   AimingPoint:
   - {fileID: 21300000, guid: 8b58b1dbb494e664c9268622c95afb00, type: 3}
   - {fileID: 21300000, guid: 91b783af3b1a2dc4ba7978e0dd87d937, type: 3}
@@ -1994,8 +1992,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7337382796147065441}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.85, z: 0}
-  m_LocalScale: {x: 0.75, y: 0.1, z: 1.2}
+  m_LocalPosition: {x: 0, y: 1.9, z: 0}
+  m_LocalScale: {x: 0.75, y: 0.2, z: 1.2}
   m_Children: []
   m_Father: {fileID: 934338966991860352}
   m_RootOrder: 5

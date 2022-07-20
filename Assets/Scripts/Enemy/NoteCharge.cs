@@ -26,17 +26,13 @@ public class NoteCharge : MonoBehaviour
         switch (name)   //거리에 따른 화살표 변화
         {
             case "Red":
-                if (dis > 26)    //거리 확인
+                if (dis > 20.5f)
                 {
-                    img.sprite = redArrow[0];// ⊙⊙⊙⊙
-                }
-                else if (dis > 20.5f)
-                {
-                    img.sprite = redArrow[1];
+                    img.sprite = redArrow[0];
                 }// →⊙⊙⊙
                 else if (dis > 15)
                 {
-                    img.sprite = redArrow[2];
+                    img.sprite = redArrow[1];
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Miss();
@@ -47,7 +43,7 @@ public class NoteCharge : MonoBehaviour
                 }// -→⊙⊙
                 else if (dis > 9.5f)
                 {
-                    img.sprite = redArrow[3];   // --→⊙
+                    img.sprite = redArrow[2];   // --→⊙
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Good();
@@ -58,7 +54,7 @@ public class NoteCharge : MonoBehaviour
                 }
                 else if (dis > 4f)
                 {
-                    img.sprite = redArrow[4];   // --→⊙
+                    img.sprite = redArrow[3];   // --→⊙
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Great();
@@ -99,21 +95,14 @@ public class NoteCharge : MonoBehaviour
                         hitbox.Monbreak();
                         break;
                     }
-                    else
-                    {
-                        ScoreManager.Instance.Miss();
-                        break;
-                    }
                 };   // →⊙⊙⊙
                 break;
             case "Blue":
-                if (dis > 26)
-                    img.sprite = blueArrow[0];  // ⊙⊙⊙⊙
-                else if (dis > 20.5f)
-                    img.sprite = blueArrow[1];
+                if (dis > 20.5f)
+                    img.sprite = blueArrow[0];
                 else if (dis > 15)
                 {
-                    img.sprite = blueArrow[2];
+                    img.sprite = blueArrow[1];
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Miss();
@@ -124,7 +113,7 @@ public class NoteCharge : MonoBehaviour
                 }
                 else if (dis > 9.5)
                 {
-                    img.sprite = blueArrow[3];   // --→⊙
+                    img.sprite = blueArrow[2];   // --→⊙
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Good();
@@ -135,19 +124,18 @@ public class NoteCharge : MonoBehaviour
                 }
                 else if (dis > 4)
                 {
-                    img.sprite = blueArrow[4];
+                    img.sprite = blueArrow[3];
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Great();
                         hitbox.isHit = false;
-
                         hitbox.Monbreak();
                         break;
                     }// --→⊙
                 }
                 else if (dis > 1.75f)
                 {
-                    img.sprite = blueArrow[5];
+                    img.sprite = blueArrow[4];
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Perpect();
@@ -169,7 +157,7 @@ public class NoteCharge : MonoBehaviour
                 }
                 else
                 {
-                    img.sprite = blueArrow[1];
+                    img.sprite = blueArrow[2];
                     if (hitbox.isHit && hitbox.colorMatch)
                     {
                         ScoreManager.Instance.Good();
@@ -177,28 +165,13 @@ public class NoteCharge : MonoBehaviour
                         hitbox.Monbreak();
                         break;
                     }
-                    else
-                    {
-                        ScoreManager.Instance.Miss();
-                        break;
-                    }
                 }  // →⊙⊙⊙
 
                 break;
             case "AimPoint":
-                if (dis > 30)
+                if (dis > 25)
                 {
                     img.sprite = AimingPoint[0];
-                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
-                    {
-                        ScoreManager.Instance.Miss();
-                        Lim_ViveInputLeftHandManager.isgunhit = false;
-                        break;
-                    }// ⊙⊙⊙⊙
-                }
-                else if (dis > 25)
-                {
-                    img.sprite = AimingPoint[1];
                     if (Lim_ViveInputLeftHandManager.isgunhit == true)
                     {
                         ScoreManager.Instance.Miss();
@@ -208,7 +181,7 @@ public class NoteCharge : MonoBehaviour
                 }
                 else if (dis > 20)
                 {
-                    img.sprite = AimingPoint[2];
+                    img.sprite = AimingPoint[1];
                     if (Lim_ViveInputLeftHandManager.isgunhit == true)
                     {
                         ScoreManager.Instance.Miss();
@@ -218,7 +191,7 @@ public class NoteCharge : MonoBehaviour
                 }
                 else if (dis > 15)
                 {
-                    img.sprite = AimingPoint[3];
+                    img.sprite = AimingPoint[2];
                     if (Lim_ViveInputLeftHandManager.isgunhit == true)
                     {
                         ScoreManager.Instance.Good();
@@ -228,7 +201,7 @@ public class NoteCharge : MonoBehaviour
                 }
                 else if (dis > 10)
                 {
-                    img.sprite = AimingPoint[4];
+                    img.sprite = AimingPoint[3];
                     if (Lim_ViveInputLeftHandManager.isgunhit == true)
                     {
                         ScoreManager.Instance.Great();
@@ -266,15 +239,8 @@ public class NoteCharge : MonoBehaviour
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         break;
                     }
-                    else
-                    {
-                        ScoreManager.Instance.Miss();
-                        Destroy(gameObject);
-                        break;
-                    }
                 }
                 break;
         }
-        //Debug.Log(Vector3.Distance(playerPos.position, mechPos.position));
     }
 }

@@ -188,5 +188,5 @@ public class Lim_ViveInputManager : MonoBehaviour
                 Source.PlayOneShot(playerDead);
                 break;
         }
-    }
+    }   
 }

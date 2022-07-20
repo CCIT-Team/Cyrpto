@@ -60,7 +60,7 @@ public class HItBox : MonoBehaviour
             Breakmon = 1;
             col = GetComponent<BoxCollider>();
             col.center = new Vector3(0, 1.1f, col.center.z);
-            col.size = new Vector3(0.9f, 2.2f, col.size.z);
+            col.size = new Vector3(1, 2.2f, col.size.z);
         }
     }
 
@@ -72,47 +72,6 @@ public class HItBox : MonoBehaviour
             Debug.Log("HitBOOOOOOOOOOOOOOOOOOOOOOOOOOOOOX");
         }
         else { Debug.Log("DON  HIT"); }
-
-        //else if (isHit && !colorMatch)
-        //{
-        //    ScoreManager.Instance.Miss();
-        //    isbreak = true;
-        //    Monbreak();
-        //}
-        //else if (isHit && ((tag == "far" && other.tag == "Blue_Sword") || (tag == "far" && other.tag == "Red_Sword")))
-        //{
-        //    ScoreManager.Instance.Miss();
-        //    isbreak = true;
-        //    Monbreak();
-        //}
-        //else if(!isHit && Player.transform.position == gameObject.transform.position || inHit && Player.transform.position == gameObject.transform.position)
-        //{
-        //    ScoreManager.Instance.Miss();
-        //}
-        //if (isHit && hitboxleft == true & hitboxright == true)
-        //{
-        //   // ScoreManager.Instance.Great();
-        //    isbreak = true;
-        //    //Monbreak();
-        //}
-        //if (isHit && hitboxright == true & hitboxleft == true) 
-        //{
-        //   // ScoreManager.Instance.Great();
-        //    isbreak = true;
-        //    //Monbreak();
-        //}
-        //else if (isHit && hitboxup == true & hitboxright == true)
-        //{
-        //    ScoreManager.Instance.Good();
-        //    isbreak = true;
-        //    Monbreak();
-        //}
-        //else if (isHit && hitboxup == true & hitboxleft == true)
-        //{
-        //    ScoreManager.Instance.Good();
-        //    isbreak = true;
-        //    Monbreak();
-        //}
 
     }
 

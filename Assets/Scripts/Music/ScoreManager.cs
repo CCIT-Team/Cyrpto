@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 
@@ -59,7 +60,6 @@ public class ScoreManager : MonoBehaviour
     public Image image3;
     public Image image4;
     public Image image5;
-
 
     public bool gameend;
     AudioSource audioSource;
@@ -158,7 +158,6 @@ public class ScoreManager : MonoBehaviour
         percentScore();
         FinalResult();
         GameEnd();
-        Reset1();
     }
 
     public void GameEnd()
@@ -168,35 +167,28 @@ public class ScoreManager : MonoBehaviour
             gameend = true;
             resluton();
         }
-        else { gameend = false; }
-        if(allnoteCount == 99)
+        else 
+        { gameend = false; }
+        if (allnoteCount == 99 && gameend == false)
         {
             gameend = true;
             resluton();
         }
-        else { gameend = false; }
     }
 
     public void resluton()
     {
-        
-            StartCoroutine(waitfade());
-            StartCoroutine(faderesult());
-        
-    }
-    public void Reset1()
-    {
-        //if (SceneManager.GetActiveScene().name == "MainScene")
-        //{
-        //    combocount = 0; peroectCount = 0; greatCount = 0; goodCount = 0; missCount = 0; finalScore = 0; finalSocorefloat = 0; finalScorehave = 0; finalsocreup = 0;
-        //}
+
+        StartCoroutine(waitfade());
+        StartCoroutine(faderesult());
+
     }
     IEnumerator waitfade()
     {
         yield return waitForSeconds1;
         resultwindow.SetActive(true);
         audioSource.PlayOneShot(audioClip);
-        
+
     }
 
     IEnumerator faderesult()

@@ -457,6 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6951358819475859148}
+  - component: {fileID: 2355689590950003618}
   m_Layer: 0
   m_Name: MainBreak 2
   m_TagString: Untagged
@@ -482,3 +483,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 37.695, z: 0}
+--- !u!114 &2355689590950003618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8749939782272104942}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 913db922db72e614cb6341a19caf7420, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

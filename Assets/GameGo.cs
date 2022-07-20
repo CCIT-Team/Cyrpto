@@ -10,6 +10,7 @@ public class GameGo : MonoBehaviour
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2f);
     public static readonly WaitForSeconds waitForSeconds1 = new WaitForSeconds(0.01f);
     public Image image;
+    public GameObject titledis;
     public void Start()
     {
 
@@ -18,6 +19,7 @@ public class GameGo : MonoBehaviour
     {
         if(title.Next == true)
         {
+            Destroy(titledis, 0.1f);
             StartCoroutine(fadenextstep());
             StartCoroutine(active());
         }

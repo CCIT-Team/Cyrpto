@@ -29,6 +29,7 @@ public class Lim_GameManager : MonoBehaviour
     public Text HPtext;
 
     [Header("Audio")]
+    public AudioClip pausesound;
     public AudioClip settingsound;
     public AudioClip resultsound;
     public AudioSource audioSource;
@@ -68,6 +69,7 @@ public class Lim_GameManager : MonoBehaviour
     {
         if (IsPause == true)
         {
+            audioSource.PlayOneShot(pausesound);
             pause.SetActive(true);
             Time.timeScale = 0.1f;
         }

@@ -15,7 +15,7 @@ public class MapCreate : MonoBehaviour
     void Start()
     {
         partCount = map_Part.Length;
-        Instantiate(backGroundMap).transform.position = new Vector3(0, 0, 200);
+        Instantiate(backGroundMap).transform.position = new Vector3(0, 0, 400);
     }
 
     // Update is called once per frame

@@ -961,7 +961,7 @@ GameObject:
   - component: {fileID: 738504030}
   m_Layer: 0
   m_Name: SHOOT ONLY
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1758,7 +1758,7 @@ GameObject:
   - component: {fileID: 1108831024}
   m_Layer: 0
   m_Name: MELEE ONLY
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3922,7 +3922,7 @@ GameObject:
   - component: {fileID: 8524272292921654209}
   m_Layer: 0
   m_Name: MainMenuChild
-  m_TagString: Untagged
+  m_TagString: Title
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
