@@ -1,33 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 
 public class IntroManager : MonoBehaviour
 {
-    [SerializeField]
-    GameObject Title;
-    [SerializeField]
-    GameObject Mainmenu;
-    [SerializeField]
-    GameObject Setting;
-    public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
+    public GameObject intormanager;
 
-    void Start()
+    public void Update()
     {
-        
-    }
-
-    void Update()
-    {
-    
-    }
-    IEnumerator active1()
-    {
-        yield return waitForSeconds;
-        for (int i = 0; i < 4; i++)
+        if (SceneManager.GetActiveScene().name == "chapter1" || SceneManager.GetActiveScene().name == "shoot only" || SceneManager.GetActiveScene().name == "melee only")
         {
-            transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = false;
+            intormanager.SetActive(false);
         }
-
     }
+    
 }

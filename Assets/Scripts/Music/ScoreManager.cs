@@ -61,7 +61,7 @@ public class ScoreManager : MonoBehaviour
     public Image image4;
     public Image image5;
 
-    public bool gameend;
+    public bool gameend = false;
     AudioSource audioSource;
     AudioClip audioClip;
 
@@ -83,7 +83,6 @@ public class ScoreManager : MonoBehaviour
     void Start()
     {
         audioSource = Lim_GameManager.instance.audioSource;
-        audioClip = Lim_GameManager.instance.resultsound;
     }
 
     public void Hit()
@@ -162,14 +161,14 @@ public class ScoreManager : MonoBehaviour
 
     public void GameEnd()
     {
-        if (missCount == 10) //------------------------------------------------------------------- 4로 변경하면 끝
+        if (missCount == 10 && gameend == false) 
         {
             gameend = true;
             resluton();
         }
         else 
-        { gameend = false; }
-        if (allnoteCount == 99 && gameend == false)
+        //{ gameend = false; }
+        if (allnoteCount == 99 && gameend == false)//----------------------------------------------------------변경해야됨
         {
             gameend = true;
             resluton();
@@ -178,7 +177,7 @@ public class ScoreManager : MonoBehaviour
 
     public void resluton()
     {
-
+        Debug.Log(" 결과 호출됨");
         StartCoroutine(waitfade());
         StartCoroutine(faderesult());
 

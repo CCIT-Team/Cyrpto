@@ -28,7 +28,7 @@ public class Gradechage : MonoBehaviour
 
     public void Chage_image() //스코어 매니져랑 연동중
     {
-        if(ScoreManager.instance.finalsocreup > 90 && ScoreManager.instance.finalsocreup <= 100)
+        if(ScoreManager.instance.finalsocreup > 99 && ScoreManager.instance.finalsocreup == 100)
         {
             image.sprite = offsetimage[0]; //이미지 순서가 빠를 수록 좋은 판정
         }
