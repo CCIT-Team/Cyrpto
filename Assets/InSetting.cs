@@ -4,12 +4,13 @@ using UnityEngine;
 
 public class InSetting : MonoBehaviour
 {
-    //public GameObject sync, reset, exit;
-
+    public AudioClip settingsound;
+    public AudioSource audioSource;
 
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
     private void OnEnable()
     {
+        audioSource.PlayOneShot(settingsound);
         gameObject.GetComponent<BoxCollider>().enabled = false;
         for (int i = 0; i < 6; i++)
         {
@@ -19,7 +20,7 @@ public class InSetting : MonoBehaviour
     }
     public void Update()
     {
-        if (Lim_GameManager.Instance.IsSetting == true)
+        if (Lim_GameManager.instance.IsSetting == true)
         {
             setactive();
         }
@@ -33,5 +34,4 @@ public class InSetting : MonoBehaviour
             transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = true;
         }
     }
-
 }

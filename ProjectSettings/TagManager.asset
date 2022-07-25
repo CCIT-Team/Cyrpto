@@ -21,6 +21,7 @@ TagManager:
   - panj
   - BlueCuttingMonster
   - RedCuttingMonster
+  - track
   layers:
   - Default
   - TransparentFX

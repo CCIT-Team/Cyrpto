@@ -22,15 +22,13 @@ public class Lim_GameManager : MonoBehaviour
 
     public bool IsPause = false, IsGameOver = false, IsSetting = false, Isbefore = false;
 
-    public GameObject result, pause, setting, OffSetImage, beforeresult, introSound;
+    public GameObject result, pause, setting, OffSetImage, beforeresult;
 
     public Image HPbar;
 
     public Text HPtext;
 
     [Header("Audio")]
-    public AudioClip pausesound;
-    public AudioClip settingsound;
     public AudioSource audioSource;
     private void Awake()
     {
@@ -50,7 +48,6 @@ public class Lim_GameManager : MonoBehaviour
         GameOver();
         Gamepause();
         SettingPopup();
-        isintrosound();
     }
 
     public void GameOver()
@@ -67,11 +64,11 @@ public class Lim_GameManager : MonoBehaviour
     }
     public void Gamepause()
     {
+
         if (IsPause == true)
         {
-            audioSource.PlayOneShot(pausesound);
             pause.SetActive(true);
-            Time.timeScale = 0.1f;
+            Time.timeScale = 0f;
         }
         else if (IsPause == false)
         {
@@ -88,16 +85,10 @@ public class Lim_GameManager : MonoBehaviour
 
     }
 
-    public void isintrosound()
-    {
-        if (SceneManager.GetActiveScene().name == "MainScene")
-        introSound.SetActive(true);
-    }
     public void SettingPopup()
     {
         if (IsSetting == true)
         {
-            audioSource.PlayOneShot(settingsound);
             setting.SetActive(true);
             Time.timeScale = 0.1f;
         }
@@ -133,7 +124,5 @@ public class Lim_GameManager : MonoBehaviour
     {
         yield return waitForReslut;
         result.SetActive(true);
-
-
     }
 }

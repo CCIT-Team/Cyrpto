@@ -9,16 +9,16 @@ public class HItBox : MonoBehaviour
     int Breakmon = 0;
     public ParticleSystem[] Dead;
     public bool isHit = false;
-    public static bool inHit;
     [HideInInspector]
-    public int hitDir = 0;
+    public int hitDir = 0; //L = 1, R = 0, U = 2
     public GameObject[] hitbox;
     public GameObject arrow;
     BoxCollider col;
     GameObject breakParts;
-    bool hitboxright = false;
-    bool hitboxleft = false;
-    bool hitboxup = false;
+    public bool hr = false;
+    public bool hl = false;
+    public bool hu = false;
+    public bool me = false;
     public bool isbreak = false;
     internal bool colorMatch;
 
@@ -29,8 +29,7 @@ public class HItBox : MonoBehaviour
 
     void Update()
     {
-        inHit = isHit;
-       
+        RightDirection();
     }
 
     private void OnEnable()
@@ -43,9 +42,11 @@ public class HItBox : MonoBehaviour
             {
                 case 0:
                     hitbox[0].gameObject.SetActive(true);
+                    hitbox[1].gameObject.SetActive(true);
                     arrow.transform.Rotate(0, 0, 180);
                     break;
                 case 1:
+                    hitbox[0].gameObject.SetActive(true);
                     hitbox[1].gameObject.SetActive(true);
                     arrow.transform.Rotate(0, 0, 0);
                     break;
@@ -66,13 +67,8 @@ public class HItBox : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
+        if (other.tag == "Red_Sword" || other.tag == "Blue_Sword") { me = true; }
         colorMatch = (tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword") ? true : false;
-        if(colorMatch == true)
-        {
-            Debug.Log("HitBOOOOOOOOOOOOOOOOOOOOOOOOOOOOOX");
-        }
-        else { Debug.Log("DON  HIT"); }
-
     }
 
     private void OnTriggerEnter(Collider other)
@@ -97,5 +93,12 @@ public class HItBox : MonoBehaviour
                 break;
         }
         Destroy(gameObject);
+    }
+
+    void RightDirection()
+    {
+       if(hl == true) { Destroy(hitbox[0]);}
+       if(hr == true) { Destroy(hitbox[1]);}
+       if(me == true) { Destroy(hitbox[2]);}
     }
 }

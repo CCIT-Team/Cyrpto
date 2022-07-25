@@ -28,7 +28,18 @@ public class Note : MonoBehaviour
         }
         else
         {
-            transform.localPosition = Vector3.Lerp(Vector3.back * MusicManager.Instance.NoteSpawnZ, Vector3.back * MusicManager.Instance.NoteDespawnZ, t);
+            if(Lim_GameManager.instance.pause.activeSelf == true)
+            {
+                Time.timeScale = 0;
+                t = 0;
+                transform.localPosition = Vector3.Lerp(Vector3.back * MusicManager.Instance.NoteSpawnZ, Vector3.back * MusicManager.Instance.NoteDespawnZ,Time.deltaTime + t);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                t = (float)(timeSinceInstantiated / (MusicManager.Instance.NoteTime * 2));
+                transform.localPosition = Vector3.Lerp(Vector3.back * MusicManager.Instance.NoteSpawnZ, Vector3.back * MusicManager.Instance.NoteDespawnZ, t);
+            }         
             //transform.position = Vector3.Lerp(Vector3.forward * MusicManager.Instance.NoteSpawnZ, Vector3.forward * MusicManager.Instance.NoteDespawnZ, t);           
         }
     }

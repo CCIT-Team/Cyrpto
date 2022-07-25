@@ -12,6 +12,7 @@ public class MusicManager : MonoBehaviour
     public static MusicManager Instance;
     public AudioSource audioSource;
     public Lane[] lanes;
+    public GameObject[] laness;
     public float SongDelayInSec;
     public int InputDelayInMilSec;
     public double[] marginOfError;
@@ -32,10 +33,15 @@ public class MusicManager : MonoBehaviour
 
     void Awake()
     {
-        Instance = this; 
+        Instance = this;
+        for (int i = 0; i >= 7; i++)
+        {
+            laness[i].SetActive(true);
+        }
     }
+
     void Start()
-    {       
+    {
         NoteSpawnZ = Lane.lanetransform.position.z;
         ReadFromFile();
     }
@@ -44,6 +50,7 @@ public class MusicManager : MonoBehaviour
     void Update()
     {
         NoteTapZ = Player.transform.position.z;
+        resultEND();
     }
 
     void ReadFromFile()
@@ -69,5 +76,25 @@ public class MusicManager : MonoBehaviour
     public static double GetAudioSourceTime()
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
+    }
+
+    public void resultEND()
+    {
+        if (ScoreManager.instance.resultwindow.activeSelf == true && ScoreManager.instance.missCount == 10)
+        {
+            for (int i = 0; i < 6; i++)
+            {
+                laness[i].SetActive(false);
+            }
+        }
+
+    }
+    public void Pause_Stop()
+    {
+        if(Lim_GameManager.instance.pause.activeSelf == true && audioSource.isPlaying == true)
+        {
+            audioSource.Pause();
+        }
+        else { audioSource.UnPause(); }
     }
 }

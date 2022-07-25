@@ -18,7 +18,6 @@ public class HitBox_Sub : MonoBehaviour
     {
         if (other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
         {
-            Debug.Log("Hit");
             Hit.isHit = true;
         }
     }

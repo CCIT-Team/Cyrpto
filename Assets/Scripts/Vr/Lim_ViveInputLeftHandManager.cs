@@ -54,7 +54,7 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
             if(hit.collider.tag == "farEnemy")
             {
                 isgunhit = true;
-                Debug.Log(hit.collider.name);
+                //Debug.Log(hit.collider.name);
                 if (hit.collider.GetComponent<MechMove>().state == MechMove.State.Shoot)
                     hit.collider.GetComponent<HItBox>().Monbreak();
                 farSource.PlayOneShot(farSound);

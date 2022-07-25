@@ -36,6 +36,7 @@ public class Title : MonoBehaviour
             transform.GetChild(i).gameObject.GetComponent<BoxCollider>().enabled = true;
         }
         uiactive = true;
+        Next = false;
     }
 
 }

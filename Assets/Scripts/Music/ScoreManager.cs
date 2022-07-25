@@ -161,7 +161,7 @@ public class ScoreManager : MonoBehaviour
 
     public void GameEnd()
     {
-        if (missCount == 10 && gameend == false) 
+        if (missCount >= 10 && gameend == false) 
         {
             gameend = true;
             resluton();
@@ -177,7 +177,7 @@ public class ScoreManager : MonoBehaviour
 
     public void resluton()
     {
-        Debug.Log(" 결과 호출됨");
+       // Debug.Log(" 결과 호출됨");
         StartCoroutine(waitfade());
         StartCoroutine(faderesult());
 
