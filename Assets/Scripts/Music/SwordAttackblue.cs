@@ -26,7 +26,7 @@ void OnTriggerEnter(Collider col)
                 Debug.Log(isbluecut);
             }
         }*/
-        if (col.GetComponent<HItBox>().isbreak)
+        if (col.GetComponent<HitBox>().isbreak)
         {
             Debug.Log("----------------------------------------------------------------------»ç¿îµå---------------------------------------------------------------------------");
             closeSource.PlayOneShot(close);

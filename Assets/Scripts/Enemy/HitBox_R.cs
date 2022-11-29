@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class HitBox_R : MonoBehaviour
 {
-    public HItBox Hit;
+    public HitBox Hit;
     //private void OnTriggerEnter(Collider other)
     //{
     //    if (other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))

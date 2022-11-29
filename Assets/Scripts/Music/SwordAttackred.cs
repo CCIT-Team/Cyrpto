@@ -26,7 +26,7 @@ public class SwordAttackred : MonoBehaviour
                 Debug.Log(isredcut);
             }
         }*/
-        if(col.GetComponent<HItBox>().isbreak)
+        if(col.GetComponent<HitBox>().isbreak)
         {
             closeSource.PlayOneShot(close);
         }

@@ -14,7 +14,7 @@ public class swordsound : MonoBehaviour
     }
     void OnTriggerEnter(Collider col)
     {
-        if (col.GetComponent<HItBox>().isbreak)
+        if (col.GetComponent<HitBox>().isbreak)
         {
             closeSource.PlayOneShot(close);
         }

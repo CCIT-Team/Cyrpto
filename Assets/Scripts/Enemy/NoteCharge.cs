@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class NoteCharge : MonoBehaviour
 {
-    public HItBox hitbox;
+    public HitBox hitbox;
     public Sprite[] blueArrow;
     public Sprite[] redArrow;
     public Sprite[] AimingPoint;
