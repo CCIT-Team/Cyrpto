@@ -50467,7 +50467,7 @@ MonoBehaviour:
   hit: {fileID: 0}
   Source: {fileID: 5637914774835845643}
   playerDead: {fileID: 8300000, guid: 530dcd35cb4a01f499361d1840164edc, type: 3}
-  EnemyBreak: {fileID: 8300000, guid: 7e9d5df5fbc66274f971e11e5efaaca1, type: 3}
+  lefttime: {fileID: 1205458950139057285}
   rightHandManager: {fileID: 6166891503779057401}
 --- !u!114 &8556003128105950068
 MonoBehaviour:

@@ -10,7 +10,8 @@ public class shootonly : MonoBehaviour
     {
         if (other.tag == "Blue_Sword")
         {
-            SceneManager.LoadScene("shoot only");
+            MusicManager.Instance.rock = true;
+            SceneManager.LoadScene("chapter1");
         }
     }
 

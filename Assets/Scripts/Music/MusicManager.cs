@@ -4,6 +4,7 @@ using UnityEngine;
 using Melanchall.DryWetMidi.Core;
 using Melanchall.DryWetMidi.Interaction;
 using System.IO;
+using System;
 using UnityEngine.Networking;
 using UnityEngine.UI;
 
@@ -23,6 +24,11 @@ public class MusicManager : MonoBehaviour
     public float NoteTapZ;
     public GameObject Player;
     public int noteCount;
+
+    public bool rock = false;
+    public AudioClip[] audio = new AudioClip[3];
+    public Text lefttime;
+    float leftT;
     public float NoteDespawnZ {
         get {
             //return NoteTapZ - (NoteSpawnZ - NoteTapZ);
@@ -44,15 +50,40 @@ public class MusicManager : MonoBehaviour
     {
         NoteSpawnZ = Lane.lanetransform.position.z;
         ReadFromFile();
+        leftT = audioSource.clip.length;
+        lefttime = Player.GetComponent<Lim_ViveInputManager>().lefttime;
+        Invoke(nameof(StartSong), SongDelayInSec);
     }
 
 
     void Update()
     {
         NoteTapZ = Player.transform.position.z;
+        leftT -= Time.deltaTime;
+        lefttime.text = Convert.ToString(leftT);
+        
         resultEND();
+        Pause_Stop();
     }
 
+    public void StartSong()
+    {
+        audioSource.Play();
+    }
+
+    void SelectScene()
+    {
+        if(rock == true)
+        {
+            FileLocation = "rock.mid";
+            audioSource.clip = audio[0];
+        }
+        else
+        {
+            FileLocation = "chapter1.mid";
+            audioSource.clip = audio[1];
+        }
+    }
     void ReadFromFile()
     {
         midiFile = MidiFile.Read(Application.streamingAssetsPath + "/" + FileLocation);
@@ -66,13 +97,9 @@ public class MusicManager : MonoBehaviour
 
         foreach (var lane in lanes) lane.SetTimeStamps(array);
 
-        Invoke(nameof(StartSong), SongDelayInSec);
-    }
-    public void StartSong()
-    {
-        audioSource.Play();
         GetAudioSourceTime();
     }
+   
     public static double GetAudioSourceTime()
     {
         return (double)Instance.audioSource.timeSamples / Instance.audioSource.clip.frequency;
@@ -91,10 +118,14 @@ public class MusicManager : MonoBehaviour
     }
     public void Pause_Stop()
     {
-        if(Lim_GameManager.instance.pause.activeSelf == true && audioSource.isPlaying == true)
+        if(Lim_GameManager.instance.IsPause == true && audioSource.isPlaying == true)
         {
             audioSource.Pause();
         }
-        else { audioSource.UnPause(); }
+        else if(Lim_GameManager.instance.IsPause == false && audioSource.isPlaying == false)
+        {
+            audioSource.UnPause(); 
+        }
+
     }
 }

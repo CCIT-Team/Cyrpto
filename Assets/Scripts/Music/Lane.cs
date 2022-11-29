@@ -399,7 +399,7 @@ public class Lane : MonoBehaviour
 
         if (SpawnIndex < timeStamps.Count)
         {
-            if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime)
+            if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime && MusicManager.Instance.audioSource.isPlaying == true && Lim_GameManager.instance.IsGameOver == false)
             {
                 note = Instantiate(noteprefab, gameObject.transform);
                 notes.Add(note.GetComponent<Note>());
@@ -408,20 +408,20 @@ public class Lane : MonoBehaviour
             }
         }
 
-        if (InputIndex < timeStamps.Count)
+        if (InputIndex < timeStamps.Count && MusicManager.Instance.audioSource.isPlaying == true && Lim_GameManager.instance.IsGameOver == false)
         {
             double timeStamp = timeStamps[InputIndex];
             double[] marginOfError = MusicManager.Instance.marginOfError;
             double[] farmarginOfError = MusicManager.Instance.farmarginOfError;
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
-            if (Lim_GameManager.instance.pause.activeSelf == true)
-            {
-                audioTime = 0;
-            }
-            else
-            {
-                audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
-            }
+            //if (Lim_GameManager.instance.pause.activeSelf == true)
+            //{
+            //    audioTime = 0;
+            //}
+            //else
+            //{
+            //    audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
+            //}
         }
     }
 }

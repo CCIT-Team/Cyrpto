@@ -25,6 +25,7 @@ public class Lim_ViveInputManager : MonoBehaviour
     public AudioClip hit;
     public AudioSource Source;
     public AudioClip playerDead;
+    public Text lefttime;
 
     public Lim_ViveInputRightHandManager rightHandManager;
 
