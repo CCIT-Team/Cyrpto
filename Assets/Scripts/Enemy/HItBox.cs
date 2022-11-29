@@ -1,12 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 
-public class HItBox : MonoBehaviour
+public class HitBox : MonoBehaviour
 {
-    public GameObject[] BreakMon;
-    int Breakmon = 0;
+    AudioSource soundob;
+    public GameObject BreakMon;
+    bool isMelee = false;
     public ParticleSystem[] Dead;
     public bool isHit = false;
     [HideInInspector]
@@ -22,21 +24,26 @@ public class HItBox : MonoBehaviour
     public bool isbreak = false;
     internal bool colorMatch;
 
+    public bool itdead = false;
+
     void Start()
     {
-
+        
     }
 
     void Update()
     {
         RightDirection();
+        if (itdead)
+            Monbreak();
     }
 
     private void OnEnable()
     {
+        soundob = Camera.main.GetComponent<AudioSource>();
         if (arrow.name != "AimPoint")
         {
-            Breakmon = 0;
+            isMelee = true;
             hitDir = Random.Range(0, 3);
             switch (hitDir)
             {
@@ -58,7 +65,7 @@ public class HItBox : MonoBehaviour
         }
         else
         {
-            Breakmon = 1;
+            isMelee = false;
             col = GetComponent<BoxCollider>();
             col.center = new Vector3(0, 1.1f, col.center.z);
             col.size = new Vector3(1, 2.2f, col.size.z);
@@ -81,17 +88,11 @@ public class HItBox : MonoBehaviour
 
     public void Monbreak()
     {
-        switch (Breakmon)
-        {
-            case 0:
-                breakParts = Instantiate(BreakMon[0]);
-                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
-                break;
-            case 1:
-                breakParts = Instantiate(BreakMon[1]);
-                breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
-                break;
-        }
+        if(isMelee)
+            soundob.Play();
+        //MechDistroy.Invoke();
+        breakParts = Instantiate(BreakMon);
+        breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
         Destroy(gameObject);
     }
 
@@ -101,4 +102,6 @@ public class HItBox : MonoBehaviour
        if(hr == true) { Destroy(hitbox[1]);}
        if(me == true) { Destroy(hitbox[2]);}
     }
+
+    public UnityEvent MechDistroy;
 }
