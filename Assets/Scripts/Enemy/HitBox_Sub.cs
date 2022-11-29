@@ -5,20 +5,13 @@ using UnityEngine;
 public class HitBox_Sub : MonoBehaviour
 {
     public HitBox Hit;
-    //private void OnTriggerEnter(Collider other)
-    //{
-    //    if (other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
-    //    {
-    //        Debug.Log("Hit");
-    //        Hit.isHit = true;
-    //    }
-    //}
 
     private void OnTriggerStay(Collider other)
     {
-        if (other.CompareTag("Blue_Sword") || other.CompareTag("Red_Sword"))
+        if (other.gameObject.layer == 8 || other.gameObject.layer == 9)
         {
             Hit.isHit = true;
+            Destroy(this.gameObject);
         }
     }
 }

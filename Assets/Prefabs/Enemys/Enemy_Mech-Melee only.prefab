@@ -541,7 +541,7 @@ GameObject:
   - component: {fileID: 7812948708101045832}
   - component: {fileID: 7205358161822123029}
   m_Layer: 0
-  m_Name: NPC_Mech_LOD1_LWRP-Melee only
+  m_Name: Enemy_Mech-Melee only
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

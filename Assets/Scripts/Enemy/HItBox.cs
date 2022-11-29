@@ -6,6 +6,7 @@ using UnityEngine.Events;
 
 public class HitBox : MonoBehaviour
 {
+    public static HitBox instance;
     public AudioSource break_sound_audiosorce;
     public AudioClip EnemyBreak;
     public GameObject BreakMon;
@@ -27,21 +28,27 @@ public class HitBox : MonoBehaviour
 
     public bool itdead = false;
 
+    Transform playerPos, mechPos;
+    public float dis;
+    public NoteCharge note;
+
     void Start()
     {
-        
+        playerPos = GameObject.FindWithTag("Player").GetComponent<Transform>();
+        mechPos = transform;
     }
 
     void Update()
     {
-        RightDirection();
+        dis = Vector3.Distance(playerPos.position, mechPos.position);
+        Jugiment();
         if (itdead)
             Monbreak();
     }
 
     private void OnEnable()
     {
-        if (arrow.name != "AimPoint")
+        if (gameObject.layer == 8 || gameObject.layer == 9)
         {
             isMelee = true;
             hitDir = Random.Range(0, 3);
@@ -72,10 +79,165 @@ public class HitBox : MonoBehaviour
         }
     }
 
+    void Jugiment()
+    {
+        switch (gameObject.layer)   //거리에 따른 화살표 변화
+        {
+            case 8:
+            case 9:
+                if (dis > 15)
+                {
+                    note.chargeGage = 1;
+                    if (isHit && colorMatch)
+                    {
+                        ScoreManager.Instance.Miss();
+                        isHit = false;
+                        Monbreak();
+                        break;
+                    }
+                }// -→⊙⊙
+                else if (dis > 9.5f)
+                {   // --→⊙
+                    note.chargeGage = 2;
+                    if (isHit && colorMatch)
+                    {
+                        ScoreManager.Instance.Good();
+                        isHit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 4f)
+                {
+                    note.chargeGage = 3;
+                    if (isHit && colorMatch)
+                    {
+                        ScoreManager.Instance.Great();
+                        isHit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 1.75f)
+                {
+                    note.chargeGage = 4;
+                    if (isHit && colorMatch)
+                    {
+                        ScoreManager.Instance.Perpect();
+                        isHit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 0.75f)
+                {
+                    note.chargeGage = 3;
+                    if (isHit && colorMatch)
+                    {
+                        ScoreManager.Instance.Great();
+                        isHit = false;
+                        Monbreak();
+                        break;
+                    }
+                }     // -→⊙⊙
+                else
+                {
+                    note.chargeGage = 2;
+                    if (isHit && colorMatch)
+                    {
+                        ScoreManager.Instance.Good();
+                        isHit = false;
+                        Monbreak();
+                        break;
+                    }
+                };   // →⊙⊙⊙
+                break;
+            case 10:
+                if (dis > 25)
+                {
+                    note.chargeGage = 0;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Miss();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 20)
+                {
+                    note.chargeGage = 1;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Miss();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 15)
+                {
+                    note.chargeGage = 2;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Good();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 10)
+                {
+                    note.chargeGage = 3;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Great();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                // Perfact
+                else if (dis > 5)
+                {
+                    note.chargeGage = 4;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Perpect();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else if (dis > 0)
+                {
+                    note.chargeGage = 3;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Great();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                else
+                {
+                    note.chargeGage = 2;
+                    if (Lim_ViveInputLeftHandManager.isgunhit == true)
+                    {
+                        ScoreManager.Instance.Good();
+                        Lim_ViveInputLeftHandManager.isgunhit = false;
+                        Monbreak();
+                        break;
+                    }
+                }
+                break;
+        }
+    }
     private void OnTriggerStay(Collider other)
     {
-        if (other.tag == "Red_Sword" || other.tag == "Blue_Sword") { me = true; }
-        colorMatch = (tag == "RedEnemy" && other.tag == "Red_Sword") || (tag == "BlueEnemy" && other.tag == "Blue_Sword") ? true : false;
+        if (other.gameObject.layer == 8 || other.gameObject.layer == 9 ) { Destroy(hitbox[2]); }
+        colorMatch = (gameObject.layer == other.gameObject.layer) ? true : false;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -95,13 +257,4 @@ public class HitBox : MonoBehaviour
         breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
         Destroy(gameObject);
     }
-
-    void RightDirection()
-    {
-       if(hl == true) { Destroy(hitbox[0]);}
-       if(hr == true) { Destroy(hitbox[1]);}
-       if(me == true) { Destroy(hitbox[2]);}
-    }
-
-    public UnityEvent MechDistroy;
 }

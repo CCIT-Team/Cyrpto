@@ -51,12 +51,9 @@ public class Lim_ViveInputLeftHandManager: MonoBehaviour
         audioSource.PlayOneShot(fireSound);
         if(Physics.Raycast(shootpos.transform.position, shootpos.transform.forward, out hit, 1000,~layerMask))
         {
-            if(hit.collider.tag == "farEnemy")
+            if(hit.collider.gameObject.layer == 10)
             {
                 isgunhit = true;
-                //Debug.Log(hit.collider.name);
-                if (hit.collider.GetComponent<MechMove>().state == MechMove.State.Shoot)
-                    hit.collider.GetComponent<HitBox>().Monbreak();
                 farSource.PlayOneShot(farSound);
                
             }
