@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 public class HitBox : MonoBehaviour
 {
-    AudioSource soundob;
+    public AudioSource break_sound_audiosorce;
+    public AudioClip EnemyBreak;
     public GameObject BreakMon;
     bool isMelee = false;
     public ParticleSystem[] Dead;
@@ -40,7 +41,6 @@ public class HitBox : MonoBehaviour
 
     private void OnEnable()
     {
-        soundob = Camera.main.GetComponent<AudioSource>();
         if (arrow.name != "AimPoint")
         {
             isMelee = true;
@@ -89,7 +89,7 @@ public class HitBox : MonoBehaviour
     public void Monbreak()
     {
         if(isMelee)
-            soundob.Play();
+            break_sound_audiosorce.PlayOneShot(EnemyBreak);
         //MechDistroy.Invoke();
         breakParts = Instantiate(BreakMon);
         breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);

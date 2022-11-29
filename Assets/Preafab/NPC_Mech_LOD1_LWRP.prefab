@@ -539,7 +539,7 @@ GameObject:
   - component: {fileID: 5017326038096911647}
   - component: {fileID: -9172405470883846900}
   - component: {fileID: 7812948708101045832}
-  - component: {fileID: 7205358161822123029}
+  - component: {fileID: 660972741139712729}
   m_Layer: 0
   m_Name: NPC_Mech_LOD1_LWRP
   m_TagString: Untagged
@@ -646,7 +646,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   assignedTime: 0
   timeSinceInstantiated: 0
---- !u!114 &7205358161822123029
+--- !u!114 &660972741139712729
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -658,9 +658,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd64ca3f802010a4697cb2a5c818b741, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BreakMon:
-  - {fileID: 7681203393346848344, guid: a8381e42e131b0d40abd05a13e6ee3b0, type: 3}
-  - {fileID: 7681203393346848344, guid: bf248280804ea304898ce47d89c0cc0f, type: 3}
+  break_sound_audiosorce: {fileID: 5637914774835845643, guid: 638464c17efcadc44a852d0ad3a97b12, type: 3}
+  EnemyBreak: {fileID: 8300000, guid: 7e9d5df5fbc66274f971e11e5efaaca1, type: 3}
+  BreakMon: {fileID: 7681203393346848344, guid: bf248280804ea304898ce47d89c0cc0f, type: 3}
   Dead:
   - {fileID: 1302551502524444268, guid: edf4be876cae9c548a519f20a928930c, type: 3}
   - {fileID: 8652347292870536397, guid: 49c49b2e7fa68a242908672b0a8e20e2, type: 3}
@@ -678,6 +678,10 @@ MonoBehaviour:
   hu: 0
   me: 0
   isbreak: 0
+  itdead: 0
+  MechDistroy:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &934338966992129130
 GameObject:
   m_ObjectHideFlags: 0
@@ -1862,7 +1866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 825da237b2cad8f4a9194d56a11f25dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hit: {fileID: 7205358161822123029}
+  Hit: {fileID: 660972741139712729}
 --- !u!1 &4129785385534163362
 GameObject:
   m_ObjectHideFlags: 0
@@ -1951,7 +1955,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c664f229e5cbc6d47b46e4f2b4279d10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitbox: {fileID: 7205358161822123029}
+  hitbox: {fileID: 660972741139712729}
   blueArrow:
   - {fileID: 21300000, guid: d1c983be00a509246b51fdb5efea3604, type: 3}
   - {fileID: 21300000, guid: 45cb65cf3fb5a3446abe0384c35e1a74, type: 3}
@@ -2027,7 +2031,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6eb5edcfceec25546a3795b5a9500292, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hit: {fileID: 7205358161822123029}
+  Hit: {fileID: 660972741139712729}
 --- !u!1 &8427523871572002789
 GameObject:
   m_ObjectHideFlags: 0
@@ -2185,4 +2189,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ed6cf209463cd84aa76cd2e974815c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Hit: {fileID: 7205358161822123029}
+  Hit: {fileID: 660972741139712729}
