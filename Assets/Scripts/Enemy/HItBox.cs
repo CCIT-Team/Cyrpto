@@ -14,7 +14,7 @@ public class HitBox : MonoBehaviour
     public ParticleSystem[] Dead;
     public bool isHit = false;
     [HideInInspector]
-    public int hitDir = 0; //L = 1, R = 0, U = 2
+    public int hitDir = 0; //R = 0, L = 1, U = 2
     public GameObject[] hitbox;
     public GameObject arrow;
     BoxCollider col;
@@ -36,14 +36,6 @@ public class HitBox : MonoBehaviour
     {
         playerPos = GameObject.FindWithTag("Player").GetComponent<Transform>();
         mechPos = transform;
-    }
-
-    void Update()
-    {
-        dis = Vector3.Distance(playerPos.position, mechPos.position);
-        Jugiment();
-        if (itdead)
-            Monbreak();
     }
 
     private void OnEnable()
@@ -79,6 +71,37 @@ public class HitBox : MonoBehaviour
         }
     }
 
+    void Update()
+    {
+        dis = Vector3.Distance(playerPos.position, mechPos.position);
+        Jugiment();
+        if (itdead)
+            Monbreak();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "panj")
+        {
+            ScoreManager.instance.Miss();
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.gameObject.layer == 8 || other.gameObject.layer == 9) { Destroy(hitbox[2]); }
+        colorMatch = (gameObject.layer == other.gameObject.layer) ? true : false;
+    }
+
+    public void Monbreak()
+    {
+        if(isMelee)
+            break_sound_audiosorce.PlayOneShot(EnemyBreak);
+        breakParts = Instantiate(BreakMon);
+        breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
+        Destroy(gameObject);
+    }
+
     void Jugiment()
     {
         switch (gameObject.layer)   //거리에 따른 화살표 변화
@@ -93,7 +116,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Miss();
                         isHit = false;
                         Monbreak();
-                        break;
                     }
                 }// -→⊙⊙
                 else if (dis > 9.5f)
@@ -104,7 +126,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Good();
                         isHit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 4f)
@@ -115,7 +136,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Great();
                         isHit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 1.75f)
@@ -126,7 +146,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Perpect();
                         isHit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 0.75f)
@@ -137,7 +156,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Great();
                         isHit = false;
                         Monbreak();
-                        break;
                     }
                 }     // -→⊙⊙
                 else
@@ -147,8 +165,6 @@ public class HitBox : MonoBehaviour
                     {
                         ScoreManager.Instance.Good();
                         isHit = false;
-                        Monbreak();
-                        break;
                     }
                 };   // →⊙⊙⊙
                 break;
@@ -161,7 +177,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Miss();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 20)
@@ -172,7 +187,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Miss();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 15)
@@ -183,7 +197,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Good();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 10)
@@ -194,7 +207,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Great();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 // Perfact
@@ -206,7 +218,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Perpect();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else if (dis > 0)
@@ -217,7 +228,6 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Great();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 else
@@ -228,33 +238,9 @@ public class HitBox : MonoBehaviour
                         ScoreManager.Instance.Good();
                         Lim_ViveInputLeftHandManager.isgunhit = false;
                         Monbreak();
-                        break;
                     }
                 }
                 break;
         }
-    }
-    private void OnTriggerStay(Collider other)
-    {
-        if (other.gameObject.layer == 8 || other.gameObject.layer == 9 ) { Destroy(hitbox[2]); }
-        colorMatch = (gameObject.layer == other.gameObject.layer) ? true : false;
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.tag == "panj")
-        {
-            ScoreManager.instance.Miss();
-        }
-    }
-
-    public void Monbreak()
-    {
-        if(isMelee)
-            break_sound_audiosorce.PlayOneShot(EnemyBreak);
-        //MechDistroy.Invoke();
-        breakParts = Instantiate(BreakMon);
-        breakParts.transform.position = this.gameObject.transform.position + new Vector3(0, 0.2f, 0);
-        Destroy(gameObject);
     }
 }
