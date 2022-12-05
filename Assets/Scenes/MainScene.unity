@@ -965,7 +965,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &738504028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1112,9 +1112,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 875135301}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bb808425ca1f95a4c9f90c7aee2078fa, type: 3}
+  m_Script: {fileID: 11500000, guid: 015b7a06197b74d46bb0e7111d3d6494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Title: {fileID: 6574794894319627685, guid: 32c92d905e022564ba4865de824b213c, type: 3}
 --- !u!65 &875135304
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1126,8 +1127,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.53105, y: 2.3689563, z: 0.88274294}
-  m_Center: {x: 0.0040073153, y: -0.36562008, z: 0.2210432}
+  m_Size: {x: 2.53105, y: 3.1819627, z: 0.88274294}
+  m_Center: {x: 0.0040073153, y: -0.77212083, z: 0.22104377}
 --- !u!1 &880203347
 GameObject:
   m_ObjectHideFlags: 0
@@ -1761,7 +1762,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1108831023
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2164,9 +2165,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 1411764782}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d91671be6fb180f4eb1af593e3938c8f, type: 3}
+  m_Script: {fileID: 11500000, guid: 015b7a06197b74d46bb0e7111d3d6494, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Title: {fileID: 8749939782272104942, guid: 909875398b06ada4089f4c596e08a02a, type: 3}
 --- !u!65 &1411764785
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2178,8 +2180,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.53105, y: 2.3689563, z: 0.88274294}
-  m_Center: {x: 0.0040073153, y: -0.36562008, z: 0.2210432}
+  m_Size: {x: 2.53105, y: 3.1978416, z: 0.88274294}
+  m_Center: {x: 0.004007325, y: -0.7800607, z: 0.22104378}
 --- !u!1 &1503437165
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,7 +2393,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1626585793}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24dbd5927eb120b4dbd2e52c1e9c7d7d, type: 3}
   m_Name: 
@@ -2408,7 +2410,7 @@ BoxCollider:
   m_GameObject: {fileID: 1626585793}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.5327184, y: 0.98786676, z: 0.8042866}
   m_Center: {x: -0.00020852126, y: -0.7709973, z: 0.19052863}
@@ -3579,7 +3581,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &8524272292321374191
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4204,7 +4206,7 @@ BoxCollider:
   m_GameObject: {fileID: 8524272293829153569}
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 2.5327184, y: 0.98786676, z: 0.8042866}
   m_Center: {x: -0.00020852126, y: -0.7709973, z: 0.19052863}
@@ -4234,7 +4236,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8524272293829153569}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 24dbd5927eb120b4dbd2e52c1e9c7d7d, type: 3}
   m_Name: 
@@ -4253,8 +4255,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.53105, y: 2.3689563, z: 0.88274294}
-  m_Center: {x: 0.0040073153, y: -0.36562008, z: 0.2210432}
+  m_Size: {x: 2.53105, y: 3.213716, z: 0.88274294}
+  m_Center: {x: 0.0040073195, y: -0.78800035, z: 0.22104394}
 --- !u!1 &8524272293915945782
 GameObject:
   m_ObjectHideFlags: 0

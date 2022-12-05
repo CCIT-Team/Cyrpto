@@ -457,7 +457,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6951358819475859148}
-  - component: {fileID: 2355689590950003618}
+  - component: {fileID: 8562778405802134222}
   m_Layer: 0
   m_Name: MainBreak 2
   m_TagString: Untagged
@@ -472,7 +472,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8749939782272104942}
-  m_LocalRotation: {x: -0, y: 0.32305342, z: -0, w: 0.94638073}
+  m_LocalRotation: {x: 0, y: 0.32305032, z: 0, w: 0.94638187}
   m_LocalPosition: {x: 0.811, y: 1.657, z: 0.16810405}
   m_LocalScale: {x: 1, y: 1.4, z: 1}
   m_Children:
@@ -483,7 +483,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 37.695, z: 0}
---- !u!114 &2355689590950003618
+--- !u!114 &8562778405802134222
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -492,6 +492,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 8749939782272104942}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 913db922db72e614cb6341a19caf7420, type: 3}
+  m_Script: {fileID: 11500000, guid: e80736805a97ae64f87a89ac87b78758, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

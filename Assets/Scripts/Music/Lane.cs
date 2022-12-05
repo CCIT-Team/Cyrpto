@@ -399,7 +399,7 @@ public class Lane : MonoBehaviour
 
         if (SpawnIndex < timeStamps.Count)
         {
-            if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime && MusicManager.Instance.audioSource.isPlaying == true && Lim_GameManager.instance.IsGameOver == false)
+            if (MusicManager.GetAudioSourceTime() >= timeStamps[SpawnIndex] - MusicManager.Instance.NoteTime && MusicManager.Instance.audioSource.isPlaying == true && Lim_GameManager.instance.IsGameOver == false && Lim_GameManager.instance.IsPause == false)
             {
                 note = Instantiate(noteprefab, gameObject.transform);
                 notes.Add(note.GetComponent<Note>());
@@ -408,7 +408,7 @@ public class Lane : MonoBehaviour
             }
         }
 
-        if (InputIndex < timeStamps.Count && MusicManager.Instance.audioSource.isPlaying == true && Lim_GameManager.instance.IsGameOver == false)
+        if (InputIndex < timeStamps.Count && MusicManager.Instance.audioSource.isPlaying == true && Lim_GameManager.instance.IsGameOver == false && Lim_GameManager.instance.IsPause == false)
         {
             double timeStamp = timeStamps[InputIndex];
             double[] marginOfError = MusicManager.Instance.marginOfError;
