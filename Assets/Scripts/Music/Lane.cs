@@ -414,14 +414,6 @@ public class Lane : MonoBehaviour
             double[] marginOfError = MusicManager.Instance.marginOfError;
             double[] farmarginOfError = MusicManager.Instance.farmarginOfError;
             double audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
-            //if (Lim_GameManager.instance.pause.activeSelf == true)
-            //{
-            //    audioTime = 0;
-            //}
-            //else
-            //{
-            //    audioTime = MusicManager.GetAudioSourceTime() - (MusicManager.Instance.InputDelayInMilSec / 1000.0);
-            //}
         }
     }
 }

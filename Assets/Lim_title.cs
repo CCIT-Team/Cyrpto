@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Lim_title : MonoBehaviour
 {
-    public GameObject titlePrefab;
     public GameObject disable;
     public bool uiactive;
     public static readonly WaitForSeconds waitForSeconds = new WaitForSeconds(2.0f);
@@ -28,7 +27,6 @@ public class Lim_title : MonoBehaviour
         
         if(other.tag == "Blue_Sword")
         {
-            Instantiate(titlePrefab);
             disable.SetActive(false);
         }
 
