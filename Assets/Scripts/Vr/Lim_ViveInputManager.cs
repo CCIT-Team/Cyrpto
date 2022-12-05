@@ -141,7 +141,7 @@ public class Lim_ViveInputManager : MonoBehaviour
             case 1:
                 HPbar.fillAmount = 0.9f;
                 HPtext.text = "90";
-               Source.PlayOneShot(hit);
+                Source.PlayOneShot(hit);
                 break;
             case 2:
                 HPbar.fillAmount = 0.8f;
