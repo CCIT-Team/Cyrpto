@@ -24,7 +24,7 @@ VR플랫폼의 장점인 다양한 상호작용을 통하여 플레이어의 몰
 
 
 ## 개발
-|<img src="https://github.com/baegichan/CCIT_SYNDROME/assets/88014706/7fefe5f4-2440-4e46-9e1a-3703bf2fc743" width="150" height="150"/>|![임대연](https://github.com/CCIT-Team/Cyrpto/assets/10797029/8a98efce-1322-45ef-a341-54462f1b8f97)|<img src="https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/de0481a2-cad9-492f-b6ff-4b3c14bef2c6" width="150" height="150"/>|
+|<img src="https://github.com/baegichan/CCIT_SYNDROME/assets/88014706/7fefe5f4-2440-4e46-9e1a-3703bf2fc743" width="150" height="150"/>|<img src="https://avatars.githubusercontent.com/u/10797029" width="150" height="150"/>|<img src="https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/de0481a2-cad9-492f-b6ff-4b3c14bef2c6" width="150" height="150"/>|
 |:-----------------:|:-----------------:|:-----------------:|
 |[tuost](https://github.com/tuost)|[DAEYEONLIM](https://github.com/DAEYEONLIM)|[MoccaHazel](https://github.com/MoccaHazel)|
 
