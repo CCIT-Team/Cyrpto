@@ -43,6 +43,13 @@ VR플랫폼의 장점인 다양한 상호작용을 통하여 플레이어의 몰
 <br/>
 <br/>
 
+### 지우스토 게임 포스터
+![지우스토 포스터](https://github.com/CCIT-Team/Cyrpto/assets/10797029/02537c8e-3a2e-4cbb-8baf-a36fa5015fc0)
+
+<br/>
+<br/>
+
+
 ### 게임 순환 구조
 ![그림1](https://github.com/CCIT-Team/Cyrpto/assets/10797029/77f1a7e8-48c6-4ebd-a976-e85efba5e3ac)
 
@@ -51,9 +58,18 @@ VR플랫폼의 장점인 다양한 상호작용을 통하여 플레이어의 몰
 
 
 ### 인게임 사진
-#### * 주인공의 방
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/5601fa9f-bac6-4b23-9c41-c222b9c976bf)
+#### * 게임 타이틀
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/cc91bfb1-0fbf-4caa-a9f7-140f334c55e6)
+
+#### * 게임 타이틀
 ![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/65d5432a-8453-4c36-8f59-851d999c2bcc)
+
+#### * 주인공 스토리
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/d5a45927-4394-4c7f-975c-cbc075c45368)
+
+
+#### * 게임 타이틀
+
 
 #### * A 시나리오(화물 정리)
 ![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/33b03e0c-9425-4c5f-bde7-c394e007a3fd)
