@@ -44,7 +44,7 @@ VR플랫폼의 장점인 다양한 상호작용을 통하여 플레이어의 몰
 <br/>
 
 ### 게임 순환 구조
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/1a699e78-7327-4c27-b8f7-f51adc2d9d1c)
+![그림1](https://github.com/CCIT-Team/Cyrpto/assets/10797029/77f1a7e8-48c6-4ebd-a976-e85efba5e3ac)
 
 <br/>
 <br/>
