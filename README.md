@@ -61,29 +61,26 @@ VR플랫폼의 장점인 다양한 상호작용을 통하여 플레이어의 몰
 #### * 게임 타이틀
 ![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/cc91bfb1-0fbf-4caa-a9f7-140f334c55e6)
 
-#### * 게임 타이틀
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/65d5432a-8453-4c36-8f59-851d999c2bcc)
 
 #### * 주인공 스토리
 ![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/d5a45927-4394-4c7f-975c-cbc075c45368)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/17cbe6b7-14bc-43d3-b3c7-37b2cdbf259b)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/f5a02ac8-ab2d-4818-a18e-78e07a1e43a0)
 
 
-#### * 게임 타이틀
+#### * 게임 튜토리얼
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/64034f2e-3c69-4909-9f69-50f5b299a698)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/00fcac0a-6bc3-498f-aeb6-56f6cd80eb3a)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/c89e31b0-b429-42f5-8ff6-2b97d701adbb)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/e773d1df-cc56-4624-813f-cf115455fc9c)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/6129496f-0f41-46e8-a007-50da65d27dbd)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/847040f4-6186-4e2e-a14c-fb2a508b171a)
 
 
-#### * A 시나리오(화물 정리)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/33b03e0c-9425-4c5f-bde7-c394e007a3fd)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/59d01b68-2cdc-450d-b297-9134aa32c62f)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/c7c9d385-9600-418d-9185-768c26c2d8ee)
-
-#### * B 시나리오(동물 구조)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/b44d01f2-ecb0-4896-bc09-f6f88ea2b6c6)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/e43b88e9-e842-40ef-b7d1-9e0a49adc851)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/cfbc6849-d431-469c-b5f0-94a0e7e629f0)
-
-#### * C 시나리오(화물 정리)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/f05707d9-503f-47d5-bea4-af49d70df176)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/f986e412-63c5-49f7-99cb-b1fa89e7e91c)
-![image](https://github.com/JeonSeaStar/Empathy--VR-2Team/assets/88014706/d0ecbc35-85c7-439a-9714-f34d878c27b1)
+#### * 게임 플레이
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/2633aecb-43e8-4c1a-b5bc-52df920c0ba5)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/365ffaab-1f39-4189-b9bb-50986f46a653)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/a2eee474-e08d-4de8-912f-02f490284eda)
+![image](https://github.com/CCIT-Team/Cyrpto/assets/10797029/ebba663d-a3a6-4f2b-b0eb-d30e80df975f)
 
 <br/> 
